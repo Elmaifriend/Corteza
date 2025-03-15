@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Testing\Fakes\Fake;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Accesorie>
  */
-class ModelFactory extends Factory
+class AccesoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +17,7 @@ class ModelFactory extends Factory
     public function definition(): array
     {
         return [
-            "name" => fake()->name(),
-            "price" => fake()->randomNumber()
+            //
         ];
     }
 }
