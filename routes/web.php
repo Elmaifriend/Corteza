@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 
 Route::get('/', [PagesController::class, "inicio"])
-    ->name("inicio");
+    ->name("esp.inicio");
 
 Route::get("/contacto", [PagesController::class, "contacto"])
     ->name("contacto");
