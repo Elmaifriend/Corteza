@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('accesories', function (Blueprint $table) {
             $table->id();
+            $table->string("nombre");
             $table->string("name");
             $table->string("price");
             $table->enum("category",["Muebles", "Cocina", "Accesorios", "Electrodomesticos", "Servicios", "Seguridad"]);

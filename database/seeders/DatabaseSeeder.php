@@ -59,91 +59,106 @@ class DatabaseSeeder extends Seeder
 
         // === Accesories ===
         Accesory::factory()->create([
-            "name" => "Sala 3 Piezas",
+            "nombre" => "Sala 3 Piezas",
+            "name" => "3 Piece Living Room",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Mesa de Centro",
+            "nombre" => "Mesa de Centro",
+            "name" => "Coffee Table",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Mueble de TV",
+            "nombre" => "Mueble de TV",
+            "name" => "TV cabinet",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Cama Individual",
+            "nombre" => "Cama Individual",
+            "name" => "Single bed",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Cama Matrimonial",
+            "nombre" => "Cama Matrimonial",
+            "name" => "Double bed",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Cama KingSize",
+            "nombre" => "Cama KingSize",
+            "name" => "King Size Bed",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Cama Queen",
+            "nombre" => "Cama Queen",
+            "name" => "Queen Bed",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Litera",
+            "nombre" => "Litera",
+            "name" => "Bunk",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Alfombra",
+            "nombre" => "Alfombra",
+            "name" => "Rug",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Colchon",
+            "nombre" => "Colchon",
+            "name" => "Mattress",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Lampara de desayunador",
+            "Nombre" => "Lampara de desayunador",
+            "name" => "Breakfast bar lamp",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Sillas de desayunador",
+            "nombre" => "Sillas de desayunador",
+            "name" => "Breakfast bar chairs",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Comedor",
+            "nombre" => "Comedor",
+            "name" => "Dining room",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Sillas de Comedor",
+            "nombre" => "Sillas de Comedor",
+            "name" => "Dining Chairs",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Sala de Patio",
+            "nombre" => "Sala de Patio",
+            "name" => "Patio Room",
             "price" => "999.99",
             "category" => "Muebles"
         ]);
@@ -151,37 +166,43 @@ class DatabaseSeeder extends Seeder
 
 
         Accesory::factory()->create([
-            "name" => "Mueble de cocina de piso",
+            "nombre" => "Mueble de cocina de piso",
+            "name" => "Floor Standing kitchen cabinet",
             "price" => "999.99",
             "category" => "Cocina"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Gabinetes de techo",
+            "nombre" => "Gabinetes de techo",
+            "name" => "Ceiling cabinets",
             "price" => "999.99",
             "category" => "Cocina"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Instalacion de lavabos y desagues",
+            "nombre" => "Instalacion de lavabos y desagues",
+            "name" => "Installation of sinks and drains",
             "price" => "999.99",
             "category" => "Cocina"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Isla",
+            "nombre" => "Isla",
+            "name" => "Kitchen island",
             "price" => "999.99",
             "category" => "Cocina"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Vajillas",
+            "nombre" => "Vajillas",
+            "name" => "Tableware",
             "price" => "999.99",
             "category" => "Cocina"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Cazuelas",
+            "nombre" => "Cazuelas",
+            "name" => "Casseroles",
             "price" => "999.99",
             "category" => "Cocina"
         ]);
@@ -189,133 +210,155 @@ class DatabaseSeeder extends Seeder
 
 
         Accesory::factory()->create([
-            "name" => "Apagadores Dimmer con Focos Dimmer",
+            "nombre" => "Apagadores Dimmer con Focos Dimmer",
+            "name" => "Dimmer Switches with Dimmer Bulbs",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Ventiladores",
+            "nombre" => "Ventiladores",
+            "name" => "Fans",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
+            "nombre" => "Alexa",
             "name" => "Alexa",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Sistema de Luces Solares",
+            "nombre" => "Sistema de Luces Solares",
+            "name" => "Solar Lighting System",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Sistema Dimmer en Luces",
+            "nombre" => "Sistema Dimmer en Luces",
+            "name" => "Dimmer System in Lights",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Areas verdes de decoracion",
+            "nombre" => "Areas verdes de decoracion",
+            "name" => "Green decoration areas",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Ventiladores en las habitaciones",
+            "nombre" => "Ventiladores en las habitaciones",
+            "name" => "Fans in the rooms",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Mas contactos de luz",
+            "nombre" => "Mas contactos de luz",
+            "name" => "More light contacts",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Luz de barra en isla de coicna",
+            "nombre" => "Luz de barra en isla de coicna",
+            "name" => "Kitchen island bar light",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Lamparas solares",
+            "nombre" => "Lamparas solares",
+            "name" => "Solar lamps",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Mufa de Luz Instalada",
+            "nombre" => "Mufa de Luz Instalada",
+            "name" => "Light Mufa Installed",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
+            "nombre" => "Tinaco",
             "name" => "Tinaco",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Bomba de Agua",
+            "nombre" => "Bomba de Agua",
+            "name" => "Water Pump",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Boler de Paso",
+            "name" => "Boiler de Paso",
+            "nombre" => "Step Boiler",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Paneles Solares",
+            "nombre" => "Paneles Solares",
+            "name" => "Solar Panels",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Tanque de Gas",
+            "nombre" => "Tanque de Gas",
+            "name" => "Gas tank",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Tanque Estacionario",
+            "nombre" => "Tanque Estacionario",
+            "name" => "Stationary Tank",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Sala de Patio para 5",
+            "nombre" => "Sala de Patio para 5",
+            "name" => "Patio Room for 5",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Barandal de Madera",
+            "nombre" => "Barandal de Madera",
+            "name" => "Wooden Railing",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Fogata",
+            "nombre" => "Fogata",
+            "name" => "Bonfire",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "BBQ Asador",
+            "nombre" => "BBQ Asador",
+            "name" => "BBQ Grill",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Areas Verdes",
+            "nombre" => "Areas Verdes",
+            "name" => "Green Areas",
             "price" => "999.99",
             "category" => "Accesorios"
         ]);
@@ -324,49 +367,57 @@ class DatabaseSeeder extends Seeder
 
 
         Accesory::factory()->create([
-            "name" => "Lavadora",
+            "nombre" => "Lavadora",
+            "name" => "Washing machine",
             "price" => "999.99",
             "category" => "Electrodomesticos"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Secadora",
+            "nombre" => "Secadora",
+            "name" => "Dryer",
             "price" => "999.99",
             "category" => "Electrodomesticos"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Estufa",
+            "nombre" => "Estufa",
+            "name" => "Stove",
             "price" => "999.99",
             "category" => "Electrodomesticos"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Refri",
+            "nombre" => "Refrigerador",
+            "name" => "Refrigerator",
             "price" => "999.99",
             "category" => "Electrodomesticos"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Horno",
+            "nombre" => "Horno",
+            "name" => "Oven",
             "price" => "999.99",
             "category" => "Electrodomesticos"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Microondas",
+            "nombre" => "Microondas",
+            "name" => "Microwave",
             "price" => "999.99",
             "category" => "Electrodomesticos"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Campana",
+            "nombre" => "Campana",
+            "name" => "Bell",
             "price" => "999.99",
             "category" => "Electrodomesticos"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Cafetera",
+            "nombre" => "Cafetera",
+            "name" => "Coffee maker",
             "price" => "999.99",
             "category" => "Electrodomesticos"
         ]);
@@ -374,49 +425,57 @@ class DatabaseSeeder extends Seeder
 
 
         Accesory::factory()->create([
-            "name" => "Paneles Solares",
+            "nombre" => "Paneles Solares",
+            "name" => "Solar Panels",
             "price" => "999.99",
             "category" => "Servicios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Aplanar Terreno",
+            "nombre" => "Aplanar Terreno",
+            "name" => "Flatten the Ground",
             "price" => "999.99",
             "category" => "Servicios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Cercar el Terreno ( Madera o Alambre )",
+            "nombre" => "Cercar el Terreno ( Madera o Alambre )",
+            "name" => "Fence the Land (Wood or Wire)",
             "price" => "999.99",
             "category" => "Servicios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Extencion de Patio 2 pies mas atras o mas adelante",
+            "nombre" => "Extencion de Patio 2 pies mas atras o mas adelante",
+            "name" => "Patio extension 2 feet further back or forward",
             "price" => "999.99",
             "category" => "Servicios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Puertas de Vidrio Corredizas",
+            "nombre" => "Puertas de Vidrio Corredizas",
+            "name" => "Sliding Glass Doors",
             "price" => "999.99",
             "category" => "Servicios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Techado de Pergola",
+            "nombre" => "Techado de Pergola",
+            "name" => "Pergola Roofing",
             "price" => "999.99",
             "category" => "Servicios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Conexion de Luz",
+            "nombre" => "Conexion de Luz",
+            "name" => "Light Connection",
             "price" => "999.99",
             "category" => "Servicios"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Conexion de Agua",
+            "nombre" => "Conexion de Agua",
+            "name" => "Water Connection",
             "price" => "999.99",
             "category" => "Servicios"
         ]);
@@ -424,31 +483,36 @@ class DatabaseSeeder extends Seeder
 
 
         Accesory::factory()->create([
-            "name" => "Barra de Ventanas",
+            "nombre" => "Barra de Ventanas",
+            "name" => "Windows Bar",
             "price" => "999.99",
             "category" => "Seguridad"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Barras de Puerta",
+            "nombre" => "Barras de Puerta",
+            "name" => "Windows Bar",
             "price" => "999.99",
             "category" => "Seguridad"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Camaras de Seguridad",
+            "nombre" => "Camaras de Seguridad",
+            "name" => "Security Cameras",
             "price" => "999.99",
             "category" => "Seguridad"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Cerraduras Inteligentes",
+            "nombre" => "Cerraduras Inteligentes",
+            "name" => "Smart Locks",
             "price" => "999.99",
             "category" => "Seguridad"
         ]);
 
         Accesory::factory()->create([
-            "name" => "Sensor de Movimiento",
+            "nombre" => "Sensor de Movimiento",
+            "name" => "Motion Sensor",
             "price" => "999.99",
             "category" => "Seguridad"
         ]);
