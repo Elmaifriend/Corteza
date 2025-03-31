@@ -25,6 +25,8 @@ class AccesoriesResource extends Resource
     {
         return $form
             ->schema([
+                TextInput::make('nombre'),
+
                 TextInput::make('name'),
 
                 TextInput::make('price')
@@ -39,15 +41,15 @@ class AccesoriesResource extends Resource
                 $query->where('category', "Accesorios");
             })
             ->columns([
+                Tables\Columns\TextColumn::make("nombre")
+                    ->sortable()
+                    ->searchable(),
+
                 Tables\Columns\TextColumn::make('name')
                     ->sortable()
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("price")
-                    ->sortable()
-                    ->searchable(),
-
-                Tables\Columns\TextColumn::make("category")
                     ->sortable()
                     ->searchable(),
             ])

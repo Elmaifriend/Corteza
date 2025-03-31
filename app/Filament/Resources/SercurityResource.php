@@ -23,10 +23,14 @@ class SercurityResource extends Resource
 
     protected static ?string $modelLabel = 'Seguridad';
 
+    protected static ?string $pluralModelLabel = 'Seguridad';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                TextInput::make('nombre'),
+
                 TextInput::make('name'),
 
                 TextInput::make('price')
@@ -41,15 +45,15 @@ class SercurityResource extends Resource
                 $query->where('category', "Seguridad");
             })
             ->columns([
+                Tables\Columns\TextColumn::make("nombre")
+                    ->sortable()
+                    ->searchable(),
+
                 Tables\Columns\TextColumn::make('name')
                     ->sortable()
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("price")
-                    ->sortable()
-                    ->searchable(),
-
-                Tables\Columns\TextColumn::make("category")
                     ->sortable()
                     ->searchable(),
             ])

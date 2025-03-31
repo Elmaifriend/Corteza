@@ -27,6 +27,8 @@ class ApplianceResource extends Resource
     {
         return $form
             ->schema([
+                TextInput::make('nombre'),
+
                 TextInput::make('name'),
 
                 TextInput::make('price')
@@ -41,6 +43,10 @@ class ApplianceResource extends Resource
                 $query->where('category', "Electrodomesticos");
             })
             ->columns([
+                Tables\Columns\TextColumn::make("nombre")
+                    ->sortable()
+                    ->searchable(),
+
                 Tables\Columns\TextColumn::make('name')
                     ->sortable()
                     ->searchable(),
@@ -49,9 +55,7 @@ class ApplianceResource extends Resource
                     ->sortable()
                     ->searchable(),
 
-                Tables\Columns\TextColumn::make("category")
-                    ->sortable()
-                    ->searchable(),
+
             ])
             ->filters([
                 //

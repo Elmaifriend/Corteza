@@ -27,6 +27,8 @@ class ServicesResource extends Resource
     {
         return $form
             ->schema([
+                TextInput::make('nombre'),
+
                 TextInput::make('name'),
 
                 TextInput::make('price')
@@ -41,15 +43,15 @@ class ServicesResource extends Resource
                 $query->where('category', "Servicios");
             })
             ->columns([
+                Tables\Columns\TextColumn::make("nombre")
+                    ->sortable()
+                    ->searchable(),
+
                 Tables\Columns\TextColumn::make('name')
                     ->sortable()
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("price")
-                    ->sortable()
-                    ->searchable(),
-
-                Tables\Columns\TextColumn::make("category")
                     ->sortable()
                     ->searchable(),
             ])

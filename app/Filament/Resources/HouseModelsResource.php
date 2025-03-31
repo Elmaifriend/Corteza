@@ -21,6 +21,8 @@ class HouseModelsResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $modelLabel = 'Modelos De Casas';
+
     public static function canCreate(): bool
     {
         return false;
@@ -30,6 +32,8 @@ class HouseModelsResource extends Resource
     {
         return $form
             ->schema([
+                TextInput::make('nombre'),
+
                 TextInput::make('name'),
 
                 TextInput::make('price')
