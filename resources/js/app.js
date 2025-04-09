@@ -1,4 +1,5 @@
 import './bootstrap';
+
 document.addEventListener('alpine:init', function () {
   Alpine.data('catalogData', function() {
     return {

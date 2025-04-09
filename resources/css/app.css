@@ -24,7 +24,7 @@
       rgba(22, 22, 22, 1) 75%
     ),
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/hero-background.jpg");
+    url("@images/hero-background.jpg");
 
   --background-image-floema: radial-gradient(
       circle,
@@ -32,33 +32,33 @@
       rgba(22, 22, 22, 1) 75%
     ),
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/floema.jpg");
+    url("@images/floema.jpg");
 
   --background-image-floema-secondary: linear-gradient(
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
-    url("/images/floema-secondary.jpg");
+    url("@images/floema-secondary.jpg");
 
   --background-image-tiny-house-build: linear-gradient(
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
-    url("/images/tiny-houses-build.jpg");
+    url("@images/tiny-houses-build.jpg");
 
   --background-image-impact: linear-gradient(
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
-    url("/images/impact-background.jpg");
+    url("@images/impact-background.jpg");
 
-  --background-image-roots: url("/images/our-roots.jpg");
-  --background-image-placeholder: url("/images/model-placeholder.jpg");
+  --background-image-roots: url("@images/our-roots.jpg");
+  --background-image-placeholder: url("@images/model-placeholder.jpg");
   --background-image-model-placeholder: linear-gradient(
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
-    url("/images/model-placeholder.jpg");
+    url("@images/model-placeholder.jpg");
 
   --font-*: initial;
   --font-sans: Inter, sans-serif;

@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
-    <script src="/app.js"></script>
-    <link rel="stylesheet" href="/app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Raleway:ital,wght@0,100..900;1,100..900&amp;display=swap">
@@ -19,7 +18,7 @@
     <div class="h-screen flex flex-col items-center w-full snap-y snap-mandatory overflow-y-scroll">
       <div class="container snap-center snap-always shrink-0">
         <!-- Navigation Begin-->
-        <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr_150px] container items-center p-4 md:pb-0 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
+        <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr_150px] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
           <h1 class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight">Corteza</h1>
           <ul class="lg:w-full w-11/12 lg:p-0 p-4 lg:!flex flex lg:flex-row flex-col lg:static absolute md:top-[150%] top-[120%] left-1/2 lg:translate-0 -translate-x-1/2 z-10 rounded-2xl mdlg!bg-none bg-background text-secondary-highlight lg:divide-none divide-y-2 divide-dashed divide-secondary-highlight/10" x-show="open" x-cloak="" x-transition="">
             <li class="block lg:hidden py-3">
@@ -27,22 +26,22 @@
             </li>
             <div class="lg:flex gap-8 w-full justify-center items-center">
               <li class="py-3 lg:p-0 relative group" x-data="{ open: false }" x-on:click="open = !open" x-on:mouseover="if(window.innerWidth &gt;= 768) open = true" x-on:mouseleave="if(window.innerWidth &gt;= 768) open = false">
-                <div class="flex justify-between items-center cursor-pointer"><a href="#">Inicio</a><i class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in" x-bind:class="{ 'transform rotate-180': open }"></i></div>
+                <div class="flex justify-between items-center cursor-pointer"><a href="{{ route('inicio') }}">Inicio</a><i class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in" x-bind:class="{ 'transform rotate-180': open }"></i></div>
                 <ul class="w-full lg:w-max pl-4 mt-2 lg:p-4 lg:m-0 divide-y-2 divide-dashed lg:absolute top-full left-0 lg:rounded-2xl lg:!bg-background divide-secondary-highlight/10" x-show="open" x-cloak="" x-collapse="">
-                  <li class="py-3"><a href="#">Qué es Corteza</a></li>
-                  <li class="py-3"><a href="#">6 Funciones de Corteza</a></li>
+                  <li class="py-3"><a href="{{ route('corteza') }}">Qué es Corteza</a></li>
+                  <li class="py-3"><a href="{{ route('funciones') }}">6 Funciones de Corteza</a></li>
                 </ul>
               </li>
-              <li class="py-3"><a href="#">Historia</a></li>
+              <li class="py-3"><a href="{{ route('historia') }}">Historia</a></li>
               <li class="py-3 lg:p-0 relative group" x-data="{ open: false }" x-on:click="open = !open" x-on:mouseover="if(window.innerWidth &gt;= 768) open = true" x-on:mouseleave="if(window.innerWidth &gt;= 768) open = false">
-                <div class="flex justify-between items-center cursor-pointer"><a href="#">Tiny Houses</a><i class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in" x-bind:class="{ 'transform rotate-180': open }"></i></div>
+                <div class="flex justify-between items-center cursor-pointer"><a href="{{ route('tiny-houses') }}">Tiny Houses</a><i class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in" x-bind:class="{ 'transform rotate-180': open }"></i></div>
                 <ul class="w-full lg:w-max pl-4 mt-2 lg:p-4 lg:m-0 divide-y-2 divide-dashed lg:absolute top-full left-0 lg:rounded-2xl lg:!bg-background divide-secondary-highlight/10" x-show="open" x-cloak="" x-collapse="">
-                  <li class="py-3"><a href="#">Beneficios</a></li>
-                  <li class="py-3"><a href="#">Polizas</a></li>
+                  <li class="py-3"><a href="{{ route('beneficios') }}">Beneficios</a></li>
+                  <li class="py-3"><a href="{{ route('polizas') }}">Polizas</a></li>
                 </ul>
               </li>
-              <li class="py-3"><a href="#">Floema</a></li>
-              <li class="py-3"><a href="#">FAQ</a></li>
+              <li class="py-3"><a href="{{ route('floema') }}">Floema</a></li>
+              <li class="py-3"><a href="{{ route('faq') }}">FAQ</a></li>
             </div>
           </ul>
           <div class="justify-self-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizador</a>
@@ -62,14 +61,14 @@
                   <h1 class="sm:text-8xl text-7xl font-title font-bold inline">Houses</h1>
                 </div>
                 <p class="sm:text-lg text-sm px-2 text-secondary text-center">-Construyamos juntos el hogar que tu familia merece-</p></span>
-              <div class="flex flex-col items-center absolute bottom-6 left-1/2 transform -translate-x-1/2 cursor-pointer hover:-translate-y-1 hover:scale-110 hover:animate-none transition-transform animate-bounce"><a class="sm:text-lg" href="#">Cotizar un Modelo</a><i class="bx bx-chevron-down bx-md"></i></div>
+              <div class="flex flex-col items-center absolute bottom-6 left-1/2 transform -translate-x-1/2 cursor-pointer hover:-translate-y-1 hover:scale-110 hover:animate-none transition-transform animate-bounce"><a class="sm:text-lg" href="#nido">Cotizar un Modelo</a><i class="bx bx-chevron-down bx-md"></i></div>
             </div>
           </div>
         </div>
         <!-- Hero Image End-->
       </div>
       <!-- Models Begin-->
-      <div class="h-dvh container snap-center snap-always shrink-0">
+      <div id="nido" class="h-dvh container snap-center snap-always shrink-0">
         <div class="py-6 h-full">
           <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-placeholder bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
@@ -83,7 +82,7 @@
                 </div>
               </div>
               <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizar</a>
-              </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="/images/tiny-white.png" alt="Tiny Logo"/>
+              </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
         </div>
@@ -102,7 +101,7 @@
                 </div>
               </div>
               <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizar</a>
-              </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="/images/tiny-white.png" alt="Tiny Logo"/>
+              </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
         </div>
@@ -121,7 +120,7 @@
                 </div>
               </div>
               <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizar</a>
-              </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="/images/tiny-white.png" alt="Tiny Logo"/>
+              </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
         </div>
@@ -140,7 +139,7 @@
                 </div>
               </div>
               <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizar</a>
-              </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="/images/tiny-white.png" alt="Tiny Logo"/>
+              </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
         </div>
@@ -159,7 +158,7 @@
                 </div>
               </div>
               <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizar</a>
-              </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="/images/tiny-white.png" alt="Tiny Logo"/>
+              </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
         </div>
