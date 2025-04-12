@@ -59,4 +59,44 @@ class PagesController extends Controller
             'accesorios' => $accesorios
         ]);
     }
+
+    public function raiz(){
+      $casa = (object) ['price' => 150000, 'name' => 'raiz'];
+      $accesorios = Accesory::all()->toArray();
+
+      return view('esp.raiz',[
+          'casa' => $casa,
+          'accesorios' => $accesorios
+      ]);
+  }
+
+  public function savia(){
+    $casa = (object) ['price' => 150000, 'name' => 'savia'];
+    $accesorios = Accesory::all()->toArray();
+
+    return view('esp.savia',[
+        'casa' => $casa,
+        'accesorios' => $accesorios
+    ]);
+  }
+
+  public function copa(){
+    $casa = (object) ['price' => 150000, 'name' => 'copa'];
+    $accesorios = Accesory::all()->toArray();
+
+    return view('esp.copa',[
+        'casa' => $casa,
+        'accesorios' => $accesorios
+    ]);
+  }
+
+  public function ebano(){
+    $casa = (object) ['price' => 150000, 'name' => 'ebano'];
+    $accesorios = Accesory::all()->toArray();
+
+    return view('esp.ebano',[
+        'casa' => $casa,
+        'accesorios' => $accesorios
+    ]);
+  }
 }

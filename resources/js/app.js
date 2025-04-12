@@ -198,6 +198,11 @@ document.addEventListener('alpine:init', function () {
         return this.images[this.galleryIndex];
       },
 
+      toggleModal() {
+        document.body.style.overflow = this.showImagesModal ? "auto" : "hidden";
+        this.showImagesModal = !this.showImagesModal;
+      },
+
       setImage(index) {
         this.galleryIndex = index;
       },

@@ -69,26 +69,26 @@
     <!-- Navigation End-->
     <div class="container grid h-full grid-cols-1 gap-4 py-4 lg:grid-cols-12 lg:grid-rows-[auto_1fr]">
         <!-- Left Column -->
-        <div class="overflow-hidden rounded-2xl lg:col-span-8">
-            <div class="bg-background flex h-full flex-col gap-4 p-4 py-6 md:p-8 lg:overflow-y-auto">
+        <div class="lg:col-span-8 overflow-hidden rounded-2xl">
+            <div class="h-full bg-background flex flex-col gap-4 p-4 py-6 md:p-8 lg:overflow-y-auto">
                 <h1 class="font-title text-highlight text-4xl font-bold">Modelo {{ $casa->name }}</h1>
-
+    
                 <div x-data="modelGallery([
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-01.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-02.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-03.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-04.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-05.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-06.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-07.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-08.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-09.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-10.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-11.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-12.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-13.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-14.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-15.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-01.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-02.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-03.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-04.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-05.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-06.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-07.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-08.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-09.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-10.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-11.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-12.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-13.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-14.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/raiz-15.jpg') }}',
                 ])" class="flex flex-col gap-2">
                     <div class="relative">
                         <i class="bx bxs-chevron-left bx-lg text-foreground/40 hover:scale-85 absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer transition-transform md:left-4"
@@ -125,27 +125,18 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="flex flex-col gap-8">
                     <div class="flex flex-col gap-4">
                         <div>
-                            <h2 class="text-foreground-secondary text-lg">El refugio cálido y acogedor para reconectar
-                                con
-                                lo esencia</h2>
+                            <h2 class="text-foreground-secondary text-lg">La esencia de lo simple y funcional</h2>
                             <h1 class="text-highlight font-title text-4xl font-bold">Descripción del Modelo</h1>
                         </div>
-                        <p>El Nido representa el hogar como un refugio cálido y acogedor, donde todo está diseñado para
-                            brindar comodidad y seguridad. Inspirado en la simplicidad de los nidos de pájaros, este
-                            modelo
-                            es perfecto para quienes buscan un espacio íntimo y funcional, donde cada detalle está
-                            pensado
-                            para maximizar el espacio sin sacrificar la elegancia. Es el lugar ideal para reconectar con
-                            uno
-                            mismo y con lo esencial.</p>
+                        <p>El modelo Raíz está diseñado para quienes buscan una opción económica sin sacrificar calidad. Con un enfoque en la funcionalidad y el minimalismo, es ideal para dar los primeros pasos hacia un estilo de vida más sencillo o como espacio de oficina o estudio.</p>
                     </div>
                     <div class="flex flex-col gap-6">
                         <div>
-                            <h4 class="text-foreground-secondary">4x6 metros</h4>
+                            <h4 class="text-foreground-secondary">5×6 metros</h4>
                             <h3 class="text-highlight font-title text-3xl font-bold">Básica</h3>
                         </div>
                         <div class="grid grid-cols-2">
@@ -161,7 +152,7 @@
                                 <div>
                                     <span class="font-bold">Área construida:</span>
                                     <ul>
-                                        <li>24 m²</li>
+                                        <li>30 m²</li>
                                     </ul>
                                 </div>
                                 <div>
@@ -176,7 +167,7 @@
                     </div>
                     <div class="flex flex-col gap-6">
                         <div>
-                            <h4 class="text-foreground-secondary">4x6 metros</h4>
+                            <h4 class="text-foreground-secondary">4×6 metros</h4>
                             <h3 class="text-highlight font-title text-3xl font-bold">Intermedia</h3>
                         </div>
                         <div class="grid grid-cols-2">
@@ -193,7 +184,7 @@
                                 <div>
                                     <span class="font-bold">Área construida:</span>
                                     <ul>
-                                        <li>24 m²</li>
+                                        <li>30 m²</li>
                                     </ul>
                                 </div>
                                 <div>
@@ -208,7 +199,7 @@
                     </div>
                     <div class="flex flex-col gap-6">
                         <div>
-                            <h4 class="text-foreground-secondary">4x7 metros</h4>
+                            <h4 class="text-foreground-secondary">4×7 metros</h4>
                             <h3 class="text-highlight font-title text-3xl font-bold">Lujo</h3>
                         </div>
                         <div class="grid grid-cols-2">
@@ -217,17 +208,17 @@
                                 <ul>
                                     <li>1 habitación</li>
                                     <li>1 baño</li>
-                                    <li>Cocina</li>
+                                    <li>Cocina con isla</li>
                                     <li>Sala</li>
                                     <li>Terraza con pérgola</li>
-                                    <li>2 closets</li>
+                                    <li>2 clósets</li>
                                 </ul>
                             </div>
                             <div class="flex flex-col gap-2">
                                 <div>
                                     <span class="font-bold">Área construida:</span>
                                     <ul>
-                                        <li>28 m²</li>
+                                        <li>35 m²</li>
                                     </ul>
                                 </div>
                                 <div>

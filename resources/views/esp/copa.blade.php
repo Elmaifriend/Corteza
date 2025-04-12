@@ -74,21 +74,21 @@
                 <h1 class="font-title text-highlight text-4xl font-bold">Modelo {{ $casa->name }}</h1>
 
                 <div x-data="modelGallery([
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-01.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-02.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-03.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-04.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-05.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-06.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-07.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-08.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-09.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-10.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-11.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-12.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-13.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-14.jpg') }}',
-                    '{{ Vite::asset('resources/images/tiny-houses/nido-15.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-01.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-02.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-03.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-04.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-05.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-06.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-07.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-08.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-09.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-10.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-11.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-12.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-13.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-14.jpg') }}',
+                    '{{ Vite::asset('resources/images/tiny-houses/copa-15.jpg') }}',
                 ])" class="flex flex-col gap-2">
                     <div class="relative">
                         <i class="bx bxs-chevron-left bx-lg text-foreground/40 hover:scale-85 absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer transition-transform md:left-4"
@@ -129,23 +129,16 @@
                 <div class="flex flex-col gap-8">
                     <div class="flex flex-col gap-4">
                         <div>
-                            <h2 class="text-foreground-secondary text-lg">El refugio cálido y acogedor para reconectar
-                                con
-                                lo esencia</h2>
+                            <h2 class="text-foreground-secondary text-lg">Elegancia y amplitud en cada detalle</h2>
                             <h1 class="text-highlight font-title text-4xl font-bold">Descripción del Modelo</h1>
                         </div>
-                        <p>El Nido representa el hogar como un refugio cálido y acogedor, donde todo está diseñado para
-                            brindar comodidad y seguridad. Inspirado en la simplicidad de los nidos de pájaros, este
-                            modelo
-                            es perfecto para quienes buscan un espacio íntimo y funcional, donde cada detalle está
-                            pensado
-                            para maximizar el espacio sin sacrificar la elegancia. Es el lugar ideal para reconectar con
-                            uno
-                            mismo y con lo esencial.</p>
+                        <p>El modelo Copa es sinónimo de sofisticación y diseño premium. Con acabados de lujo y
+                            tecnologías sostenibles, este modelo está pensado para quienes buscan un hogar amplio,
+                            acogedor y con un toque de exclusividad.</p>
                     </div>
                     <div class="flex flex-col gap-6">
                         <div>
-                            <h4 class="text-foreground-secondary">4x6 metros</h4>
+                            <h4 class="text-foreground-secondary">6×6 metros</h4>
                             <h3 class="text-highlight font-title text-3xl font-bold">Básica</h3>
                         </div>
                         <div class="grid grid-cols-2">
@@ -161,7 +154,7 @@
                                 <div>
                                     <span class="font-bold">Área construida:</span>
                                     <ul>
-                                        <li>24 m²</li>
+                                        <li>36 m²</li>
                                     </ul>
                                 </div>
                                 <div>
@@ -176,7 +169,7 @@
                     </div>
                     <div class="flex flex-col gap-6">
                         <div>
-                            <h4 class="text-foreground-secondary">4x6 metros</h4>
+                            <h4 class="text-foreground-secondary">6×6 metros</h4>
                             <h3 class="text-highlight font-title text-3xl font-bold">Intermedia</h3>
                         </div>
                         <div class="grid grid-cols-2">
@@ -193,7 +186,7 @@
                                 <div>
                                     <span class="font-bold">Área construida:</span>
                                     <ul>
-                                        <li>24 m²</li>
+                                        <li>36 m²</li>
                                     </ul>
                                 </div>
                                 <div>
@@ -208,7 +201,7 @@
                     </div>
                     <div class="flex flex-col gap-6">
                         <div>
-                            <h4 class="text-foreground-secondary">4x7 metros</h4>
+                            <h4 class="text-foreground-secondary">6×7 metros</h4>
                             <h3 class="text-highlight font-title text-3xl font-bold">Lujo</h3>
                         </div>
                         <div class="grid grid-cols-2">
@@ -219,7 +212,8 @@
                                     <li>1 baño</li>
                                     <li>Cocina</li>
                                     <li>Sala</li>
-                                    <li>Terraza con pérgola</li>
+                                    <li>Isla</li>
+                                    <li>1 terraza con pérgola</li>
                                     <li>2 closets</li>
                                 </ul>
                             </div>
@@ -227,7 +221,7 @@
                                 <div>
                                     <span class="font-bold">Área construida:</span>
                                     <ul>
-                                        <li>28 m²</li>
+                                        <li>42 m²</li>
                                     </ul>
                                 </div>
                                 <div>
