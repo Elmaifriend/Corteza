@@ -187,6 +187,30 @@ document.addEventListener('alpine:init', function () {
       }
     };
   });
+  Alpine.data('modelGallery', function(imagesList) {
+    return {
+      galleryIndex: 0,
+      images: imagesList,
+      maxPreviewImages: 2,
+      showImagesModal: true,
+      
+      currentImage() {
+        return this.images[this.galleryIndex];
+      },
+
+      setImage(index) {
+        this.galleryIndex = index;
+      },
+    
+      nextImage() {
+        this.galleryIndex = (this.galleryIndex + 1) % this.images.length;
+      },
+      
+      previousImage() {
+        this.galleryIndex = (this.galleryIndex - 1 + this.images.length) % this.images.length;
+      },
+    }
+  })
 });
 
 function clamp(value, min, max) {

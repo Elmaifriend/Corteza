@@ -20,9 +20,8 @@
                                 <div>
                                     <input type="checkbox" wire:model.live="accesoriosSeleccionados"
                                         value="{{ (int) $accesorio['id'] }}" class="hidden peer">
-                                    <div
-                                        class="group w-4 h-4 p-2 border-2 border-secondary rounded-md flex items-center justify-center peer-checked:border-secondary">
-                                        <i class="bx bx-check bx-xs hidden group-peer-checked:!block"></i>
+                                    <div class="group w-4 h-4 p-2 border-2 border-secondary rounded-md flex items-center justify-center peer-checked:border-secondary">
+                                        <i class="bx bx-check bx-xs !hidden group-peer-checked:!block"></i>
                                     </div>
                                 </div>
 
@@ -49,7 +48,7 @@
         @endforeach
     </div>
     <div
-        class="w-full p-4 md:p-6 flex flex-col gap-4 items-stretch sticky bottom-0 rounded-2xl bg-highlight-secondary text-background z-10">
+        class="w-full p-4 md:p-6 flex flex-col gap-4 items-stretch sticky bottom-4 rounded-2xl bg-secondary-highlight text-background z-10">
         <h3 class="text-2xl font-semibold text-right">Total: ${{ number_format($total, 2) }}</h3>
         <button
             class="px-3 py-2 bg-highlight rounded-2xl font-bold text-background text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in">Realizar

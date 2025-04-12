@@ -19,46 +19,67 @@
   --color-foreground-secondary: #babab5;
 
   --background-image-hero: radial-gradient(
-      circle,
       rgba(0, 0, 0, 0) 40%,
-      rgba(22, 22, 22, 1) 75%
+      rgba(22, 22, 22, 0.95) 75%
     ),
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("@images/hero-background.jpg");
+    url("@images/portada.jpg");
 
-  --background-image-floema: radial-gradient(
-      circle,
-      rgba(0, 0, 0, 0) 40%,
-      rgba(22, 22, 22, 1) 75%
+  --background-image-floema: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
     ),
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("@images/floema.jpg");
+    url("@images/historia-5.jpg");
 
   --background-image-floema-secondary: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
     ),
-    url("@images/floema-secondary.jpg");
+    url("@images/historia-4.jpg");
 
   --background-image-tiny-house-build: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
     ),
-    url("@images/tiny-houses-build.jpg");
+    url("@images/historia-2.jpg");
 
   --background-image-impact: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
     ),
-    url("@images/impact-background.jpg");
+    url("@images/introduccion-3.jpg");
 
-  --background-image-roots: url("@images/our-roots.jpg");
-  --background-image-placeholder: url("@images/model-placeholder.jpg");
-  --background-image-model-placeholder: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
-    ),
-    url("@images/model-placeholder.jpg");
+  --background-image-roots: url("@images/que-es-corteza.jpg");
+
+  --background-image-model-nido: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ),
+  url("@images/tiny-houses/nido-01.jpg");
+
+  --background-image-model-raiz: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ),
+  url("@images/tiny-houses/raiz-01.jpg");
+
+  --background-image-model-copa: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ),
+  url("@images/tiny-houses/copa-01.jpg");
+
+  --background-image-model-savia: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ),
+  url("@images/tiny-houses/savia-01.jpg");
+
+  --background-image-model-ebano: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ),
+  url("@images/tiny-houses/ebano-01.jpg");
 
   --font-*: initial;
   --font-sans: Inter, sans-serif;

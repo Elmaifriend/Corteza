@@ -42,35 +42,20 @@
           <li class="py-3"><a href="{{ route('faq') }}">FAQ</a></li>
         </div>
       </ul>
-      <div class="justify-self-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizador</a>
+      <div class="justify-self-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('nido') }}">Cotizador</a>
       </div>
       <button class="lg:!hidden bx bx-menu bx-md cursor-pointer hover:text-foreground/60 transition-colors ease-in" x-on:click="open = !open"></button>
     </nav>
     <!-- Navigation End-->
-    <div class="h-dvh container">
-      <!-- Hero Image Begin-->
-      <div class="w-full h-full p-0 md:py-6 bg-background">
-        <div class="w-full h-full text-background relative sm:rounded-3xl bg-hero sm:bg-right bg-center bg-cover">
-          <div class="flex flex-col px-6 md:px-8 py-10 sm:rounded-3xl gap-4 justify-center items-center sm:items-end sm:pr-4 sm:text-right text-center w-full h-full transition-all">
-            <h1 class="sm:text-8xl text-4xl font-title font-bold"></h1>
-            <p class="sm:text-lg text-sm px-2 text-secondary text-center"></p><span class="relative inline-block before:absolute before:left-0 before:-top-3 before:h-2 before:w-1/2 before:block before:-skew-y-12 before:bg-background after:absolute after:left-1/2 after:-top-3 after:h-2 after:w-1/2 after:block after:skew-y-12 after:bg-background">
-              <div class="flex flex-col items-center"><span class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-highlight"><span class="relative text-xs sm:text-sm px-2">“Tiny”</span></span>
-                <h1 class="sm:text-8xl text-7xl font-title font-bold inline">Houses</h1>
-              </div>
-              <p class="sm:text-lg text-sm px-2 text-secondary text-center">-Construyamos juntos el hogar que tu familia merece-</p></span>
-          </div>
-        </div>
-      </div>
-      <!-- Hero Image End-->
-    </div>
     <!-- 8 Functions Begin-->
     <div class="p-6 py-8 container bg-center bg-no-repeat bg-cover "> 
       <div class="flex gap-6 flex-col md:flex-row">
-        <div class="w-full min-w-72 max-w-lg min-h-[500px] md:min-h-[700px] flex flex-col gap-8 justify-center items-center px-4 py-16 rounded-4xl bg-floema-secondary bg-center bg-no-repeat bg-cover">
+        <div class="w-full min-w-72 max-w-lg min-h-[500px] md:min-h-[700px] flex flex-col gap-8 justify-center items-center px-4 py-16 rounded-4xl bg-floema bg-center bg-no-repeat bg-cover">
+          <img class="sm:max-w-38 max-w-34" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo">
           <div class="flex flex-col-reverse gap-2 text-center">
             <h1 class="text-3xl sm:text-5xl font-bold text-background">8 beneficios de tener tu propia “Tiny House”</h1>
             <h2 class="text-lg text-secondary">Beneficios que transforman familias</h2>
-          </div><img class="sm:max-w-xs max-w-64" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo">
+          </div>
         </div>
         <div class="flex flex-col gap-6 justify-center w-full">
           <div class="p-2 border-b w-full  border-secondary" x-data="{ open: false }">
@@ -148,41 +133,8 @@
         </div>
       </div>
     </div>
-    <!-- Models Begin-->
-    <div class="p-6 py-8 container bg-center bg-no-repeat bg-cover ">
-      <div class="flex flex-col gap-4">
-        <div class="flex flex-col-reverse gap-2 text-center">
-          <h1 class="text-3xl sm:text-5xl font-bold text-highlight">Los Favoritos de Corteza</h1>
-          <h2 class="text-lg text-foreground-secondary">Pequeños Espacios, Grandes Sueños</h2>
-        </div>
-        <div class="flex flex-wrap gap-4 justify-center items-center">
-          <div class="flex flex-col gap-4 max-w-96"><img class="rounded-4xl" src="{{ Vite::asset('resources/images/model-placeholder.jpg') }}"/>
-            <div class="flex flex-col items-center">
-              <h6 class="text-highlight font-bold">Nido</h6><span class="text-tertiary">4x6 metros</span>
-            </div>
-            <div class="flex items-center justify-center gap-2"><span class="text-sm text-foreground">Cálido</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Acogedor</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Esencial</span>
-            </div>
-          </div>
-          <div class="flex flex-col gap-4 max-w-96"><img class="rounded-4xl" src="{{ Vite::asset('resources/images/model-placeholder.jpg') }}"/>
-            <div class="flex flex-col items-center">
-              <h6 class="text-highlight font-bold">Raíz</h6><span class="text-tertiary">5x6 metros</span>
-            </div>
-            <div class="flex items-center justify-center gap-2"><span class="text-sm text-foreground">Simple</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Funcional</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Minimalista</span>
-            </div>
-          </div>
-          <div class="flex flex-col gap-4 max-w-96"><img class="rounded-4xl" src="{{ Vite::asset('resources/images/model-placeholder.jpg') }}"/>
-            <div class="flex flex-col items-center">
-              <h6 class="text-highlight font-bold">Copa</h6><span class="text-tertiary">6x6 metros</span>
-            </div>
-            <div class="flex items-center justify-center gap-2"><span class="text-sm text-foreground">Elegante</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Amplio</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Sofisticado</span>
-            </div>
-          </div>
-        </div><a class="flex gap-1 items-center justify-center py-2 font-bold text-highlight sm:text-lg text-center select-none hover:text-dark-highlight/90 transition-colors ease-in" href="{{ route('tiny-houses') }}">Ver más Modelos</a>
-      </div>
-    </div>
-    <!-- Models End-->
     <!-- Floema Begin-->
-    <div class="w-full flex flex-col items-stretch content-center flex-wrap p-0 md:p-6 py-8 bg-highlight bg-center bg-no-repeat bg-cover">
+    <div class="w-full flex flex-col items-stretch content-center flex-wrap p-0 md:p-6 py-8 bg-background bg-center bg-no-repeat bg-cover">
       <div class="px-6 md:px-8 py-10 sm:rounded-4xl bg-highlight bg-center bg-no-repeat bg-cover h-full container">
         <div class="flex gap-6 flex-col md:flex-row">
           <div class="w-full min-w-72 max-w-sm flex flex-col gap-6 items-center px-4 py-16 rounded-4xl bg-floema-secondary bg-center bg-no-repeat bg-cover">

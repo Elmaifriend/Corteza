@@ -43,7 +43,7 @@
             <li class="py-3"><a href="{{ route('faq') }}">FAQ</a></li>
           </div>
         </ul>
-        <div class="justify-self-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizador</a>
+        <div class="justify-self-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('nido') }}">Cotizador</a>
         </div>
         <button class="lg:!hidden bx bx-menu bx-md cursor-pointer hover:text-foreground/60 transition-colors ease-in" x-on:click="open = !open"></button>
       </nav>
@@ -60,9 +60,9 @@
       <!-- Hero Image End-->
     </div>
     <!-- Timeline Begin-->
-    <div id="historia" class="p-6 py-8 container bg-center bg-no-repeat bg-cover  relative" x-data="scrollTracker" x-intersect:enter.half="trackScroll" x-intersect:leave.half="untrackScroll">
-      <div class="hidden lg:block absolute top-0 left-6 w-1 min-h-48 max-h-11/12 rounded-full bg-gradient-to-b from-secondary-highlight from-[300px] to-light-highlight to-[50vh]" x-bind:style="'height:' + progress + 'px'"></div>
-      <div class="relative ml-4 min-h-64 md:items-start md:grid md:grid-cols-2 gap-6">
+    <div id="historia" class="p-6 py-8 container bg-center bg-no-repeat bg-cover  relative" x-data="scrollTracker" x-intersect:enter="trackScroll" x-intersect:leave="untrackScroll">
+      <div class="hidden lg:block absolute top-0 left-6 w-1 min-h-48 max-h-full rounded-full bg-gradient-to-b from-secondary-highlight from-[300px] to-light-highlight to-[50vh]" x-bind:style="'height:' + progress + 'px'"></div>
+      <div class="relative lg:ml-4 min-h-64 md:items-start md:grid md:grid-cols-2 gap-6">
         <div class="md:w-auto py-6 rounded-2xl text-center md:text-left bg-highlight text-background md:bg-transparent md:text-highlight sticky top-4 md:top-1/2">
           <div class="flex flex-col md:flex-row gap-2 items-center"><i class="bx bxs-home-heart text-6xl md:text-8xl"></i>
             <h2 class="font-bold text-xl md:text-3xl">Desde mi Niñez</h2>
@@ -72,9 +72,10 @@
           <h3 class="text-2xl font-bold">1. Una Infancia de Sueños y Dificultades</h3>
           <p>Crecí en un hogar de bajos recursos con una madre que luchaba por sacarnos adelante. Estuvimos moviéndonos de casa en casa, algunas de ellas no tenían las mejores condiciones para vivir.</p>
           <p>Siendo niño recuerdo pensar... 'ojalá un día podamos tener un hogar en donde todos podamos vivir juntos'.</p>
+          <img class="rounded-2xl" src="{{ Vite::asset('resources/images/historia.jpg') }}">
         </div>
       </div>
-      <div class="relative ml-4 min-h-64 md:items-start md:grid md:grid-cols-2 gap-6">
+      <div class="relative lg:ml-4 min-h-64 md:items-start md:grid md:grid-cols-2 gap-6">
         <div class="md:w-auto flex flex-col py-6 rounded-2xl text-center md:text-left md:flex-row gap-2 items-center bg-highlight text-background md:bg-transparent md:text-highlight sticky top-4 md:top-1/2"><i class="bx bxs-building-house text-6xl md:text-8xl"></i>
           <h2 class="font-bold text-xl md:text-3xl">Por Tijuana</h2>
         </div>
@@ -83,9 +84,10 @@
           <p>Cuando me mudé a Tijuana para ser misionero y servir a mi nación, me encontré a jóvenes brillantes teniendo trabajos indeseados por la necesidad de conseguir dinero para traer comida a la mesa.</p>
           <p>Encontré también muchas familias que venían del sur de México a Tijuana con la esperanza de un mejor futuro pero que vivían en condiciones incluso peor a las que yo viví cuando era niño.</p>
           <p>Sin mencionar los climas tan extremistas por los que tienen que pasar en diferentes temporadas del año, las rentas tan caras para poder obtener una casa apropiada con costos tan elevados, el tiempo que le toma a una familia construir una casa habitable, los costos tan elevados de materiales y la mano de obra para construir.</p>
+          <img class="rounded-2xl" src="{{ Vite::asset('resources/images/historia-2.jpg') }}">
         </div>
       </div>
-      <div class="relative ml-4 min-h-64 md:items-start md:grid md:grid-cols-2 gap-6">
+      <div class="relative lg:ml-4 min-h-64 md:items-start md:grid md:grid-cols-2 gap-6">
         <div class="md:w-auto flex flex-col py-6 rounded-2xl text-center md:text-left md:flex-row gap-2 items-center bg-highlight text-background md:bg-transparent md:text-highlight sticky top-4 md:top-1/2"><i class="bx bxs-bulb text-6xl md:text-8xl"></i>
           <h2 class="font-bold text-xl md:text-3xl">Durante la Oportunidad</h2>
         </div>
@@ -93,9 +95,10 @@
           <h3 class="text-2xl font-bold">3. Transformando la Crisis en Oportunidad</h3>
           <p>Así que decidí ver la crisis como una oportunidad, creando un modelo de negocio que pudiera dar empleo a jóvenes brillantes para que pudieran traer lo necesario a la casa y alimentar a sus familias.</p>
           <p>Con una empresa que pudiera proveer materiales y construcción para crear hogares seguros, cálidos y con elegancia a familias mexicanas</p>
+          <img class="rounded-2xl" src="{{ Vite::asset('resources/images/historia-4.jpg') }}">
         </div>
       </div>
-      <div class="relative ml-4 min-h-64 md:items-start md:grid md:grid-cols-2 gap-6">
+      <div class="relative lg:ml-4 min-h-64 md:items-start md:grid md:grid-cols-2 gap-6">
         <div class="md:w-auto flex flex-col py-6 rounded-2xl text-center md:text-left md:flex-row gap-2 items-center bg-highlight text-background md:bg-transparent md:text-highlight sticky top-4 md:top-1/2"><i class="bx bxs-leaf text-6xl md:text-8xl"></i>
           <h2 class="font-bold text-xl md:text-3xl">Hasta el nacimiento de Corteza</h2>
         </div>
@@ -105,6 +108,7 @@
           <p>De forma fascinante la <span class="text-highlight font-bold">Corteza</span> transporta nutrientes, almacena agua, contribuye a la cicatrización de heridas del árbol y lo protege dándole seguridad contra animales, contra el clima, manteniéndolo templado al árbol en el frío y trayendo frescura en tiempos calurosos.</p>
           <p>Una cáscara simple pero indispensable para que el árbol esté bien cuidado y cumpla su propósito.</p>
           <p>Ese es <span class="text-highlight font-bold">Corteza:</span> Una empresa que provee lo necesario para cuidar lo más importante... la familia.</p>
+          <img class="rounded-2xl" src="{{ Vite::asset('resources/images/historia-5.jpg') }}">
         </div>
       </div>
     </div>

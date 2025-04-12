@@ -18,7 +18,7 @@
     <div class="h-screen flex flex-col items-center w-full snap-y snap-mandatory overflow-y-scroll">
       <div class="container snap-center snap-always shrink-0">
         <!-- Navigation Begin-->
-        <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr_150px] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
+        <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
           <h1 class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight">Corteza</h1>
           <ul class="lg:w-full w-11/12 lg:p-0 p-4 lg:!flex flex lg:flex-row flex-col lg:static absolute md:top-[150%] top-[120%] left-1/2 lg:translate-0 -translate-x-1/2 z-10 rounded-2xl mdlg!bg-none bg-background text-secondary-highlight lg:divide-none divide-y-2 divide-dashed divide-secondary-highlight/10" x-show="open" x-cloak="" x-transition="">
             <li class="block lg:hidden py-3">
@@ -44,8 +44,6 @@
               <li class="py-3"><a href="{{ route('faq') }}">FAQ</a></li>
             </div>
           </ul>
-          <div class="justify-self-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizador</a>
-          </div>
           <button class="lg:!hidden bx bx-menu bx-md cursor-pointer hover:text-foreground/60 transition-colors ease-in" x-on:click="open = !open"></button>
         </nav>
         <!-- Navigation End-->
@@ -70,7 +68,7 @@
       <!-- Models Begin-->
       <div id="nido" class="h-dvh container snap-center snap-always shrink-0">
         <div class="py-6 h-full">
-          <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-placeholder bg-cover bg-center">
+          <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-nido bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
               <div class="flex flex-col gap-4 items-center mt-auto">
                 <p class="text-foreground-secondary">4x8 metros</p>
@@ -89,7 +87,7 @@
       </div>
       <div class="h-dvh container snap-center snap-always shrink-0">
         <div class="py-6 h-full">
-          <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-placeholder bg-cover bg-center">
+          <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-raiz bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
               <div class="flex flex-col gap-4 items-center mt-auto">
                 <p class="text-foreground-secondary">5x6 metros</p>
@@ -108,7 +106,7 @@
       </div>
       <div class="h-dvh container snap-center snap-always shrink-0">
         <div class="py-6 h-full">
-          <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-placeholder bg-cover bg-center">
+          <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-savia bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
               <div class="flex flex-col gap-4 items-center mt-auto">
                 <p class="text-foreground-secondary">3x12 metros</p>
@@ -127,7 +125,7 @@
       </div>
       <div class="h-dvh container snap-center snap-always shrink-0">
         <div class="py-6 h-full">
-          <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-placeholder bg-cover bg-center">
+          <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-copa bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
               <div class="flex flex-col gap-4 items-center mt-auto">
                 <p class="text-foreground-secondary">6x6 metros</p>
@@ -146,7 +144,7 @@
       </div>
       <div class="h-dvh container snap-center snap-always shrink-0">
         <div class="py-6 h-full">
-          <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-placeholder bg-cover bg-center">
+          <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-ebano bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
               <div class="flex flex-col gap-4 items-center mt-auto">
                 <p class="text-foreground-secondary">6x6 metros</p>

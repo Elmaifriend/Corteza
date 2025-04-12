@@ -46,14 +46,14 @@
             <li class="py-3"><a href="{{ route('faq') }}">FAQ</a></li>
           </div>
         </ul>
-        <div class="justify-self-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizador</a>
+        <div class="justify-self-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('nido') }}">Cotizador</a>
         </div>
         <button class="lg:!hidden bx bx-menu bx-md cursor-pointer hover:text-foreground/60 transition-colors ease-in" x-on:click="open = !open"></button>
       </nav>
       <!-- Navigation End-->
       <!-- Hero Image Begin-->
       <div class="w-full h-full p-0 md:py-6 bg-background">
-        <div class="w-full h-full text-background relative sm:rounded-3xl bg-hero bg-center bg-cover">
+        <div class="w-full h-full text-background relative sm:rounded-3xl bg-tiny-house-build bg-center bg-cover">
           <div class="flex flex-col px-6 md:px-8 py-10 sm:rounded-3xl gap-4 justify-center items-center text-center w-full h-full transition-all">
             <h1 class="sm:text-8xl text-4xl font-title font-bold">Pólizas de Consideración</h1>
             <p class="sm:text-lg text-sm px-2 text-secondary text-center"></p>
