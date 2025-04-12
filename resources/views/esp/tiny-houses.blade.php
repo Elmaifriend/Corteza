@@ -79,7 +79,7 @@
                   <p class="text-secondary">Tu refugio cálido y acogedor</p>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizar</a>
+              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('nido') }}">Cotizar</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -98,7 +98,7 @@
                   <p class="text-secondary">La esencia de lo simple y funcional</p>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizar</a>
+              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('raiz') }}">Cotizar</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -117,7 +117,7 @@
                   <p class="text-secondary">Diseño moderno y armonioso</p>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizar</a>
+              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('savia') }}">Cotizar</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -136,7 +136,7 @@
                   <p class="text-secondary">Elegancia y amplitud en cada detalle</p>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizar</a>
+              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('copa') }}">Cotizar</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -155,7 +155,7 @@
                   <p class="text-secondary">El epítome del lujo y la exclusividad</p>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Cotizar</a>
+              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('ebano') }}">Cotizar</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
