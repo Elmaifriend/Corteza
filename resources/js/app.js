@@ -192,7 +192,7 @@ document.addEventListener('alpine:init', function () {
       galleryIndex: 0,
       images: imagesList,
       maxPreviewImages: 2,
-      showImagesModal: true,
+      showImagesModal: false,
       
       currentImage() {
         return this.images[this.galleryIndex];

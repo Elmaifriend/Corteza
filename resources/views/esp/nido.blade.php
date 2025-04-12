@@ -32,7 +32,6 @@
               ])"
               class="flex flex-col gap-2"
             >
-              <p x-text="galleryIndex"></p>
               <div class="relative">
                 <i
                   class="bx bxs-chevron-left bx-lg text-secondary/70 absolute top-1/2 -translate-y-1/2 left-2 md:left-4 cursor-pointer hover:scale-85 transition-transform"
