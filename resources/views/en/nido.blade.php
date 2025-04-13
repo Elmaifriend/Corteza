@@ -34,31 +34,31 @@
                         x-on:mouseover="if(window.innerWidth &gt;= 768) open = true"
                         x-on:mouseleave="if(window.innerWidth &gt;= 768) open = false">
                         <div class="flex cursor-pointer items-center justify-between"><a
-                                href="{{ route('inicio') }}">Home</a><i
+                                href="{{ route('home') }}">Home</a><i
                                 class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in"
                                 x-bind:class="{ 'transform rotate-180': open }"></i></div>
                         <ul class="lg:!bg-background divide-secondary-highlight/10 left-0 top-full mt-2 w-full divide-y-2 divide-dashed pl-4 lg:absolute lg:m-0 lg:w-max lg:rounded-2xl lg:p-4"
                             x-show="open" x-cloak="" x-collapse="">
-                            <li class="py-3"><a href="{{ route('corteza') }}">What is Corteza</a></li>
-                            <li class="py-3"><a href="{{ route('funciones') }}">6 Functions of Corteza</a></li>
+                            <li class="py-3"><a href="{{ route('en_corteza') }}">What is Corteza</a></li>
+                            <li class="py-3"><a href="{{ route('functions') }}">6 Functions of Corteza</a></li>
                         </ul>
                     </li>
-                    <li class="py-3"><a href="{{ route('historia') }}">History</a></li>
+                    <li class="py-3"><a href="{{ route('history') }}">History</a></li>
                     <li class="group relative py-3 lg:p-0" x-data="{ open: false }" x-on:click="open = !open"
                         x-on:mouseover="if(window.innerWidth &gt;= 768) open = true"
                         x-on:mouseleave="if(window.innerWidth &gt;= 768) open = false">
                         <div class="flex cursor-pointer items-center justify-between"><a
-                                href="{{ route('tiny-houses') }}">Tiny Houses</a><i
+                                href="{{ route('en_tiny-houses') }}">Tiny Houses</a><i
                                 class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in"
                                 x-bind:class="{ 'transform rotate-180': open }"></i></div>
                         <ul class="lg:!bg-background divide-secondary-highlight/10 left-0 top-full mt-2 w-full divide-y-2 divide-dashed pl-4 lg:absolute lg:m-0 lg:w-max lg:rounded-2xl lg:p-4"
                             x-show="open" x-cloak="" x-collapse="">
-                            <li class="py-3"><a href="{{ route('beneficios') }}">Benefits</a></li>
-                            <li class="py-3"><a href="{{ route('polizas') }}">Policies</a></li>
+                            <li class="py-3"><a href="{{ route('benefits') }}">Benefits</a></li>
+                            <li class="py-3"><a href="{{ route('policies') }}">Policies</a></li>
                         </ul>
                     </li>
-                    <li class="py-3"><a href="{{ route('floema') }}">Floema</a></li>
-                    <li class="py-3"><a href="{{ route('faq') }}">FAQ</a></li>
+                    <li class="py-3"><a href="{{ route('en_floema') }}">Floema</a></li>
+                    <li class="py-3"><a href="{{ route('en_faq') }}">FAQ</a></li>
                 </div>
             </ul>
             <button

@@ -40,11 +40,19 @@
                         </label>
                     @endforeach
                 </div>
-                <a class="text-foreground-secondary hover:text-tertiary z-10 cursor-pointer self-center transition-colors"
-                    x-on:click="open = !open"
-                    x-bind:class="open ? '' : 'absolute bottom-4 left-1/2 transform -translate-x-1/2'"
-                    x-text="open ? 'Ver Menos' : 'Ver Más'">
-                </a>
+                @if ($lenguaje == 'esp')
+                    <a class="text-foreground-secondary hover:text-tertiary z-10 cursor-pointer self-center transition-colors"
+                        x-on:click="open = !open"
+                        x-bind:class="open ? '' : 'absolute bottom-4 left-1/2 transform -translate-x-1/2'"
+                        x-text="open ? 'Ver menos' : 'Ver más'">
+                    </a>
+                @else
+                    <a class="text-foreground-secondary hover:text-tertiary z-10 cursor-pointer self-center transition-colors"
+                        x-on:click="open = !open"
+                        x-bind:class="open ? '' : 'absolute bottom-4 left-1/2 transform -translate-x-1/2'"
+                        x-text="open ? 'See less' : 'See more'">
+                    </a>
+                @endif
             </div>
         @endforeach
     </div>
@@ -147,7 +155,8 @@
                                 <label for="subdivision">Neighborhood</label>
                                 <input
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="subdivision" placeholder="Enter the neighborhood of delivery" />
+                                    type="text" id="subdivision"
+                                    placeholder="Enter the neighborhood of delivery" />
                             @endif
                         </fieldset>
                         <fieldset class="flex flex-col gap-1">
@@ -198,13 +207,13 @@
                         </h1>
                         <p>
                             @if ($lenguaje == 'esp')
-                              Muchas Gracias por enviar tu aplicación, en las próximas 48 horas uno de nuestros
-                              operadores se pondrá en contacto contigo para agendar una cita, en caso de que no se
-                              contacten por favor cominicate directamente a nuestro correo: 
+                                Muchas Gracias por enviar tu aplicación, en las próximas 48 horas uno de nuestros
+                                operadores se pondrá en contacto contigo para agendar una cita, en caso de que no se
+                                contacten por favor cominicate directamente a nuestro correo:
                             @else
-                              Thank you very much for sending your application, in the next 48 hours one of our
-                              operators will contact you to schedule an appointment, in case they do not contact you
-                              by please contact us directly to our email: 
+                                Thank you very much for sending your application, in the next 48 hours one of our
+                                operators will contact you to schedule an appointment, in case they do not contact you
+                                by please contact us directly to our email:
                             @endif
                             <span class="text-highlight font-bold">cortezacym@gmail.com</span>
                         </p>

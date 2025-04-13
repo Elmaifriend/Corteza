@@ -79,7 +79,7 @@
                   <p class="text-secondary">Your warm and cozy refuge</p>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('nido') }}">Get Quote</a>
+              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_nido') }}">Get Quote</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -98,7 +98,7 @@
                   <p class="text-secondary">The essence of simple and functional</p>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('raiz') }}">Get Quote</a>
+              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_raiz') }}">Get Quote</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -117,7 +117,7 @@
                   <p class="text-secondary">Modern and harmonious design</p>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('savia') }}">Get Quote</a>
+              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_savia') }}">Get Quote</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -136,7 +136,7 @@
                   <p class="text-secondary">Elegance and spaciousness in every detail</p>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('copa') }}">Get Quote</a>
+              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_copa') }}">Get Quote</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -155,7 +155,7 @@
                   <p class="text-secondary">The epitome of luxury and exclusivity</p>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('ebano') }}">Get Quote</a>
+              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_ebano') }}">Get Quote</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>

@@ -23,25 +23,25 @@
         </li>
         <div class="lg:flex gap-8 w-full justify-center items-center">
           <li class="py-3 lg:p-0 relative group" x-data="{ open: false }" x-on:click="open = !open" x-on:mouseover="if(window.innerWidth &gt;= 768) open = true" x-on:mouseleave="if(window.innerWidth &gt;= 768) open = false">
-            <div class="flex justify-between items-center cursor-pointer"><a href="{{ route('inicio') }}">Home</a><i class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in" x-bind:class="{ 'transform rotate-180': open }"></i></div>
+            <div class="flex justify-between items-center cursor-pointer"><a href="{{ route('home') }}">Home</a><i class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in" x-bind:class="{ 'transform rotate-180': open }"></i></div>
             <ul class="w-full lg:w-max pl-4 mt-2 lg:p-4 lg:m-0 divide-y-2 divide-dashed lg:absolute top-full left-0 lg:rounded-2xl lg:!bg-background divide-secondary-highlight/10" x-show="open" x-cloak="" x-collapse="">
-              <li class="py-3"><a href="{{ route('corteza') }}">What is Corteza</a></li>
-              <li class="py-3"><a href="{{ route('funciones') }}">6 Functions of Corteza</a></li>
+              <li class="py-3"><a href="{{ route('en_corteza') }}">What is Corteza</a></li>
+              <li class="py-3"><a href="{{ route('functions') }}">6 Functions of Corteza</a></li>
             </ul>
           </li>
-          <li class="py-3"><a href="{{ route('historia') }}">History</a></li>
+          <li class="py-3"><a href="{{ route('history') }}">History</a></li>
           <li class="py-3 lg:p-0 relative group" x-data="{ open: false }" x-on:click="open = !open" x-on:mouseover="if(window.innerWidth &gt;= 768) open = true" x-on:mouseleave="if(window.innerWidth &gt;= 768) open = false">
-            <div class="flex justify-between items-center cursor-pointer"><a href="{{ route('tiny-houses') }}">Tiny Houses</a><i class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in" x-bind:class="{ 'transform rotate-180': open }"></i></div>
+            <div class="flex justify-between items-center cursor-pointer"><a href="{{ route('en_tiny-houses') }}">Tiny Houses</a><i class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in" x-bind:class="{ 'transform rotate-180': open }"></i></div>
             <ul class="w-full lg:w-max pl-4 mt-2 lg:p-4 lg:m-0 divide-y-2 divide-dashed lg:absolute top-full left-0 lg:rounded-2xl lg:!bg-background divide-secondary-highlight/10" x-show="open" x-cloak="" x-collapse="">
-              <li class="py-3"><a href="{{ route('beneficios') }}">Benefits</a></li>
-              <li class="py-3"><a href="{{ route('polizas') }}">Policies</a></li>
+              <li class="py-3"><a href="{{ route('benefits') }}">Benefits</a></li>
+              <li class="py-3"><a href="{{ route('policies') }}">Policies</a></li>
             </ul>
           </li>
-          <li class="py-3"><a href="{{ route('floema') }}">Floema</a></li>
-          <li class="py-3"><a href="{{ route('faq') }}">FAQ</a></li>
+          <li class="py-3"><a href="{{ route('en_floema') }}">Floema</a></li>
+          <li class="py-3"><a href="{{ route('en_faq') }}">FAQ</a></li>
         </div>
       </ul>
-      <div class="justify-self-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('nido') }}">Get a Quote</a>
+      <div class="justify-self-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_nido') }}">Get a Quote</a>
       </div>
       <button class="lg:!hidden bx bx-menu bx-md cursor-pointer hover:text-foreground/60 transition-colors ease-in" x-on:click="open = !open"></button>
     </nav>

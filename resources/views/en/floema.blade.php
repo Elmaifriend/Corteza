@@ -20,7 +20,7 @@
 <body class="flex flex-col items-center">
     <div class="container grid h-dvh grid-rows-[80px_1fr]">
         <!-- Navigation Begin-->
-        <nav class="container relative z-10 flex w-full select-none flex-row items-center justify-between p-4 lg:grid lg:grid-cols-[150px_1fr_150px]"
+        <nav class="container relative z-10 flex w-full select-none flex-row items-center justify-between p-4 lg:grid lg:grid-cols-[160px_1fr_160px]"
             x-data="{ open: false }" x-on:click.outside="open = false">
             <h1 class="font-title text-highlight hidden justify-self-start text-4xl font-bold lg:block">Corteza</h1>
             <ul class="lg:translate-0 mdlg!bg-none bg-background text-secondary-highlight divide-secondary-highlight/10 absolute left-1/2 top-[120%] z-10 flex w-11/12 -translate-x-1/2 flex-col divide-y-2 divide-dashed rounded-2xl p-4 md:top-[150%] lg:static lg:!flex lg:w-full lg:flex-row lg:divide-none lg:p-0"
@@ -33,36 +33,36 @@
                         x-on:mouseover="if(window.innerWidth &gt;= 768) open = true"
                         x-on:mouseleave="if(window.innerWidth &gt;= 768) open = false">
                         <div class="flex cursor-pointer items-center justify-between"><a
-                                href="{{ route('inicio') }}">Home</a><i
+                                href="{{ route('home') }}">Home</a><i
                                 class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in"
                                 x-bind:class="{ 'transform rotate-180': open }"></i></div>
                         <ul class="lg:!bg-background divide-secondary-highlight/10 left-0 top-full mt-2 w-full divide-y-2 divide-dashed pl-4 lg:absolute lg:m-0 lg:w-max lg:rounded-2xl lg:p-4"
                             x-show="open" x-cloak="" x-collapse="">
-                            <li class="py-3"><a href="{{ route('corteza') }}">What is Corteza</a></li>
-                            <li class="py-3"><a href="{{ route('funciones') }}">6 Functions of Corteza</a></li>
+                            <li class="py-3"><a href="{{ route('en_corteza') }}">What is Corteza</a></li>
+                            <li class="py-3"><a href="{{ route('functions') }}">6 Functions of Corteza</a></li>
                         </ul>
                     </li>
-                    <li class="py-3"><a href="{{ route('historia') }}">History</a></li>
+                    <li class="py-3"><a href="{{ route('history') }}">History</a></li>
                     <li class="group relative py-3 lg:p-0" x-data="{ open: false }" x-on:click="open = !open"
                         x-on:mouseover="if(window.innerWidth &gt;= 768) open = true"
                         x-on:mouseleave="if(window.innerWidth &gt;= 768) open = false">
                         <div class="flex cursor-pointer items-center justify-between"><a
-                                href="{{ route('tiny-houses') }}">Tiny Houses</a><i
+                                href="{{ route('en_tiny-houses') }}">Tiny Houses</a><i
                                 class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in"
                                 x-bind:class="{ 'transform rotate-180': open }"></i></div>
                         <ul class="lg:!bg-background divide-secondary-highlight/10 left-0 top-full mt-2 w-full divide-y-2 divide-dashed pl-4 lg:absolute lg:m-0 lg:w-max lg:rounded-2xl lg:p-4"
                             x-show="open" x-cloak="" x-collapse="">
-                            <li class="py-3"><a href="{{ route('beneficios') }}">Benefits</a></li>
-                            <li class="py-3"><a href="{{ route('polizas') }}">Policies</a></li>
+                            <li class="py-3"><a href="{{ route('benefits') }}">Benefits</a></li>
+                            <li class="py-3"><a href="{{ route('policies') }}">Policies</a></li>
                         </ul>
                     </li>
-                    <li class="py-3"><a href="{{ route('floema') }}">Floema</a></li>
-                    <li class="py-3"><a href="{{ route('faq') }}">FAQ</a></li>
+                    <li class="py-3"><a href="{{ route('en_floema') }}">Floema</a></li>
+                    <li class="py-3"><a href="{{ route('en_faq') }}">FAQ</a></li>
                 </div>
             </ul>
             <div class="justify-self-end"><a
                     class="bg-highlight text-background hover:bg-dark-highlight/90 flex select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-colors ease-in sm:px-6 sm:text-lg"
-                    href="{{ route('nido') }}">Get a Quote</a>
+                    href="{{ route('en_nido') }}">Get a Quote</a>
             </div>
             <button
                 class="bx bx-menu bx-md hover:text-foreground/60 cursor-pointer transition-colors ease-in lg:!hidden"
@@ -121,7 +121,7 @@
                 </div>
                 <p class="text-foreground-secondary text-center">We have a wide variety of construction materials and tools, adapted to your budget and needs</p>
             </div>
-            <div class="flex w-full flex-col gap-12" x-data="catalogData">
+            <div class="flex w-full flex-col gap-12" x-data="enCatalogData">
                 <template x-for="(section, sectionIndex) in sections" x-bind:key="sectionIndex">
                     <template x-if="currentSection === sectionIndex" x-transition="">
                         <div class="flex flex-col gap-14">
@@ -133,8 +133,8 @@
                                 <template x-for="product in section.products" x-bind:key="product.name">
                                     <div class="flex w-full max-w-sm flex-col gap-4">
                                         <div class="h-[250px] w-full rounded-2xl bg-cover bg-center"
-                                            x-bind:style="`background-image: url({{ Vite::asset('resources/images/corteza-products/') }}${product.image});`"
-                                            x-bind:alt="product.name"></div>
+                                        x-bind:style="{ 'background-image': `url(/images/corteza-products/${product.image})` }"
+                                        x-bind:alt="product.name"></div>
                                         <div>
                                             <h3 class="text-2xl font-bold" x-text="product.name"></h3>
                                             <p class="text-tertiary" x-text="product.description"></p>
