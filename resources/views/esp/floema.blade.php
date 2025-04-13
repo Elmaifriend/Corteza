@@ -139,7 +139,7 @@
                                 <template x-for="product in section.products" x-bind:key="product.name">
                                     <div class="flex w-full max-w-sm flex-col gap-4">
                                         <div class="h-[250px] w-full rounded-2xl bg-cover bg-center"
-                                            x-bind:style="`background-image: url({{ Vite::asset('resources/images/corteza-products/') }}${product.image});`"
+                                            x-bind:style="{ 'background-image': `url(/images/corteza-products/${product.image})` }"
                                             x-bind:alt="product.name"></div>
                                         <div>
                                             <h3 class="text-2xl font-bold" x-text="product.name"></h3>

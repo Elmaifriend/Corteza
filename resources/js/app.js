@@ -1,5 +1,7 @@
 import './bootstrap';
 
+import.meta.glob(['../images/*', '../images/corteza-products/*', '../images/tiny-houses/*'])
+
 document.addEventListener('alpine:init', function () {
   Alpine.data('catalogData', function() {
     return {

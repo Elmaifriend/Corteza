@@ -13,11 +13,15 @@ export default defineConfig({
         imageOptimizer({
           png: {
             // https://sharp.pixelplumbing.com/api-output#png
-            quality: 70,
+            quality: 100,
+          },
+          jpeg: {
+            // https://sharp.pixelplumbing.com/api-output#jpeg
+            quality: 100,
           },
           jpg: {
             // https://sharp.pixelplumbing.com/api-output#jpeg
-            quality: 70,
+            quality: 100,
           },
           logStats: true,
           ansiColors: true,
