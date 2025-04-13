@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Raleway:ital,wght@0,100..900;1,100..900&amp;display=swap">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <title>Funciones </title>
+  </head>
+  <body class="flex flex-col items-center">
+    <!-- Navigation Begin-->
+    <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr_150px] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
+      <h1 class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight">Corteza</h1>
+      <ul class="lg:w-full w-11/12 lg:p-0 p-4 lg:!flex flex lg:flex-row flex-col lg:static absolute md:top-[150%] top-[120%] left-1/2 lg:translate-0 -translate-x-1/2 z-10 rounded-2xl mdlg!bg-none bg-background text-secondary-highlight lg:divide-none divide-y-2 divide-dashed divide-secondary-highlight/10" x-show="open" x-cloak="" x-transition="">
+        <li class="block lg:hidden py-3">
+          <h1 class="font-title font-bold text-4xl text-highlight">Corteza</h1>
+        </li>
+        <div class="lg:flex gap-8 w-full justify-center items-center">
+          <li class="py-3 lg:p-0 relative group" x-data="{ open: false }" x-on:click="open = !open" x-on:mouseover="if(window.innerWidth &gt;= 768) open = true" x-on:mouseleave="if(window.innerWidth &gt;= 768) open = false">
+            <div class="flex justify-between items-center cursor-pointer"><a href="{{ route('inicio') }}">Inicio</a><i class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in" x-bind:class="{ 'transform rotate-180': open }"></i></div>
+            <ul class="w-full lg:w-max pl-4 mt-2 lg:p-4 lg:m-0 divide-y-2 divide-dashed lg:absolute top-full left-0 lg:rounded-2xl lg:!bg-background divide-secondary-highlight/10" x-show="open" x-cloak="" x-collapse="">
+              <li class="py-3"><a href="{{ route('corteza') }}">Qué es Corteza</a></li>
+              <li class="py-3"><a href="{{ route('funciones') }}">6 Funciones de Corteza</a></li>
+            </ul>
+          </li>
+          <li class="py-3"><a href="{{ route('historia') }}">Historia</a></li>
+          <li class="py-3 lg:p-0 relative group" x-data="{ open: false }" x-on:click="open = !open" x-on:mouseover="if(window.innerWidth &gt;= 768) open = true" x-on:mouseleave="if(window.innerWidth &gt;= 768) open = false">
+            <div class="flex justify-between items-center cursor-pointer"><a href="{{ route('tiny-houses') }}">Tiny Houses</a><i class="bx bx-chevron-down bx-sm cursor-pointer transition-transform ease-in" x-bind:class="{ 'transform rotate-180': open }"></i></div>
+            <ul class="w-full lg:w-max pl-4 mt-2 lg:p-4 lg:m-0 divide-y-2 divide-dashed lg:absolute top-full left-0 lg:rounded-2xl lg:!bg-background divide-secondary-highlight/10" x-show="open" x-cloak="" x-collapse="">
+              <li class="py-3"><a href="{{ route('beneficios') }}">Beneficios</a></li>
+              <li class="py-3"><a href="{{ route('polizas') }}">Polizas</a></li>
+            </ul>
+          </li>
+          <li class="py-3"><a href="{{ route('floema') }}">Floema</a></li>
+          <li class="py-3"><a href={{ route('faq') }}#">FAQ</a></li>
+        </div>
+      </ul>
+      <div class="justify-self-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('nido') }}">Cotizador</a>
+      </div>
+      <button class="lg:!hidden bx bx-menu bx-md cursor-pointer hover:text-foreground/60 transition-colors ease-in" x-on:click="open = !open"></button>
+    </nav>
+    <!-- Navigation End-->
+    <!-- Functions Begin-->
+    <div class="w-full flex flex-col items-stretch content-center flex-wrap p-0 md:p-6 py-8 bg-secondary bg-center bg-no-repeat bg-cover">
+      <div class="px-6 md:px-8 py-10 sm:rounded-4xl bg-background bg-center bg-no-repeat bg-cover h-full container">
+        <div class="flex flex-col gap-6 py-8">
+          <div class="flex flex-col gap-2 text-center">
+            <h1 class="text-3xl sm:text-5xl font-bold text-foreground">6 Funciones de Corteza</h1>
+            <h2 class="text-lg text-foreground-secondary">&quot;La corteza es fundamental para la salud y la supervivencia del árbol, ya que cumple funciones de protección, transporte, almacenamiento y defensa&quot;</h2>
+          </div>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <div class="flex flex-wrap gap-4 justify-center min-h-72">
+              <div class="flex flex-col gap-4 justify-center items-center max-w-60 rounded-4xl py-6 px-6 bg-highlight text-center"><i class="bx bxs-shield bx-lg text-background"></i>
+                <div class="flex flex-col gap-2">
+                  <h4 class="text-lg font-bold leading-5 text-background">Protección</h4>
+                  <p class="text-xs text-secondary">La corteza protege al árbol de amenazas externas como insectos, enfermedades y climas extremos</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-4 justify-center items-center max-w-60 rounded-4xl py-6 px-6 bg-highlight text-center"><i class="bx bxs-leaf bx-lg text-background"></i>
+                <div class="flex flex-col gap-2">
+                  <h4 class="text-lg font-bold leading-5 text-background">Transporte de nutrientes</h4>
+                  <p class="text-xs text-secondary">A través del floema, la corteza transporta nutrientes esenciales para el crecimiento del árbol</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4 justify-center min-h-72">
+              <div class="flex flex-col gap-4 justify-center items-center max-w-60 rounded-4xl py-6 px-6 bg-highlight text-center"><i class="bx bx-water bx-lg text-background"></i>
+                <div class="flex flex-col gap-2">
+                  <h4 class="text-lg font-bold leading-5 text-background">Almacenamiento</h4>
+                  <p class="text-xs text-secondary">La corteza almacena agua y nutrientes, ayudando al árbol a sobrevivir en condiciones adversas</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-4 justify-center items-center max-w-60 rounded-4xl py-6 px-6 bg-highlight text-center"><i class="bx bxs-layer bx-lg text-background"></i>
+                <div class="flex flex-col gap-2">
+                  <h4 class="text-lg font-bold leading-5 text-background">Aislamiento térmico</h4>
+                  <p class="text-xs text-secondary">La corteza regula la temperatura del árbol, protegiéndolo del frío y el calor extremos</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4 justify-center min-h-72">
+              <div class="flex flex-col gap-4 justify-center items-center max-w-60 rounded-4xl py-6 px-6 bg-highlight text-center"><i class="bx bxs-band-aid bx-lg text-background"></i>
+                <div class="flex flex-col gap-2">
+                  <h4 class="text-lg font-bold leading-5 text-background">Regeneración</h4>
+                  <p class="text-xs text-secondary">La corteza ayuda al árbol a sanar sus heridas y recuperarse</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-4 justify-center items-center max-w-60 rounded-4xl py-6 px-6 bg-highlight text-center"><i class="bx bxs-message-alt bx-lg text-background"></i>
+                <div class="flex flex-col gap-2">
+                  <h4 class="text-lg font-bold leading-5 text-background">Comunicación y defensa</h4>
+                  <p class="text-xs text-secondary">La corteza contiene compuestos que defienden al árbol de insectos y animales</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Functions End-->
+    <!-- Impact Begin-->
+    <div class="w-full flex flex-col items-stretch content-center flex-wrap p-0 md:p-6 py-8 bg-impact bg-center bg-no-repeat bg-cover">
+      <div class="px-6 md:px-8 py-10 sm:rounded-4xl bg-none bg-center bg-no-repeat bg-cover h-full container">
+        <div class="flex flex-col gap-6 items-center py-16">
+          <div class="flex flex-col gap-2 text-center">
+            <h1 class="text-3xl sm:text-5xl font-bold text-background">Raíces que transforman vidas</h1>
+            <h2 class="text-lg text-secondary">Nuestro Impacto</h2>
+          </div>
+          <div class="p-6 py-8 container bg-center bg-no-repeat bg-cover bg-secondary-highlight w-full rounded-4xl sm:max-w-1/2">
+            <div class="w-full px-6 py-8 flex flex-col gap-6">
+              <div class="p-2 border-b w-full  border-secondary-light-highlight/60" x-data="{ open: false }">
+                <div class="py-4 flex justify-between items-center font-bold cursor-pointer lg:py-0" x-on:click="open = !open" x-on:click.outside="open = false">
+                  <div class="flex items-center gap-2 select-none"><i class="bx bxs-tree-alt text-xl text-background"></i>
+                    <h1 class="text-background">Empleos para jóvenes</h1>
+                  </div><i class="bx bx-chevron-down text-3xl text-background transition-transform ease-in" x-bind:class="open ? 'bx-rotate-180' : ''"></i>
+                </div>
+                <div class="text-sm text-secondary pt-2" x-show="open" x-cloak="" x-collapse="">Capacitamos y empleamos a jóvenes, dándoles herramientas para un futuro mejor.</div>
+              </div>
+              <div class="p-2 border-b w-full  border-secondary-light-highlight/60" x-data="{ open: false }">
+                <div class="py-4 flex justify-between items-center font-bold cursor-pointer lg:py-0" x-on:click="open = !open" x-on:click.outside="open = false">
+                  <div class="flex items-center gap-2 select-none"><i class="bx bxs-tree-alt text-xl text-background"></i>
+                    <h1 class="text-background">Becas y apoyo comunitario</h1>
+                  </div><i class="bx bx-chevron-down text-3xl text-background transition-transform ease-in" x-bind:class="open ? 'bx-rotate-180' : ''"></i>
+                </div>
+                <div class="text-sm text-secondary pt-2" x-show="open" x-cloak="" x-collapse="">Gran parte de nuestras ganancias se destinan a becas estudiantiles y proyectos sociales.</div>
+              </div>
+              <div class="p-2 border-b w-full  border-secondary-light-highlight/60" x-data="{ open: false }">
+                <div class="py-4 flex justify-between items-center font-bold cursor-pointer lg:py-0" x-on:click="open = !open" x-on:click.outside="open = false">
+                  <div class="flex items-center gap-2 select-none"><i class="bx bxs-tree-alt text-xl text-background"></i>
+                    <h1 class="text-background">Hogares construidos</h1>
+                  </div><i class="bx bx-chevron-down text-3xl text-background transition-transform ease-in" x-bind:class="open ? 'bx-rotate-180' : ''"></i>
+                </div>
+                <div class="text-sm text-secondary pt-2" x-show="open" x-cloak="" x-collapse="">Familias que han encontrado en nuestras Tiny Houses un lugar seguro y lleno de amor.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Impact End-->
+    <!-- Footer Begin-->
+    <footer class="w-full">
+          <div class="w-full flex flex-col items-stretch content-center flex-wrap p-0 sm:py-6 md:p-6 bg-background bg-center bg-no-repeat bg-cover">
+            <div class="px-6 md:px-8 py-10 sm:rounded-4xl bg-foreground bg-center bg-no-repeat bg-cover h-full container">
+              <div class="flex flex-col gap-8 text-background">
+                <div class="flex justify-between items-center flex-col gap-4 md:flex-row"><img class="max-w-62" src="{{ Vite::asset('resources/images/corteza-white.png') }}" alt="Logo de Corteza">
+                  <div class="flex flex-col gap-4 items-center">
+                    <div class="flex gap-2 items-center"><i class="bx bx-envelope bx-sm"></i><span class="font-bold">cortezacym@gmail.com</span></div>
+                    <p class="text-tertiary">Proveemos lo necesario para proteger lo más importante</p>
+                    <div class="flex gap-2 items-center"> <i class="bx bxl-facebook-circle bx-md hover:text-light-highlight transition-colors cursor-pointer"></i><i class="bx bxl-instagram-alt bx-md hover:text-light-highlight transition-colors cursor-pointer"></i><i class="bx bxl-whatsapp bx-md hover:text-light-highlight transition-colors cursor-pointer"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </footer>
+    <!-- Footer End-->
+  </body>
+</html>

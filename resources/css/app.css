@@ -7,49 +7,90 @@
 @source "../**/*.vue";
 
 @theme {
-    --color-background: #ffffff;
-    --color-dark-highlight: #373d20;
-    --color-highlight: #606c38;
-    --color-light-highlight: #808f61;
-    --color-highlight-secondary: #4f423b;
-    --color-light-highlight-secondary: #766153;
-    --color-secondary: #eaeaea;
-    --color-tertiary: #808080;
-    --color-foreground: #1e1e1e;
-    --color-foreground-secondary: #babab5;
+  --color-background: #ffffff;
+  --color-dark-highlight: #373d20;
+  --color-highlight: #606c38;
+  --color-light-highlight: #808f61;
+  --color-secondary-highlight: #4f423b;
+  --color-secondary-light-highlight: #766153;
+  --color-secondary: #eaeaea;
+  --color-tertiary: #808080;
+  --color-foreground: #1e1e1e;
+  --color-foreground-secondary: #babab5;
 
-    --background-image-hero: radial-gradient(
-            circle,
-            rgba(0, 0, 0, 0) 40%,
-            rgba(22, 22, 22, 1) 75%
-        ),
-        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url("/images/hero-background.jpg");
-    --background-image-floema-secondary: linear-gradient(
-            rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.6)
-        ),
-        url("/images/floema-secondary.jpg");
-    --background-image-tiny-house-build: linear-gradient(
-            rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.6)
-        ),
-        url("/images/tiny-houses-build.jpg");
-    --background-image-roots: url("/images/our-roots.jpg");
-    --background-image-placeholder: url("/images/model-placeholder.jpg");
-    --background-image-model-placeholder: linear-gradient(
-            rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.6)
-        ),
-        url("/images/model-placeholder.jpg");
+  --background-image-hero: radial-gradient(
+      rgba(0, 0, 0, 0) 40%,
+      rgba(22, 22, 22, 0.95) 75%
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("@images/portada.jpg");
 
+  --background-image-floema: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("@images/historia-5.jpg");
 
-    --font-*: initial;
-    --font-sans: Inter, sans-serif;
-    --font-serif: Inter, serif;
-    --font-title: Raleway;
+  --background-image-floema-secondary: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("@images/historia-4.jpg");
+
+  --background-image-tiny-house-build: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("@images/historia-2.jpg");
+
+  --background-image-impact: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("@images/introduccion-3.jpg");
+
+  --background-image-roots: url("@images/que-es-corteza.jpg");
+
+  --background-image-model-nido: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ),
+  url("@images/tiny-houses/nido-01.jpg");
+
+  --background-image-model-raiz: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ),
+  url("@images/tiny-houses/raiz-01.jpg");
+
+  --background-image-model-copa: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ),
+  url("@images/tiny-houses/copa-01.jpg");
+
+  --background-image-model-savia: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ),
+  url("@images/tiny-houses/savia-01.jpg");
+
+  --background-image-model-ebano: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ),
+  url("@images/tiny-houses/ebano-01.jpg");
+
+  --font-*: initial;
+  --font-sans: Inter, sans-serif;
+  --font-serif: Inter, serif;
+  --font-title: Raleway;
 }
 
-.bx.hidden {
-    display: none !important;
+[x-cloak] { display: none !important; }
+
+@media screen and (width <= 320px) {
+  p {
+    font-size: 14px;
+  }
 }

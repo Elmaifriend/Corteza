@@ -1,28 +1,28 @@
-<div>
+<div x-data="{ showForm: false }">
     @if ($lenguaje == 'esp')
         <h2 class="text-xl font-bold">Crea la Casa de tus Sueños</h2>
     @else
         <h2 class="text-xl font-bold">Create the House of your Dreams</h2>
     @endif
 
-    <div class="divide-y-2 divide-dashed divide-light-highlight/50">
+    <div class="divide-light-highlight/50 relative mb-32 divide-y-2 divide-dashed lg:mb-0">
         @foreach ($accesoriosPorCategoria as $categoria => $accesorios)
-            <div class="relative py-4 flex flex-col gap-2" x-data="{ open: false }">
+            <div class="relative flex flex-col gap-2 py-4" x-data="{ open: false }">
                 <h3 class="text-foreground-secondary">{{ $categoria }}</h3>
                 <div class="relative flex flex-col gap-2" x-show="open" x-collapse.min.250px>
-                    <div class="absolute w-full h-full pb-2 bottom-0 left-0 bg-gradient-to-t from-background from-3% to-transparent to-40% pointer-events-none"
+                    <div class="from-background from-3% pointer-events-none absolute bottom-0 left-0 h-full w-full bg-gradient-to-t to-transparent to-40% pb-2"
                         x-on:click="open = !open" x-show="!open">
                     </div>
                     @foreach ($accesorios as $accesorio)
                         <label
-                            class="flex gap-2 items-center justify-between px-2 md:px-6 py-4 rounded-2xl border-2 border-secondary bg-background has-[:checked]:bg-highlight has-[:checked]:text-background has-[:checked]:border-highlight transition-colors cursor-pointer">
-                            <div class="flex gap-2 items-center">
+                            class="border-secondary bg-background has-[:checked]:bg-highlight has-[:checked]:text-background has-[:checked]:border-highlight flex cursor-pointer items-center justify-between gap-2 rounded-2xl border-2 px-2 py-4 transition-colors md:px-6">
+                            <div class="flex items-center gap-2">
                                 <div>
                                     <input type="checkbox" wire:model.live="accesoriosSeleccionados"
-                                        value="{{ (int) $accesorio['id'] }}" class="hidden peer">
+                                        value="{{ (int) $accesorio['id'] }}" class="peer hidden">
                                     <div
-                                        class="group w-4 h-4 p-2 border-2 border-secondary rounded-md flex items-center justify-center peer-checked:border-secondary">
-                                        <i class="bx bx-check bx-xs hidden group-peer-checked:!block"></i>
+                                        class="border-secondary peer-checked:border-secondary group flex h-4 w-4 items-center justify-center rounded-md border-2 p-2">
+                                        <i class="bx bx-check bx-xs group-peer-checked:!block !hidden"></i>
                                     </div>
                                 </div>
 
@@ -40,7 +40,7 @@
                         </label>
                     @endforeach
                 </div>
-                <a class="self-center z-10 text-foreground-secondary hover:text-tertiary transition-colors cursor-pointer"
+                <a class="text-foreground-secondary hover:text-tertiary z-10 cursor-pointer self-center transition-colors"
                     x-on:click="open = !open"
                     x-bind:class="open ? '' : 'absolute bottom-4 left-1/2 transform -translate-x-1/2'"
                     x-text="open ? 'Ver Menos' : 'Ver Más'">
@@ -49,9 +49,94 @@
         @endforeach
     </div>
     <div
-        class="w-full p-4 md:p-6 flex flex-col gap-4 items-stretch sticky bottom-0 rounded-2xl bg-highlight-secondary text-background z-10">
-        <h3 class="text-2xl font-semibold text-right">Total: ${{ number_format($total, 2) }}</h3>
-        <button
-            class="px-3 py-2 bg-highlight rounded-2xl font-bold text-background text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in">Realizar
-            Cotización</button>
+        class="lg:translate-none container fixed bottom-4 left-1/2 z-10 mx-auto w-full -translate-x-1/2 px-4 lg:sticky lg:bottom-0 lg:left-0 lg:px-0">
+        <div class="bg-secondary-highlight text-background flex flex-col items-stretch gap-4 rounded-2xl p-4 md:p-6">
+            <h3 class="text-right text-2xl font-semibold">Total: ${{ number_format($total, 2) }}</h3>
+            <button x-on:click="showForm = !showForm"
+                class="bg-highlight text-background hover:bg-dark-highlight/90 select-none rounded-2xl px-3 py-2 text-center font-bold transition-colors ease-in">Realizar
+                Cotización</button>
+        </div>
     </div>
+
+    <div x-data="{ readTermsAndConditions: false }" x-cloak x-show="showForm" x-transition class="fixed inset-0 z-50"
+        x-trap.noscroll="showForm">
+        <div x-on:click="showForm = false" class="fixed inset-0 bg-black/80"></div>
+
+        <div class="fixed left-1/2 top-1/2 w-fit -translate-x-1/2 -translate-y-1/2">
+            <div class="overflow-hidden rounded-2xl">
+                <form x-data="{ formStep: 0 }"
+                    class="bg-background container h-full max-h-[90vh] w-full overflow-y-auto rounded-2xl px-6 py-8 lg:px-16">
+                    <div x-show="formStep == 0" x-transition class="flex flex-col gap-6">
+                        <h1 class="text-highlight text-4xl font-bold">Cotiza tu TinyHouse</h1>
+                        <fieldset class="flex flex-col gap-1">
+                            <label for="name">Nombre</label>
+                            <input
+                                class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                type="text" id="name" placeholder="Ingresa tu Nombre Completo" />
+                        </fieldset>
+                        <fieldset class="flex flex-col gap-1">
+                            <label for="mail">Correo</label>
+                            <input
+                                class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                type="text" id="mail" placeholder="Ingresa tu Correo Electrónico" />
+                        </fieldset>
+                        <fieldset class="flex flex-col gap-1">
+                            <label for="phone">Teléfono</label>
+                            <input
+                                class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                type="text" id="phone" placeholder="Ingresa tu Número de Teléfono" />
+                        </fieldset>
+                        <div class="my-2 border-t border-gray-300"></div>
+                        <fieldset class="flex flex-col gap-1">
+                            <label for="city">Ciudad</label>
+                            <input
+                                class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                type="text" id="city"
+                                placeholder="Ingresa la ciudad donde se realizará la entrega" />
+                        </fieldset>
+                        <div class="my-2 border-t border-gray-300"></div>
+                        <fieldset class="flex flex-col gap-1">
+                            <label for="subdivision">Fraccionamiento</label>
+                            <input
+                                class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                type="text" id="subdivision"
+                                placeholder="Ingresa el fraccionamiento o colonia de entrega" />
+                        </fieldset>
+                        <fieldset class="flex flex-col gap-1">
+                            <label for="message">Notas</label>
+                            <textarea
+                                class="bg-secondary focus:ring-highlight text-tertiary resize-none appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                type="textarea" rows="5" id="message" placeholder="Notas"></textarea>
+                        </fieldset>
+                        <fieldset class="flex items-center gap-1">
+                            <input x-on:click="readTermsAndConditions = !readTermsAndConditions" type="checkbox"
+                                class="accent-highlight cursor-pointer" id="terms">
+                            <label for="terms">He leido las
+                                Pólizas de Consideración para adquirir mi Tiny</label>
+                        </fieldset>
+                        <div class="mt-4 flex justify-end">
+                            <button x-on:click="formStep++" x-bind:disabled="!readTermsAndConditions" type="button"
+                                class="bg-highlight text-background hover:bg-dark-highlight/90 disabled:bg-secondary disabled:text-foreground-secondary flex cursor-pointer select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-all ease-in disabled:cursor-default sm:px-6 sm:text-lg">
+                                Realizar Cotización
+                            </button>
+                        </div>
+                    </div>
+                    <div x-show="formStep == 1" x-transition class="flex flex-col gap-6">
+                        <h1 class="text-highlight text-4xl font-bold">Estas a un paso de obtener la Tiny House de tus
+                            Sueños</h1>
+                        <p>Muchas Gracias por enviar tu aplicación, en las próximas 48 horas uno de nuestros operadores
+                            se pondrá en contacto contigo para agendar una cita, en caso de que no se contacten por
+                            favor cominicate directamente a nuestro correo: <span
+                                class="text-highlight font-bold">cortezacym@gmail.com</span></p>
+                        <div class="mt-4 flex justify-end">
+                            <button x-bind:disabled="!readTermsAndConditions" x-on:click="showForm = !showForm"
+                                class="bg-highlight text-background hover:bg-dark-highlight/90 disabled:bg-secondary disabled:text-foreground-secondary flex cursor-pointer select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-all ease-in disabled:cursor-default sm:px-6 sm:text-lg">
+                                Aceptar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
