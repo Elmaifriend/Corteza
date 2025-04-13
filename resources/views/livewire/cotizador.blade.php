@@ -51,10 +51,17 @@
     <div
         class="lg:translate-none container fixed bottom-4 left-1/2 z-10 mx-auto w-full -translate-x-1/2 px-4 lg:sticky lg:bottom-0 lg:left-0 lg:px-0">
         <div class="bg-secondary-highlight text-background flex flex-col items-stretch gap-4 rounded-2xl p-4 md:p-6">
-            <h3 class="text-right text-2xl font-semibold">Total: ${{ number_format($total, 2) }}</h3>
+            <h3 class="text-right text-2xl font-semibold">
+                Total: ${{ number_format($total, 2) }}
+            </h3>
             <button x-on:click="showForm = !showForm"
-                class="bg-highlight text-background hover:bg-dark-highlight/90 select-none rounded-2xl px-3 py-2 text-center font-bold transition-colors ease-in">Realizar
-                Cotización</button>
+                class="bg-highlight text-background hover:bg-dark-highlight/90 select-none rounded-2xl px-3 py-2 text-center font-bold transition-colors ease-in">
+                @if ($lenguaje == 'esp')
+                    Realizar Cotización
+                @else
+                    Get Quote
+                @endif
+            </button>
         </div>
     </div>
 
@@ -67,71 +74,148 @@
                 <form x-data="{ formStep: 0 }"
                     class="bg-background container h-full max-h-[90vh] w-full overflow-y-auto rounded-2xl px-6 py-8 lg:px-16">
                     <div x-show="formStep == 0" x-transition class="flex flex-col gap-6">
-                        <h1 class="text-highlight text-4xl font-bold">Cotiza tu TinyHouse</h1>
+                        <h1 class="text-highlight text-4xl font-bold">
+                            @if ($lenguaje == 'esp')
+                                Cotiza tu TinyHouse
+                            @else
+                                Get your TinyHouse
+                            @endif
+                        </h1>
                         <fieldset class="flex flex-col gap-1">
-                            <label for="name">Nombre</label>
-                            <input
-                                class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                type="text" id="name" placeholder="Ingresa tu Nombre Completo" />
+                            @if ($lenguaje == 'esp')
+                                <label for="name">Nombre</label>
+                                <input
+                                    class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="text" id="name" placeholder="Ingresa tu Nombre Completo" />
+                            @else
+                                <label for="name">Name</label>
+                                <input
+                                    class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="text" id="name" placeholder="Enter your Full Name" />
+                            @endif
                         </fieldset>
                         <fieldset class="flex flex-col gap-1">
-                            <label for="mail">Correo</label>
-                            <input
-                                class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                type="text" id="mail" placeholder="Ingresa tu Correo Electrónico" />
+                            @if ($lenguaje == 'esp')
+                                <label for="mail">Correo</label>
+                                <input
+                                    class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="text" id="mail" placeholder="Ingresa tu Correo Electrónico" />
+                            @else
+                                <label for="mail">Email</label>
+                                <input
+                                    class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="text" id="mail" placeholder="Enter your Email Address" />
+                            @endif
                         </fieldset>
                         <fieldset class="flex flex-col gap-1">
-                            <label for="phone">Teléfono</label>
-                            <input
-                                class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                type="text" id="phone" placeholder="Ingresa tu Número de Teléfono" />
+                            @if ($lenguaje == 'esp')
+                                <label for="phone">Teléfono</label>
+                                <input
+                                    class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="text" id="phone" placeholder="Ingresa tu Número de Teléfono" />
+                            @else
+                                <label for="phone">Phone Number</label>
+                                <input
+                                    class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="text" id="phone" placeholder="Enter your Phone Number" />
+                            @endif
                         </fieldset>
                         <div class="my-2 border-t border-gray-300"></div>
                         <fieldset class="flex flex-col gap-1">
-                            <label for="city">Ciudad</label>
-                            <input
-                                class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                type="text" id="city"
-                                placeholder="Ingresa la ciudad donde se realizará la entrega" />
+                            @if ($lenguaje == 'esp')
+                                <label for="city">Ciudad</label>
+                                <input
+                                    class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="text" id="city"
+                                    placeholder="Ingresa la ciudad donde se realizará la entrega" />
+                            @else
+                                <label for="city">City</label>
+                                <input
+                                    class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="text" id="city" placeholder="Enter the city of delivery" />
+                            @endif
                         </fieldset>
                         <div class="my-2 border-t border-gray-300"></div>
                         <fieldset class="flex flex-col gap-1">
-                            <label for="subdivision">Fraccionamiento</label>
-                            <input
-                                class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                type="text" id="subdivision"
-                                placeholder="Ingresa el fraccionamiento o colonia de entrega" />
+                            @if ($lenguaje == 'esp')
+                                <label for="subdivision">Fraccionamiento</label>
+                                <input
+                                    class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="text" id="subdivision"
+                                    placeholder="Ingresa el fraccionamiento o colonia de entrega" />
+                            @else
+                                <label for="subdivision">Neighborhood</label>
+                                <input
+                                    class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="text" id="subdivision" placeholder="Enter the neighborhood of delivery" />
+                            @endif
                         </fieldset>
                         <fieldset class="flex flex-col gap-1">
-                            <label for="message">Notas</label>
-                            <textarea
-                                class="bg-secondary focus:ring-highlight text-tertiary resize-none appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                type="textarea" rows="5" id="message" placeholder="Notas"></textarea>
+                            @if ($lenguaje == 'esp')
+                                <label for="message">Notas</label>
+                                <textarea
+                                    class="bg-secondary focus:ring-highlight text-tertiary resize-none appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="textarea" rows="5" id="message" placeholder="Notas"></textarea>
+                            @else
+                                <label for="message">Notes</label>
+                                <textarea
+                                    class="bg-secondary focus:ring-highlight text-tertiary resize-none appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                    type="textarea" rows="5" id="message" placeholder="Notes"></textarea>
+                            @endif
                         </fieldset>
                         <fieldset class="flex items-center gap-1">
-                            <input x-on:click="readTermsAndConditions = !readTermsAndConditions" type="checkbox"
-                                class="accent-highlight cursor-pointer" id="terms">
-                            <label for="terms">He leido las
-                                Pólizas de Consideración para adquirir mi Tiny</label>
+                            @if ($lenguaje == 'esp')
+                                <input x-on:click="readTermsAndConditions = !readTermsAndConditions" type="checkbox"
+                                    class="accent-highlight cursor-pointer" id="terms">
+                                <label for="terms">He leido las
+                                    Pólizas de Consideración para adquirir mi Tiny</label>
+                            @else
+                                <input x-on:click="readTermsAndConditions = !readTermsAndConditions" type="checkbox"
+                                    class="accent-highlight cursor-pointer" id="terms">
+                                <label for="terms">I have read the Policies of Consideration to acquire my
+                                    Tiny</label>
+                            @endif
+
                         </fieldset>
                         <div class="mt-4 flex justify-end">
                             <button x-on:click="formStep++" x-bind:disabled="!readTermsAndConditions" type="button"
                                 class="bg-highlight text-background hover:bg-dark-highlight/90 disabled:bg-secondary disabled:text-foreground-secondary flex cursor-pointer select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-all ease-in disabled:cursor-default sm:px-6 sm:text-lg">
-                                Realizar Cotización
+                                @if ($lenguaje == 'esp')
+                                    Realizar Cotización
+                                @else
+                                    Get Quote
+                                @endif
                             </button>
                         </div>
                     </div>
                     <div x-show="formStep == 1" x-transition class="flex flex-col gap-6">
-                        <h1 class="text-highlight text-4xl font-bold">Estas a un paso de obtener la Tiny House de tus
-                            Sueños</h1>
-                        <p>Muchas Gracias por enviar tu aplicación, en las próximas 48 horas uno de nuestros operadores
-                            se pondrá en contacto contigo para agendar una cita, en caso de que no se contacten por
-                            favor cominicate directamente a nuestro correo: <span
-                                class="text-highlight font-bold">cortezacym@gmail.com</span></p>
+                        <h1 class="text-highlight text-4xl font-bold">
+                            @if ($lenguaje == 'esp')
+                                Estas a un paso de obtener la Tiny House de tus Sueños
+                            @else
+                                You are one step away from getting the Tiny House of your Dreams
+                            @endif
+                        </h1>
+                        <p>
+                            @if ($lenguaje == 'esp')
+                              Muchas Gracias por enviar tu aplicación, en las próximas 48 horas uno de nuestros
+                              operadores se pondrá en contacto contigo para agendar una cita, en caso de que no se
+                              contacten por favor cominicate directamente a nuestro correo: 
+                            @else
+                              Thank you very much for sending your application, in the next 48 hours one of our
+                              operators will contact you to schedule an appointment, in case they do not contact you
+                              by please contact us directly to our email: 
+                            @endif
+                            <span class="text-highlight font-bold">cortezacym@gmail.com</span>
+                        </p>
                         <div class="mt-4 flex justify-end">
                             <button x-bind:disabled="!readTermsAndConditions" x-on:click="showForm = !showForm"
                                 class="bg-highlight text-background hover:bg-dark-highlight/90 disabled:bg-secondary disabled:text-foreground-secondary flex cursor-pointer select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-all ease-in disabled:cursor-default sm:px-6 sm:text-lg">
-                                Aceptar
+                                @if ($lenguaje == 'esp')
+                                    Aceptar
+                                @else
+                                    Accept
+                                @endif
                             </button>
                         </div>
                     </div>
