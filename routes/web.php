@@ -54,14 +54,37 @@ Route::get('/ebano', [PagesController::class, 'ebano'])
 
 
 Route::prefix('en')->group( function(){
-    route::get('/home', [PagesController::class, 'home'])
-        ->name('home');
+    Route::get('/', [PagesController::class, 'home'])
+      ->name('home');
 
-    Route::get('/contact', [PagesController::class, 'contact'])
-        ->name('contact');
+    Route::get('/corteza', [PagesController::class, 'en_corteza'])
+      ->name('en_corteza');
 
-    Route::get('/catalog', [PagesController::class, 'catalog'])
-        ->name('catalog');
+    Route::get('/functions', [PagesController::class, 'functions'])
+      ->name('functions');
+
+
+    Route::get('/history', [PagesController::class, 'history'])
+      ->name('history');
+
+
+    Route::get('/tiny-houses', [PagesController::class, 'en_tinyHouses'])
+      ->name('en_tiny-houses');
+
+    Route::get('/benefits', [PagesController::class, 'benefits'])
+      ->name('benefits');
+
+    Route::get('/policies', [PagesController::class, 'policies'])
+      ->name('policies');
+
+
+    Route::get('/floema', [PagesController::class, 'en_floema'])
+      ->name('en_floema');
+
+
+    Route::get('/faq', [PagesController::class, 'en_faq'])
+      ->name('en_faq');
+      
 
     Route::get('/nido', [PagesController::class, 'en_nido'])
         ->name('en_nido');
@@ -77,7 +100,4 @@ Route::prefix('en')->group( function(){
 
     Route::get('/ebano', [PagesController::class, 'en_ebano'])
         ->name('en_ebano');
-
-    Route::get('/suplies', [PagesController::class, 'suplies'])
-        ->name('suplies');
 });

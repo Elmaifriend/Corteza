@@ -1,5 +1,7 @@
 import './bootstrap';
 
+import.meta.glob(['../images/*', '../images/corteza-products/*', '../images/tiny-houses/*'])
+
 document.addEventListener('alpine:init', function () {
   Alpine.data('catalogData', function() {
     return {
@@ -160,6 +162,173 @@ document.addEventListener('alpine:init', function () {
             {
               "name": "Lámparas",
               "description": "Lámparas y accesorios de iluminación modernos, perfectos para interiores y exteriores.",
+              "image": "lamparas.jpg"
+            }
+          ]
+        }
+      ],
+      currentSection: 0,
+    }
+  });
+  Alpine.data('enCatalogData', function() {
+    return {
+      sections: [
+        {
+          "title": "Tools",
+          "description": "Power and precision for every project",
+          "products": [
+            {
+              "name": "Milwaukee Tools",
+              "description": "High-performance power tools, ideal for professionals and hobbyists seeking precision and durability in every use.",
+              "image": "herramientas-milwaukee.jpg"
+            },
+            {
+              "name": "Ridgid Tools",
+              "description": "Robust tools designed for demanding jobs, with guaranteed long life and high performance.",
+              "image": "herramientas-ridgid.jpg"
+            },
+            {
+              "name": "DeWalt Tools",
+              "description": "High-performance power tools designed for professionals seeking efficiency and durability.",
+              "image": "herramientas-dewalt.jpg"
+            },
+            {
+              "name": "Ryobi Tools",
+              "description": "Versatile power tools, perfect for hobbyists and professionals looking for quality and performance.",
+              "image": "herramientas-ryobi.jpg"
+            },
+            {
+              "name": "Basic Tools",
+              "description": "Hand tool kit including hammers, screwdrivers and more for everyday jobs.",
+              "image": "herramientas-basicas.jpg"
+            }
+          ]
+        },
+        {
+          "title": "Lumber and Planks",
+          "description": "Quality and versatility in every cut",
+          "products": [
+            {
+              "name": "Shelby 1x6",
+              "description": "High-quality pine wood, perfect for construction projects, furniture and decoration with impeccable finish.",
+              "image": "shelby-1x6.jpg"
+            },
+            {
+              "name": "Shelby 1x4",
+              "description": "Pine wood in standard sizes, perfect for structures, frames and fine details in construction and carpentry.",
+              "image": "shelby-1x4.jpg"
+            },
+            {
+              "name": "Rustic Wood",
+              "description": "Wood with rustic finish, ideal for cladding and decorative projects requiring a unique, natural touch.",
+              "image": "petatillo.jpg"
+            },
+            {
+              "name": "Planks All Sizes",
+              "description": "Wood planks in various sizes and finishes, adaptable to all types of constructions and designs.",
+              "image": "tablones-todas-las-medidas.jpg"
+            },
+            {
+              "name": "Plywood",
+              "description": "Versatile plywood, ideal for furniture, paneling and construction projects.",
+              "image": "triplay.jpg"
+            },
+            {
+              "name": "Grooved Exterior Plywood",
+              "description": "Specially treated wood for exteriors, resistant to moisture and adverse weather conditions.",
+              "image": "triplay-ranurado-exterior.jpg"
+            },
+            {
+              "name": "2x4 Stud",
+              "description": "Ideal studs for structures, supports and projects requiring reliable, durable materials.",
+              "image": "barrote-2x4.jpg"
+            },
+            {
+              "name": "2x6 Stud",
+              "description": "High-strength studs, perfect for medium constructions needing firmness and stability.",
+              "image": "barrote-2x6.jpg"
+            },
+            {
+              "name": "2x8 Stud",
+              "description": "Robust and durable studs, perfect for supports and structures requiring maximum strength.",
+              "image": "barrote-2x8.jpg"
+            }
+          ]
+        },
+        {
+          "title": "Paints and Finishes",
+          "description": "Color and protection for your spaces",
+          "products": [
+            {
+              "name": "Sayer Paint",
+              "description": "High-performance paint, weather-resistant and perfect for interiors and exteriors.",
+              "image": "pintura-sayer.jpg"
+            },
+            {
+              "name": "Comex Paint",
+              "description": "Paint with advanced technology, designed to provide coverage, durability and impeccable finishes.",
+              "image": "pintura-comex.jpg"
+            },
+            {
+              "name": "Paint",
+              "description": "Wide range of colors and textures, designed to provide professional, long-lasting finishes.",
+              "image": "pintura.jpg"
+            },
+            {
+              "name": "Berel Paint",
+              "description": "High-quality paint in practical presentations, perfect for bringing life and protection to your walls and surfaces.",
+              "image": "pintura-berel.jpg"
+            },
+            {
+              "name": "Sandpaper",
+              "description": "High-quality sandpaper, perfect for preparing surfaces before painting or applying finishes.",
+              "image": "papel-felpa.jpg"
+            }
+          ]
+        },
+        {
+          "title": "Construction Materials",
+          "description": "Strength and functionality for every project",
+          "products": [
+            {
+              "name": "Drywall Sheets",
+              "description": "Drywall panels ideal for interior constructions, easy to install with impeccable finishes.",
+              "image": "hojas-de-yeso.jpg"
+            },
+            {
+              "name": "Roof Shingles",
+              "description": "Durable asphalt shingles, ideal for roofs with modern, functional finishes.",
+              "image": "shingle-techo.jpg"
+            },
+            {
+              "name": "Grooved MDF Panel",
+              "description": "Grooved MDF panels, ideal for decoration, furniture and light construction projects.",
+              "image": "panel-ranurado-mdf.jpg"
+            },
+            {
+              "name": "Nails",
+              "description": "High-quality steel nails, designed to secure structures and projects firmly.",
+              "image": "clavos.jpg"
+            },
+            {
+              "name": "Hardware",
+              "description": "High-quality screws and anchors, designed to secure structures and projects firmly.",
+              "image": "tornilleria.jpg"
+            },
+            {
+              "name": "Electrical Components",
+              "description": "Reliable electrical components, ideal for safe and efficient installations in homes and commercial projects.",
+              "image": "accesorios-electricos.jpg"
+            }
+          ]
+        },
+        {
+          "title": "Lighting and Decor",
+          "description": "Style and functionality for your spaces",
+          "products": [
+            {
+              "name": "Lamps",
+              "description": "Modern lamps and lighting accessories, perfect for interiors and exteriors.",
               "image": "lamparas.jpg"
             }
           ]
