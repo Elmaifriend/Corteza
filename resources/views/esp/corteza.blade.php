@@ -110,39 +110,6 @@
       </div>
     </div>
     <!-- Mission End-->
-    <!-- Models Begin-->
-    <div class="p-6 py-8 container bg-center bg-no-repeat bg-cover ">
-      <div class="flex flex-col gap-4">
-        <div class="flex flex-col-reverse gap-2 text-center">
-          <h1 class="text-3xl sm:text-5xl font-bold text-highlight">Los Favoritos de Corteza</h1>
-          <h2 class="text-lg text-foreground-secondary">Pequeños Espacios, Grandes Sueños</h2>
-        </div>
-        <div class="flex flex-wrap gap-4 justify-center items-center">
-          <div class="flex flex-col gap-4 max-w-96"><img class="rounded-4xl" src="{{ Vite::asset('resources/images/model-placeholder.jpg') }}"/>
-            <div class="flex flex-col items-center">
-              <h6 class="text-highlight font-bold">Nido</h6><span class="text-tertiary">4x6 metros</span>
-            </div>
-            <div class="flex items-center justify-center gap-2"><span class="text-sm text-foreground">Cálido</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Acogedor</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Esencial</span>
-            </div>
-          </div>
-          <div class="flex flex-col gap-4 max-w-96"><img class="rounded-4xl" src="{{ Vite::asset('resources/images/model-placeholder.jpg') }}"/>
-            <div class="flex flex-col items-center">
-              <h6 class="text-highlight font-bold">Raíz</h6><span class="text-tertiary">5x6 metros</span>
-            </div>
-            <div class="flex items-center justify-center gap-2"><span class="text-sm text-foreground">Simple</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Funcional</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Minimalista</span>
-            </div>
-          </div>
-          <div class="flex flex-col gap-4 max-w-96"><img class="rounded-4xl" src="{{ Vite::asset('resources/images/model-placeholder.jpg') }}"/>
-            <div class="flex flex-col items-center">
-              <h6 class="text-highlight font-bold">Copa</h6><span class="text-tertiary">6x6 metros</span>
-            </div>
-            <div class="flex items-center justify-center gap-2"><span class="text-sm text-foreground">Elegante</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Amplio</span><i class="bx bxs-leaf bx-xs text-highlight"></i><span class="text-sm text-foreground">Sofisticado</span>
-            </div>
-          </div>
-        </div><a class="flex gap-1 items-center justify-center py-2 font-bold text-highlight sm:text-lg text-center select-none hover:text-dark-highlight/90 transition-colors ease-in" href="{{ route('tiny-houses') }}">Ver más Modelos</a>
-      </div>
-    </div>
-    <!-- Models End-->
     <!-- Footer Begin-->
     <footer class="w-full">
           <div class="w-full flex flex-col items-stretch content-center flex-wrap p-0 sm:py-6 md:p-6 bg-background bg-center bg-no-repeat bg-cover">
