@@ -79,7 +79,7 @@
 
         <div class="fixed left-1/2 top-1/2 w-fit -translate-x-1/2 -translate-y-1/2">
             <div class="overflow-hidden rounded-2xl">
-                <form x-data="{ formStep: 0 }"
+                <form wire:submit.prevent="guardarCotizacion" x-data="{ formStep: 0 }"
                     class="bg-background container h-full max-h-[90vh] w-full overflow-y-auto rounded-2xl px-6 py-8 lg:px-16">
                     <div x-show="formStep == 0" x-transition class="flex flex-col gap-6">
                         <h1 class="text-highlight text-4xl font-bold">
@@ -93,11 +93,13 @@
                             @if ($lenguaje == 'esp')
                                 <label for="name">Nombre</label>
                                 <input
+                                    wire:model="nombre"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="name" placeholder="Ingresa tu Nombre Completo" />
                             @else
                                 <label for="name">Name</label>
                                 <input
+                                    wire:model="nombre"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="name" placeholder="Enter your Full Name" />
                             @endif
@@ -106,11 +108,13 @@
                             @if ($lenguaje == 'esp')
                                 <label for="mail">Correo</label>
                                 <input
+                                    wire:model="correo"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="mail" placeholder="Ingresa tu Correo Electrónico" />
                             @else
                                 <label for="mail">Email</label>
                                 <input
+                                    wire:model="correo"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="mail" placeholder="Enter your Email Address" />
                             @endif
@@ -119,11 +123,13 @@
                             @if ($lenguaje == 'esp')
                                 <label for="phone">Teléfono</label>
                                 <input
+                                    wire:model="telefono"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="phone" placeholder="Ingresa tu Número de Teléfono" />
                             @else
                                 <label for="phone">Phone Number</label>
                                 <input
+                                    wire:model="telefono"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="phone" placeholder="Enter your Phone Number" />
                             @endif
@@ -133,53 +139,63 @@
                             @if ($lenguaje == 'esp')
                                 <label for="city">Ciudad</label>
                                 <input
+                                    wire:model="ciudad"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="city"
                                     placeholder="Ingresa la ciudad donde se realizará la entrega" />
                             @else
                                 <label for="city">City</label>
                                 <input
+                                    wire:model="ciudad"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="city" placeholder="Enter the city of delivery" />
                             @endif
                         </fieldset>
-                        <div class="my-2 border-t border-gray-300"></div>
                         <fieldset class="flex flex-col gap-1">
                             @if ($lenguaje == 'esp')
                                 <label for="subdivision">Fraccionamiento</label>
                                 <input
+                                    wire:model="fraccionamiento"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="subdivision"
                                     placeholder="Ingresa el fraccionamiento o colonia de entrega" />
                             @else
                                 <label for="subdivision">Neighborhood</label>
                                 <input
+                                    wire:model="fraccionamiento"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="subdivision"
                                     placeholder="Enter the neighborhood of delivery" />
                             @endif
                         </fieldset>
+                        <div class="my-2 border-t border-gray-300"></div>
                         <fieldset class="flex flex-col gap-1">
                             @if ($lenguaje == 'esp')
                                 <label for="message">Notas</label>
                                 <textarea
+                                    wire:model="notas"
                                     class="bg-secondary focus:ring-highlight text-tertiary resize-none appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="textarea" rows="5" id="message" placeholder="Notas"></textarea>
                             @else
                                 <label for="message">Notes</label>
                                 <textarea
+                                    wire:model="notas"
                                     class="bg-secondary focus:ring-highlight text-tertiary resize-none appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="textarea" rows="5" id="message" placeholder="Notes"></textarea>
                             @endif
                         </fieldset>
                         <fieldset class="flex items-center gap-1">
                             @if ($lenguaje == 'esp')
-                                <input x-on:click="readTermsAndConditions = !readTermsAndConditions" type="checkbox"
+                                <input
+                                    wire:model="readTermsAndConditions"
+                                    x-on:click="readTermsAndConditions = !readTermsAndConditions" type="checkbox"
                                     class="accent-highlight cursor-pointer" id="terms">
                                 <label for="terms">He leido las
                                     Pólizas de Consideración para adquirir mi Tiny</label>
                             @else
-                                <input x-on:click="readTermsAndConditions = !readTermsAndConditions" type="checkbox"
+                                <input
+                                    wire:model="readTermsAndConditions"
+                                    x-on:click="readTermsAndConditions = !readTermsAndConditions" type="checkbox"
                                     class="accent-highlight cursor-pointer" id="terms">
                                 <label for="terms">I have read the Policies of Consideration to acquire my
                                     Tiny</label>

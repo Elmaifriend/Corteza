@@ -16,9 +16,11 @@ return new class extends Migration
             $table->string("name");
             $table->string("email");
             $table->string("cell_phone");
-            $table->boolean("has_wa");
-            $table->datetime("scheduled");
-            $table->longText("Accesories");
+            $table->enum("has_wa", ["Si", "No"])->nullable();
+            $table->string("city");
+            $table->string("neighborhood");
+            $table->datetime("scheduled")->nullable();
+            $table->longText("description")->nullable();
             $table->timestamps();
         });
     }
