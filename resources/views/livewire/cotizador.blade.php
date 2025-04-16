@@ -92,14 +92,12 @@
                         <fieldset class="flex flex-col gap-1">
                             @if ($lenguaje == 'esp')
                                 <label for="name">Nombre</label>
-                                <input
-                                    wire:model="nombre"
+                                <input wire:model="nombre" required 
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="name" placeholder="Ingresa tu Nombre Completo" />
                             @else
                                 <label for="name">Name</label>
-                                <input
-                                    wire:model="nombre"
+                                <input wire:model="nombre" required 
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="name" placeholder="Enter your Full Name" />
                             @endif
@@ -107,14 +105,12 @@
                         <fieldset class="flex flex-col gap-1">
                             @if ($lenguaje == 'esp')
                                 <label for="mail">Correo</label>
-                                <input
-                                    wire:model="correo"
+                                <input wire:model="correo"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="mail" placeholder="Ingresa tu Correo Electrónico" />
                             @else
                                 <label for="mail">Email</label>
-                                <input
-                                    wire:model="correo"
+                                <input wire:model="correo"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="mail" placeholder="Enter your Email Address" />
                             @endif
@@ -122,31 +118,49 @@
                         <fieldset class="flex flex-col gap-1">
                             @if ($lenguaje == 'esp')
                                 <label for="phone">Teléfono</label>
-                                <input
-                                    wire:model="telefono"
+                                <input wire:model="telefono" required 
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="phone" placeholder="Ingresa tu Número de Teléfono" />
                             @else
                                 <label for="phone">Phone Number</label>
-                                <input
-                                    wire:model="telefono"
+                                <input wire:model="telefono" required 
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="phone" placeholder="Enter your Phone Number" />
+                            @endif
+                        </fieldset>
+                        <fieldset class="flex flex-col gap-1">
+                          @if ($lenguaje == 'esp')
+                              <label for="callTime">Hora de llamada preferida</label>
+                              <input
+                                  class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                  type="datetime-local" id="callTime"/>
+                          @else
+                              <label for="callTime">Preferred call time</label>
+                              <input
+                                  class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
+                                  type="datetime-local" id="callTime"/>
+                          @endif
+                      </fieldset>
+                        <fieldset class="flex items-center gap-1">
+                            @if ($lenguaje == 'esp')
+                                <input type="checkbox" class="accent-highlight cursor-pointer" id="whatsapp">
+                                <label for="whatsapp">¿Tiene WhatsApp?</label>
+                            @else
+                                <input type="checkbox" class="accent-highlight cursor-pointer" id="whatsapp">
+                                <label for="whatsapp">Do you have WhatsApp?</label>
                             @endif
                         </fieldset>
                         <div class="my-2 border-t border-gray-300"></div>
                         <fieldset class="flex flex-col gap-1">
                             @if ($lenguaje == 'esp')
                                 <label for="city">Ciudad</label>
-                                <input
-                                    wire:model="ciudad"
+                                <input wire:model="ciudad"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="city"
                                     placeholder="Ingresa la ciudad donde se realizará la entrega" />
                             @else
                                 <label for="city">City</label>
-                                <input
-                                    wire:model="ciudad"
+                                <input wire:model="ciudad"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="city" placeholder="Enter the city of delivery" />
                             @endif
@@ -154,15 +168,13 @@
                         <fieldset class="flex flex-col gap-1">
                             @if ($lenguaje == 'esp')
                                 <label for="subdivision">Fraccionamiento</label>
-                                <input
-                                    wire:model="fraccionamiento"
+                                <input wire:model="fraccionamiento"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="subdivision"
                                     placeholder="Ingresa el fraccionamiento o colonia de entrega" />
                             @else
                                 <label for="subdivision">Neighborhood</label>
-                                <input
-                                    wire:model="fraccionamiento"
+                                <input wire:model="fraccionamiento"
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="subdivision"
                                     placeholder="Enter the neighborhood of delivery" />
@@ -172,35 +184,30 @@
                         <fieldset class="flex flex-col gap-1">
                             @if ($lenguaje == 'esp')
                                 <label for="message">Notas</label>
-                                <textarea
-                                    wire:model="notas"
+                                <textarea wire:model="notas"
                                     class="bg-secondary focus:ring-highlight text-tertiary resize-none appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="textarea" rows="5" id="message" placeholder="Notas"></textarea>
                             @else
                                 <label for="message">Notes</label>
-                                <textarea
-                                    wire:model="notas"
+                                <textarea wire:model="notas"
                                     class="bg-secondary focus:ring-highlight text-tertiary resize-none appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="textarea" rows="5" id="message" placeholder="Notes"></textarea>
                             @endif
                         </fieldset>
                         <fieldset class="flex items-center gap-1">
                             @if ($lenguaje == 'esp')
-                                <input
-                                    wire:model="readTermsAndConditions"
+                                <input wire:model="readTermsAndConditions"
                                     x-on:click="readTermsAndConditions = !readTermsAndConditions" type="checkbox"
                                     class="accent-highlight cursor-pointer" id="terms">
                                 <label for="terms">He leido las
                                     Pólizas de Consideración para adquirir mi Tiny</label>
                             @else
-                                <input
-                                    wire:model="readTermsAndConditions"
+                                <input wire:model="readTermsAndConditions"
                                     x-on:click="readTermsAndConditions = !readTermsAndConditions" type="checkbox"
                                     class="accent-highlight cursor-pointer" id="terms">
                                 <label for="terms">I have read the Policies of Consideration to acquire my
                                     Tiny</label>
                             @endif
-
                         </fieldset>
                         <div class="mt-4 flex justify-end">
                             <button x-on:click="formStep++" x-bind:disabled="!readTermsAndConditions" type="button"
