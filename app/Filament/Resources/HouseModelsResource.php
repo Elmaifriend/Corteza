@@ -37,8 +37,16 @@ class HouseModelsResource extends Resource
 
                 TextInput::make('name'),
 
-                TextInput::make('price')
-                    ->label("Precio ( USD )")
+                TextInput::make('estandar')
+                    ->label("Estandar (USD)")
+                    ->numeric(),
+
+                TextInput::make('plus')
+                    ->label("Plus (USD)")
+                    ->numeric(),
+
+                TextInput::make('delux')
+                    ->label("Delux (USD)")
                     ->numeric(),
             ]);
     }
@@ -51,7 +59,21 @@ class HouseModelsResource extends Resource
                     ->sortable()
                     ->searchable(),
 
-                Tables\Columns\TextColumn::make("price")
+                Tables\Columns\TextColumn::make("estandar")
+                    ->label("Estandar (USD)")
+                    ->numeric()
+                    ->sortable()
+                    ->searchable(),
+
+                Tables\Columns\TextColumn::make("plus")
+                    ->label("Plus (USD)")
+                    ->numeric()
+                    ->sortable()
+                    ->searchable(),
+
+                Tables\Columns\TextColumn::make("delux")
+                    ->label("Delux (USD)")
+                    ->numeric()
                     ->sortable()
                     ->searchable(),
 

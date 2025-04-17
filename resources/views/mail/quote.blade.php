@@ -9,8 +9,8 @@
 <b>Preferred contact time: </b> Date: {{$quote->scheduled->format('d-m-y') }} Time: {{$quote->scheduled->format('H:i') }}
 <h2>Your Quote:</h2>
 <b>Model: </b> {{$quote->model}}
-<textarea>
+<pre>
     {{htmlspecialchars($quote->description)}}
-</textarea>
+<pre>
 
 

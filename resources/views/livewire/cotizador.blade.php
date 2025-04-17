@@ -16,15 +16,17 @@
                     <div class="flex items-center gap-2">
                         <div>
                             <input type="radio" wire:model.live="precioBase" value="{{ $modeloBase->estandar }}"
-                                class="peer hidden">
+                                class="peer hidden" name="model">
                             <div
                                 class="border-secondary peer-checked:border-secondary group flex h-4 w-4 items-center justify-center rounded-md border-2 p-2">
                                 <i class="bx bx-check bx-xs group-peer-checked:!block !hidden"></i>
                             </div>
                         </div>
-
                         <span class="select-none font-bold">Estandar</span>
                     </div>
+                    <span class="select-none">
+                        ${{ number_format($modeloBase->estandar, 2) }}
+                    </span>
                 </label>
 
                 {{-- Plus --}}
@@ -33,15 +35,17 @@
                     <div class="flex items-center gap-2">
                         <div>
                             <input type="radio" wire:model.live="precioBase" value="{{ $modeloBase->plus }}"
-                                class="peer hidden">
+                                class="peer hidden" name="model">
                             <div
                                 class="border-secondary peer-checked:border-secondary group flex h-4 w-4 items-center justify-center rounded-md border-2 p-2">
                                 <i class="bx bx-check bx-xs group-peer-checked:!block !hidden"></i>
                             </div>
                         </div>
-
                         <span class="select-none font-bold">Plus</span>
                     </div>
+                    <span class="select-none">
+                        ${{ number_format($modeloBase->plus, 2) }}
+                    </span>
                 </label>
 
                 {{-- Delux --}}
@@ -50,15 +54,17 @@
                     <div class="flex items-center gap-2">
                         <div>
                             <input type="radio" wire:model.live="precioBase" value="{{ $modeloBase->delux }}"
-                                class="peer hidden">
+                                class="peer hidden" name="model">
                             <div
                                 class="border-secondary peer-checked:border-secondary group flex h-4 w-4 items-center justify-center rounded-md border-2 p-2">
                                 <i class="bx bx-check bx-xs group-peer-checked:!block !hidden"></i>
                             </div>
                         </div>
-
                         <span class="select-none font-bold">Delux</span>
                     </div>
+                    <span class="select-none">
+                        ${{ number_format($modeloBase->delux, 2) }}
+                    </span>
                 </label>
             </div>
         </div>

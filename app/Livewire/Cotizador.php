@@ -11,11 +11,11 @@ use DateTime;
 
 class Cotizador extends Component
 {
+    public float $total = 0; // Total calculado
     public float $precioBase; // Precio base de la casa
     public array $accesorios = []; // Lista de accesorios
     public array $accesoriosPorCategoria = [];
     public array $accesoriosSeleccionados = []; // Accesorios seleccionados
-    public float $total = 0; // Total calculado
     public string $lenguaje;
     public $modeloBase;
 
@@ -36,16 +36,18 @@ class Cotizador extends Component
         $this->accesorios = $accesorios;
         $this->lenguaje = $lenguaje;
         $this->agruparPorCategoria();
-        $this->calcularTotal(); // Calcular el total inicial
+        $this->calcularTotal();
     }
 
-    // Método que se ejecuta cuando se actualiza la selección de accesorios
     public function updatedAccesoriosSeleccionados(): void
     {
         $this->calcularTotal();
     }
 
-    // Método para calcular el total
+    public function updatedPrecioBase(){
+        $this->calcularTotal();
+    }
+
     private function calcularTotal(): void
     {
         $this->total = $this->precioBase;
@@ -70,7 +72,6 @@ class Cotizador extends Component
         }
     }
 
-    // Método para renderizar la vista
     public function render()
     {
         return view('livewire.cotizador');

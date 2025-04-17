@@ -24,9 +24,6 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->brandName("Corteza")
-            ->favicon(asset("img/fav.png"))
-            ->brandLogo(asset("img/logo.png"))
-            ->brandLogoHeight('15rem')
             ->default()
             ->id('admin')
             ->path('admin')

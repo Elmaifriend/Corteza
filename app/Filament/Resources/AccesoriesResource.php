@@ -64,6 +64,7 @@ class AccesoriesResource extends Resource
                     ->label("Editar")
             ])
             ->bulkActions([
+                //
             ]);
     }
 
