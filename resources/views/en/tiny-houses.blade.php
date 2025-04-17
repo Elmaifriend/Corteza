@@ -18,11 +18,11 @@
     <div class="h-screen flex flex-col items-center w-full snap-y snap-mandatory overflow-y-scroll">
       <div class="container snap-center snap-always shrink-0">
         <!-- Navigation Begin-->
-        <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
-          <h1 class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight">Corteza</h1>
+        <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr_150px] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
+      <a class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a> 
           <ul class="lg:w-full w-11/12 lg:p-0 p-4 lg:!flex flex lg:flex-row flex-col lg:static absolute md:top-[150%] top-[120%] left-1/2 lg:translate-0 -translate-x-1/2 z-10 rounded-2xl mdlg!bg-none bg-background text-secondary-highlight lg:divide-none divide-y-2 divide-dashed divide-secondary-highlight/10" x-show="open" x-cloak="" x-transition="">
             <li class="block lg:hidden py-3">
-              <h1 class="font-title font-bold text-4xl text-highlight">Corteza</h1>
+            <a class="font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a>
             </li>
             <div class="lg:flex gap-8 w-full justify-center items-center">
               <li class="py-3 lg:p-0 relative group" x-data="{ open: false }" x-on:click="open = !open" x-on:mouseover="if(window.innerWidth &gt;= 768) open = true" x-on:mouseleave="if(window.innerWidth &gt;= 768) open = false">
@@ -44,6 +44,8 @@
               <li class="py-3"><a href="{{ route('faq') }}">FAQ</a></li>
             </div>
           </ul>
+        <div class="justify-self-end"><a href="{{ route('inicio') }}">ES</a>
+        </div>
           <button class="lg:!hidden bx bx-menu bx-md cursor-pointer hover:text-foreground/60 transition-colors ease-in" x-on:click="open = !open"></button>
         </nav>
         <!-- Navigation End-->
