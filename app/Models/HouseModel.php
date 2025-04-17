@@ -12,6 +12,8 @@ class HouseModel extends Model
 
     protected $fillable = [
         "name",
-        "price"
+        "estandar",
+        "plus",
+        "delux"
     ];
 }

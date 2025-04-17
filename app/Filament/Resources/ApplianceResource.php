@@ -18,10 +18,9 @@ use Filament\Forms\Components\TextInput;
 class ApplianceResource extends Resource
 {
     protected static ?string $model = Accesory::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
     protected static ?string $modelLabel = 'Electrodomesticos';
+    protected static ?string $navigationGroup = 'Ajustes';
 
     public static function form(Form $form): Form
     {
@@ -32,6 +31,7 @@ class ApplianceResource extends Resource
                 TextInput::make('name'),
 
                 TextInput::make('price')
+                    ->label("Precio ( USD )")
                     ->numeric(),
             ]);
     }
@@ -40,7 +40,7 @@ class ApplianceResource extends Resource
     {
         return $table
             ->modifyQueryUsing(function (Builder $query) {
-                $query->where('category', "Electrodomesticos");
+                $query->where('categoria', "Electrodomesticos");
             })
             ->columns([
                 Tables\Columns\TextColumn::make("nombre")
@@ -52,21 +52,19 @@ class ApplianceResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("price")
+                    ->label("Precio ( USD )")
                     ->sortable()
                     ->searchable(),
-
-
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->label("Editar"),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                //
             ]);
     }
 

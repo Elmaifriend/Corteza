@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Accesory;
 use App\Models\HouseModel;
-use Illuminate\Http\Request;
-use PhpParser\Node\Expr\FuncCall;
 
 class PagesController extends Controller
 {
@@ -61,7 +59,7 @@ class PagesController extends Controller
 
   public function nido()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'nido'];
+    $casa = HouseModel::where('name', 'Nido')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.nido', [

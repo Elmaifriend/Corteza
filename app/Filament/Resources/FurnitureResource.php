@@ -18,10 +18,9 @@ use Filament\Forms\Components\TextInput;
 class FurnitureResource extends Resource
 {
     protected static ?string $model = Accesory::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
     protected static ?string $modelLabel = 'Muebles';
+    protected static ?string $navigationGroup = 'Ajustes';
 
     public static function form(Form $form): Form
     {
@@ -32,6 +31,7 @@ class FurnitureResource extends Resource
                 TextInput::make('name'),
 
                 TextInput::make('price')
+                    ->lable("Precio ( USD )")
                     ->numeric(),
             ]);
     }
@@ -40,7 +40,7 @@ class FurnitureResource extends Resource
     {
         return $table
             ->modifyQueryUsing(function (Builder $query) {
-                $query->where('category', "Muebles");
+                $query->where('categoria', "Muebles");
             })
             ->columns([
                 Tables\Columns\TextColumn::make("nombre")
@@ -52,6 +52,7 @@ class FurnitureResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("price")
+                    ->label("Precio ( USD )")
                     ->sortable()
                     ->searchable(),
             ])
@@ -59,12 +60,11 @@ class FurnitureResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->label("Editar"),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                //
             ]);
     }
 

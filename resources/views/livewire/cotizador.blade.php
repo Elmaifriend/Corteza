@@ -6,6 +6,68 @@
     @endif
 
     <div class="divide-light-highlight/50 relative mb-32 divide-y-2 divide-dashed lg:mb-0">
+
+        <div class="relative flex flex-col gap-2 py-4" x-data="{ open: false }">
+            <h3 class="text-foreground-secondary">Modelo</h3>
+            <div class="relative flex flex-col gap-2" x-show="open" x-collapse.min.250px>
+                <div class="from-background from-3% pointer-events-none absolute bottom-0 left-0 h-full w-full bg-gradient-to-t to-transparent to-40% pb-2"
+                    x-on:click="open = !open" x-show="!open">
+                </div>
+                    {{-- Estandar --}}
+                    <label
+                        class="border-secondary bg-background has-[:checked]:bg-highlight has-[:checked]:text-background has-[:checked]:border-highlight flex cursor-pointer items-center justify-between gap-2 rounded-2xl border-2 px-2 py-4 transition-colors md:px-6">
+                        <div class="flex items-center gap-2">
+                            <div>
+                                <input type="checkbox" wire:model.live="precioBase" value="{{$modeloBase->estandar}}" class="peer hidden">
+                                <div class="border-secondary peer-checked:border-secondary group flex h-4 w-4 items-center justify-center rounded-md border-2 p-2">
+                                    <i class="bx bx-check bx-xs group-peer-checked:!block !hidden"></i>
+                                </div>
+                            </div>
+
+                            <span class="select-none font-bold">Estandar</span>
+                        </div>
+                        <span class="select-none"></span>
+                    </label>
+
+                    {{-- Plus --}}
+                    <label
+                        class="border-secondary bg-background has-[:checked]:bg-highlight has-[:checked]:text-background has-[:checked]:border-highlight flex cursor-pointer items-center justify-between gap-2 rounded-2xl border-2 px-2 py-4 transition-colors md:px-6">
+                        <div class="flex items-center gap-2">
+                            <div>
+                                <input type="checkbox" wire:model.live="precioBase" value="{{$modeloBase->plus}}" class="peer hidden">
+                                <div class="border-secondary peer-checked:border-secondary group flex h-4 w-4 items-center justify-center rounded-md border-2 p-2">
+                                    <i class="bx bx-check bx-xs group-peer-checked:!block !hidden"></i>
+                                </div>
+                            </div>
+
+                            <span class="select-none font-bold">Plus</span>
+                        </div>
+                        <span class="select-none"></span>
+                    </label>
+
+                    {{-- Delux --}}
+                    <label
+                        class="border-secondary bg-background has-[:checked]:bg-highlight has-[:checked]:text-background has-[:checked]:border-highlight flex cursor-pointer items-center justify-between gap-2 rounded-2xl border-2 px-2 py-4 transition-colors md:px-6">
+                        <div class="flex items-center gap-2">
+                            <div>
+                                <input type="checkbox" wire:model.live="precioBase" value="{{$modeloBase->delux}}" class="peer hidden">
+                                <div class="border-secondary peer-checked:border-secondary group flex h-4 w-4 items-center justify-center rounded-md border-2 p-2">
+                                    <i class="bx bx-check bx-xs group-peer-checked:!block !hidden"></i>
+                                </div>
+                            </div>
+
+                            <span class="select-none font-bold">Delux</span>
+                        </div>
+                        <span class="select-none">
+
+                        </span>
+                    </label>
+            </div>
+        </div>
+
+
+
+
         @foreach ($accesoriosPorCategoria as $categoria => $accesorios)
             <div class="relative flex flex-col gap-2 py-4" x-data="{ open: false }">
                 <h3 class="text-foreground-secondary">{{ $categoria }}</h3>
@@ -92,12 +154,12 @@
                         <fieldset class="flex flex-col gap-1">
                             @if ($lenguaje == 'esp')
                                 <label for="name">Nombre</label>
-                                <input wire:model="nombre" required 
+                                <input wire:model="nombre" required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="name" placeholder="Ingresa tu Nombre Completo" />
                             @else
                                 <label for="name">Name</label>
-                                <input wire:model="nombre" required 
+                                <input wire:model="nombre" required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="name" placeholder="Enter your Full Name" />
                             @endif
@@ -118,12 +180,12 @@
                         <fieldset class="flex flex-col gap-1">
                             @if ($lenguaje == 'esp')
                                 <label for="phone">Teléfono</label>
-                                <input wire:model="telefono" required 
+                                <input wire:model="telefono" required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="phone" placeholder="Ingresa tu Número de Teléfono" />
                             @else
                                 <label for="phone">Phone Number</label>
-                                <input wire:model="telefono" required 
+                                <input wire:model="telefono" required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="phone" placeholder="Enter your Phone Number" />
                             @endif
@@ -132,21 +194,27 @@
                           @if ($lenguaje == 'esp')
                               <label for="callTime">Hora de llamada preferida</label>
                               <input
+                                  wire:model="horaDeContacto"
                                   class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                   type="datetime-local" id="callTime"/>
                           @else
                               <label for="callTime">Preferred call time</label>
                               <input
+                                  wire:model="horaDeContacto"
                                   class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                   type="datetime-local" id="callTime"/>
                           @endif
                       </fieldset>
                         <fieldset class="flex items-center gap-1">
                             @if ($lenguaje == 'esp')
-                                <input type="checkbox" class="accent-highlight cursor-pointer" id="whatsapp">
+                                <input
+                                    wire:model="tieneWA"
+                                    type="checkbox" class="accent-highlight cursor-pointer" id="whatsapp" name="whatsapp">
                                 <label for="whatsapp">¿Tiene WhatsApp?</label>
                             @else
-                                <input type="checkbox" class="accent-highlight cursor-pointer" id="whatsapp">
+                                <input
+                                    wire:model="tieneWA "
+                                    type="checkbox" class="accent-highlight cursor-pointer" id="whatsapp" name="whatsapp">
                                 <label for="whatsapp">Do you have WhatsApp?</label>
                             @endif
                         </fieldset>

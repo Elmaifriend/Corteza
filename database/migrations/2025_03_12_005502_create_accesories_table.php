@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string("nombre");
             $table->string("name");
             $table->string("price");
-            $table->enum("category",["Muebles", "Cocina", "Accesorios", "Electrodomesticos", "Servicios", "Seguridad"]);
+            $table->enum("categoria",["Muebles", "Cocina", "Accesorios", "Electrodomesticos", "Servicios", "Seguridad"]);
+            $table->enum("category", ["Furniture", "Kitchen", "Accessories", "Appliances", "Services", "Security"]);
             $table->timestamps();
         });
     }

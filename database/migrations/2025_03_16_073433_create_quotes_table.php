@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("neighborhood");
             $table->datetime("scheduled")->nullable();
             $table->longText("description")->nullable();
+            $table->enum("model", ["Nido", "Raiz", "Savia", "Copa", "Ebano"]);
             $table->timestamps();
         });
     }

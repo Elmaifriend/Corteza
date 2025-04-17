@@ -20,10 +20,9 @@ class SercurityResource extends Resource
     protected static ?string $model = Accesory::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
     protected static ?string $modelLabel = 'Seguridad';
-
     protected static ?string $pluralModelLabel = 'Seguridad';
+    protected static ?string $navigationGroup = 'Ajustes';
 
     public static function form(Form $form): Form
     {
@@ -34,6 +33,7 @@ class SercurityResource extends Resource
                 TextInput::make('name'),
 
                 TextInput::make('price')
+                    ->label("Precio ( USD )")
                     ->numeric(),
             ]);
     }
@@ -42,10 +42,11 @@ class SercurityResource extends Resource
     {
         return $table
             ->modifyQueryUsing(function (Builder $query) {
-                $query->where('category', "Seguridad");
+                $query->where('categoria', "Seguridad");
             })
             ->columns([
                 Tables\Columns\TextColumn::make("nombre")
+                    ->label("Nombre")
                     ->sortable()
                     ->searchable(),
 
@@ -54,6 +55,7 @@ class SercurityResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("price")
+                    ->label("Precio ( USD )")
                     ->sortable()
                     ->searchable(),
             ])
@@ -64,9 +66,7 @@ class SercurityResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                //
             ]);
     }
 

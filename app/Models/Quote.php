@@ -19,5 +19,6 @@ class Quote extends Model
         "neighborhood",
         'scheduled',
         'description',
+        "model"
     ];
 }

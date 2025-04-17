@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('house_models', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->double("price");
+            $table->double("estandar");
+            $table->double("plus");
+            $table->double("delux");
             $table->timestamps();
         });
     }

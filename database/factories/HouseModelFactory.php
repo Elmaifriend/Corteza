@@ -19,7 +19,9 @@ class HouseModelFactory extends Factory
     {
         return [
             "name" => fake()->name(),
-            "price" => fake()->randomNumber()
+            "estandar" => fake()->randomNumber(),
+            "plus" => fake()->randomNumber(),
+            "delux" => fake()->randomNumber()
         ];
     }
 }

@@ -2,8 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Mail\CotizacionMail;
 use Livewire\Component;
 use App\Models\Quote;
+use App\Mail\QuoteMail;
+use Illuminate\Support\Facades\Mail;
+use DateTime;
 
 class Cotizador extends Component
 {
@@ -13,18 +17,22 @@ class Cotizador extends Component
     public array $accesoriosSeleccionados = []; // Accesorios seleccionados
     public float $total = 0; // Total calculado
     public string $lenguaje;
+    public $modeloBase;
 
     public string $nombre = '';
     public string $correo = '';
     public string $telefono = '';
+    public $tieneWA = "";
     public string $ciudad = '';
     public string $fraccionamiento = '';
     public string $notas = '';
+    public DateTime $horaDeContacto;
     public bool $readTermsAndConditions = false;
 
-    public function mount(float $precioBase, array $accesorios, string $lenguaje): void
+    public function mount($modeloBase, array $accesorios, string $lenguaje): void
     {
-        $this->precioBase = $precioBase;
+        $this->modeloBase = $modeloBase;
+        $this->precioBase = $modeloBase->estandar;
         $this->accesorios = $accesorios;
         $this->lenguaje = $lenguaje;
         $this->agruparPorCategoria();
@@ -51,8 +59,14 @@ class Cotizador extends Component
     }
 
     private function agruparPorCategoria(): void {
-        foreach ( $this->accesorios as $accesorio ){
-            $this->accesoriosPorCategoria[$accesorio["category"] ][] = $accesorio;
+        if( $this->lenguaje === "esp" ){
+            foreach ( $this->accesorios as $accesorio ){
+                $this->accesoriosPorCategoria[ $accesorio["categoria"] ][] = $accesorio;
+            }
+        } else if( $this->lenguaje === "eng") {
+            foreach ( $this->accesorios as $accesorio ){
+                $this->accesoriosPorCategoria[ $accesorio["category"] ][] = $accesorio;
+            }
         }
     }
 
@@ -72,15 +86,22 @@ class Cotizador extends Component
         ]);
 
         $descripcion = $this->generarDescripcion();
+        $tieneWhatsApp = $this->verificarTieneWA();
 
-        Quote::create([
+        $quote = Quote::create([
             'name' => $this->nombre,
             'email' => $this->correo,
             'cell_phone' => $this->telefono,
+            "has_wa" => $tieneWhatsApp,
+            "scheduled" => $this->horaDeContacto,
             'city' => $this->ciudad,
             'neighborhood' => $this->fraccionamiento,
-            'description' => $descripcion
+            'description' => $descripcion,
+            "model" => $this->modeloBase->name,
         ]);
+
+        $this->sendMail($quote);
+        return redirect('/tiny-houses');
     }
 
     public function generarDescripcion(){
@@ -96,9 +117,24 @@ class Cotizador extends Component
         }
 
         $descripcion .= "\n\nNotas:\n" . $this->notas;
-
         $descripcion .= "\n\n Total: " . $this ->total;
 
         return $descripcion;
+    }
+
+    public function verificarTieneWA(){
+        if( $this->tieneWA ){
+            return "Si";
+        }
+        return "No";
+    }
+
+    public function sendMail( $quote ){
+        if( $this->lenguaje == "esp"){
+            Mail::to($quote->email)->send(new CotizacionMail($quote));
+        } else if( $this->lenguaje == "eng"){
+            Mail::to($quote->email)->send(new QuoteMail($quote));
+        }
+
     }
 }

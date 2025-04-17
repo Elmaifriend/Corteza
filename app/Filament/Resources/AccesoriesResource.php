@@ -20,6 +20,7 @@ class AccesoriesResource extends Resource
     protected static ?string $model = Accesory::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $modelLabel = 'Accesorios';
+    protected static ?string $navigationGroup = 'Ajustes';
 
     public static function form(Form $form): Form
     {
@@ -30,6 +31,7 @@ class AccesoriesResource extends Resource
                 TextInput::make('name'),
 
                 TextInput::make('price')
+                    ->label("Precio ( USD )")
                     ->numeric(),
             ]);
     }
@@ -38,7 +40,7 @@ class AccesoriesResource extends Resource
     {
         return $table
             ->modifyQueryUsing(function (Builder $query) {
-                $query->where('category', "Accesorios");
+                $query->where('categoria', "Accesorios");
             })
             ->columns([
                 Tables\Columns\TextColumn::make("nombre")
@@ -50,19 +52,18 @@ class AccesoriesResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("price")
+                    ->label("Precio ( USD )")
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->label("Editar")
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
             ]);
     }
 

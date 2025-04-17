@@ -14,14 +14,15 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Models\HouseModel;
 use Filament\Forms\Components\TextInput;
+use PhpParser\Node\Stmt\Label;
 
 class HouseModelsResource extends Resource
 {
     protected static ?string $model = HouseModel::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
     protected static ?string $modelLabel = 'Modelos De Casas';
+    protected static ?string $navigationGroup = 'Ajustes';
+
 
     public static function canCreate(): bool
     {
@@ -37,6 +38,7 @@ class HouseModelsResource extends Resource
                 TextInput::make('name'),
 
                 TextInput::make('price')
+                    ->label("Precio ( USD )")
                     ->numeric(),
             ]);
     }
@@ -58,12 +60,11 @@ class HouseModelsResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->label("Editar"),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                //
             ]);
     }
 

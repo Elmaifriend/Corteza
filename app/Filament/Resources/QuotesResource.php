@@ -14,37 +14,59 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
+
+use function Laravel\Prompts\select;
 
 class QuotesResource extends Resource
 {
     protected static ?string $model = Quote::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $modelLabel = 'Cotizaciones';
+    protected static ?int $navigationSort = -2;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('name'),
+                TextInput::make('name')
+                    ->label("Nombre"),
 
-                TextInput::make('email'),
+                TextInput::make('email')
+                    ->label("Correo"),
 
                 TextInput::make('cell_phone')
+                    ->label("Telefono")
                     ->numeric(),
 
-                TextInput::make('has_wa'),
+                TextInput::make('has_wa')
+                    ->label("WhatsApp"),
 
-                TextInput::make("city"),
+                TextInput::make("city")
+                    ->label("Ciudad"),
 
-                TextInput::make('neighborhood'),
+                TextInput::make('neighborhood')
+                    ->label("Vecindario"),
 
-                TextInput::make('scheduled'),
+                TextInput::make('scheduled')
+                    ->label("Agendado"),
+
+                Select::make('model')
+                    ->label("Modelo")
+                    ->options([
+                        'Nido' => 'Nido',
+                        'Raiz' => 'Raiz',
+                        'Savia' => 'Savia',
+                        "Copa" => "Copa",
+                        "Ebano" => "Ebano"
+                    ]),
 
                 Textarea::make('description')
-                    ->rows(30),
-            ])
-            ->columns(1);
+                    ->label("Descripcion")
+                    ->rows(20)
+                    ->columnSpan(2),
+            ]);
     }
 
     public static function table(Table $table): Table
@@ -52,14 +74,17 @@ class QuotesResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make("name")
+                    ->label("Nombre")
                     ->sortable()
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('email')
+                    ->label("Correo")
                     ->sortable()
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("cell_phone")
+                    ->label("Telefono")
                     ->sortable()
                     ->searchable(),
 
@@ -75,10 +100,12 @@ class QuotesResource extends Resource
                     }),
 
                 Tables\Columns\TextColumn::make("scheduled")
+                    ->label("Agendado")
                     ->sortable()
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("description")
+                    ->label("Descripcion")
                     ->sortable()
                     ->searchable()
                     ->limit(30),
@@ -87,8 +114,10 @@ class QuotesResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make()
+                    ->label("Ver"),
+                Tables\Actions\EditAction::make()
+                    ->label("Editar"),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

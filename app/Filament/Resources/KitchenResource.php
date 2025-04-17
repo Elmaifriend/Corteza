@@ -18,10 +18,9 @@ use App\Models\Accesory;
 class KitchenResource extends Resource
 {
     protected static ?string $model = Accesory::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
     protected static ?string $modelLabel = 'Cocina';
+    protected static ?string $navigationGroup = 'Ajustes';
 
     public static function form(Form $form): Form
     {
@@ -32,6 +31,7 @@ class KitchenResource extends Resource
                 TextInput::make('name'),
 
                 TextInput::make('price')
+                    ->label("Precio ( USD )")
                     ->numeric(),
             ]);
     }
@@ -40,7 +40,7 @@ class KitchenResource extends Resource
     {
         return $table
             ->modifyQueryUsing(function (Builder $query) {
-                $query->where('category', "Cocina");
+                $query->where('categoria', "Cocina");
             })
             ->columns([
                 Tables\Columns\TextColumn::make("nombre")
@@ -52,6 +52,7 @@ class KitchenResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("price")
+                    ->label("Precio ( USD )")
                     ->sortable()
                     ->searchable(),
             ])
@@ -59,12 +60,11 @@ class KitchenResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->label("Editar"),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                //
             ]);
     }
 

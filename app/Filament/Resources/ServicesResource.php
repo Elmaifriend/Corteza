@@ -18,20 +18,21 @@ use App\Models\Accesory;
 class ServicesResource extends Resource
 {
     protected static ?string $model = Accesory::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
     protected static ?string $modelLabel = 'Servicios';
+    protected static ?string $navigationGroup = 'Ajustes';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('nombre'),
+                TextInput::make('nombre')
+                    ->label("Nombre"),
 
                 TextInput::make('name'),
 
                 TextInput::make('price')
+                    ->label("Precio ( USD )")
                     ->numeric(),
             ]);
     }
@@ -40,10 +41,11 @@ class ServicesResource extends Resource
     {
         return $table
             ->modifyQueryUsing(function (Builder $query) {
-                $query->where('category', "Servicios");
+                $query->where('categoria', "Servicios");
             })
             ->columns([
                 Tables\Columns\TextColumn::make("nombre")
+                    ->label("Nombre")
                     ->sortable()
                     ->searchable(),
 
@@ -52,6 +54,7 @@ class ServicesResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("price")
+                    ->label("Precio ( USD )")
                     ->sortable()
                     ->searchable(),
             ])
@@ -62,9 +65,7 @@ class ServicesResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                //
             ]);
     }
 
