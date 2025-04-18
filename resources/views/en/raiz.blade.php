@@ -113,11 +113,11 @@
                             <p class="text-foreground-secondary" x-text="`+${images.length - maxPreviewImages}`"></p>
                         </div>
                         <div x-show="showImagesModal" x-transition x-on:click="toggleModal"
-                            class="w-vw bg-foreground/60 pointer-events-auto fixed inset-0 z-50 flex h-dvh items-center justify-center overflow-hidden p-4 py-4">
+                            class="w-vw bg-foreground/60 pointer-events-auto fixed inset-0 z-50 flex min-h-dvh justify-center overflow-auto p-4 py-4">
                             <div class="flex max-h-fit max-w-7xl flex-wrap items-center justify-center gap-4">
                                 <template x-for="(image, index) in images">
                                     <img x-bind:src="image" x-on:click="setImage(index)"
-                                        class="max-w-34 md:max-w-54 w-full rounded-2xl transition-transform hover:scale-105 hover:shadow-lg lg:max-w-64"
+                                        class="max-w-120 md:max-w-72 w-full rounded-2xl transition-transform hover:scale-105 hover:shadow-lg lg:max-w-64"
                                         x-bind:class="{
                                             'ring-2 ring-secondary-light-highlight': galleryIndex == index,
                                             'cursor-pointer': true
