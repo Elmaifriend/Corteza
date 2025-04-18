@@ -39,6 +39,7 @@
                                 x-bind:class="{ 'transform rotate-180': open }"></i></div>
                         <ul class="lg:!bg-background divide-secondary-highlight/10 left-0 top-full mt-2 w-full divide-y-2 divide-dashed pl-4 lg:absolute lg:m-0 lg:w-max lg:rounded-2xl lg:p-4"
                             x-show="open" x-cloak="" x-collapse="">
+                  <li class="py-3"><a href="{{ route('tiny-houses') }}">Modelos</a></li>
                             <li class="py-3"><a href="{{ route('corteza') }}">Qué es Corteza</a></li>
                             <li class="py-3"><a href="{{ route('funciones') }}">6 Funciones de Corteza</a></li>
                         </ul>
@@ -113,11 +114,11 @@
                             <p class="text-foreground-secondary" x-text="`+${images.length - maxPreviewImages}`"></p>
                         </div>
                         <div x-show="showImagesModal" x-transition x-on:click="toggleModal"
-                            class="w-vw bg-foreground/60 pointer-events-auto fixed inset-0 z-50 flex h-dvh items-center justify-center overflow-hidden p-4 py-4">
+                            class="w-vw bg-foreground/60 pointer-events-auto fixed inset-0 z-50 flex min-h-dvh justify-center overflow-auto p-4 py-4">
                             <div class="flex max-h-fit max-w-7xl flex-wrap items-center justify-center gap-4">
                                 <template x-for="(image, index) in images">
                                     <img x-bind:src="image" x-on:click="setImage(index)"
-                                        class="max-w-34 md:max-w-54 w-full rounded-2xl transition-transform hover:scale-105 hover:shadow-lg lg:max-w-64"
+                                        class="max-w-120 md:max-w-72 w-full rounded-2xl transition-transform hover:scale-105 hover:shadow-lg lg:max-w-64"
                                         x-bind:class="{
                                             'ring-2 ring-secondary-light-highlight': galleryIndex == index,
                                             'cursor-pointer': true
