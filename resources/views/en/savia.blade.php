@@ -61,7 +61,7 @@
                     <li class="py-3"><a href="{{ route('en_faq') }}">FAQ</a></li>
                 </div>
             </ul>
-        <div class="justify-self-end"><a href="{{ route('inicio') }}">ES</a>
+        <div class="justify-self-end text-foreground-secondary"><a class="flex gap-1 items-center" href="{{ route('inicio') }}">ES<i class="bx bx-world text-xl"></i></a>
         </div>
             <button
                 class="bx bx-menu bx-md hover:text-foreground/60 cursor-pointer transition-colors ease-in lg:!hidden"

@@ -44,7 +44,7 @@
             <li class="py-3"><a href="{{ route('faq') }}">FAQ</a></li>
           </div>
         </ul>
-        <div class="justify-self-end"><a href="{{ route('home') }}">EN</a>
+        <div class="justify-self-end text-foreground-secondary"><a class="flex gap-1 items-center" href="{{ route('home') }}">EN<i class="bx bx-world text-xl"></i></a>
         </div>
         <button class="lg:!hidden bx bx-menu bx-md cursor-pointer hover:text-foreground/60 transition-colors ease-in" x-on:click="open = !open"></button>
       </nav>
@@ -150,25 +150,45 @@
               <div class="text-sm text-tertiary pt-2" x-show="open" x-cloak="" x-collapse="">Si, con un aval certificado.</div>
             </div>
             <h1 class="font-bold">¿Tienes alguna otra pregunta? Contactanos!</h1>
-            <form class="w-full flex flex-col align-center gap-4">
-              <fieldset class="flex flex-col gap-1">
-                <label for="name">Nombre</label>
-                <input class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="name" placeholder="Ingresa tu nombre completo"/>
-              </fieldset>
-              <fieldset class="flex flex-col gap-1">
-                <label for="mail">Correo</label>
-                <input class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="mail" placeholder="Ingresa tu correo electrónico"/>
-              </fieldset>
-              <fieldset class="flex flex-col gap-1">
-                <label for="phone">Telefono (opcional)</label>
-                <input class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="phone" placeholder="Ingresa tu numero telefonico"/>
-              </fieldset>
-              <fieldset class="flex flex-col gap-1">
-                <label for="message">¿Cómo podemos ayudarte?</label>
-                <textarea class="appearance-none resize-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="textarea" rows="5" name="message" placeholder="Cuentanos como podemos ayudarte"></textarea>
-              </fieldset>
-              <div class="flex justify-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Contactanos</a>
-              </div>
+            <form x-data="{ formStep: 0 }" class="w-full flex flex-col align-center gap-4">
+                <div x-show="formStep == 0" x-transition class="flex flex-col gap-6">
+                    <fieldset class="flex flex-col gap-1">
+                        <label for="name">Nombre</label>
+                    <input class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="name" placeholder="Ingresa tu nombre completo"/>
+                </fieldset>
+                <fieldset class="flex flex-col gap-1">
+                    <label for="mail">Correo</label>
+                    <input class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="mail" placeholder="Ingresa tu correo electrónico"/>
+                </fieldset>
+                <fieldset class="flex flex-col gap-1">
+                    <label for="phone">Telefono (opcional)</label>
+                    <input class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="phone" placeholder="Ingresa tu numero telefonico"/>
+                </fieldset>
+                <fieldset class="flex flex-col gap-1">
+                    <label for="message">¿Cómo podemos ayudarte?</label>
+                    <textarea class="appearance-none resize-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="textarea" rows="5" name="message" placeholder="Cuentanos como podemos ayudarte"></textarea>
+                </fieldset>
+                <div class="flex justify-end">
+                <button x-on:click="formStep++" type="button"
+                    class="bg-highlight text-background hover:bg-dark-highlight/90 flex cursor-pointer select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-all ease-in sm:px-6 sm:text-lg">
+                    Contactanos
+                </button>
+                </div>
+            </div>
+             <div x-show="formStep == 1" x-transition class="flex flex-col gap-6">
+                            <h1 class="text-highlight text-4xl font-bold">Muchas Gracias por Enviar tu Aplicación</h1>
+                            <p>En las próximas 48 horas uno de nuestros
+                                operadores
+                                se pondrá en contacto contigo para agendar una cita, en caso de que no se contacten por
+                                favor cominicate directamente a nuestro correo: <span
+                                    class="text-highlight font-bold">cortezacym@gmail.com</span></p>
+                            <div class="mt-4 flex justify-end">
+                                <button x-on:click="formStep--" type="button"
+                                    class="bg-highlight text-background hover:bg-dark-highlight/90 flex cursor-pointer select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-all ease-in sm:px-6 sm:text-lg">
+                                    Aceptar
+                                </button>
+                            </div>
+                        </div>
             </form>
           </div>
         </div>
