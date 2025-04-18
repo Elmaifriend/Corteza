@@ -1,8 +1,7 @@
 <h1>Your Tiny House Quote!</h1>
 
 <p>Hello! {{$quote->name}} we will be more than happy to work with you, our sales team is gonna call you soon!</p>
-<b>Thank you for belive in us.</b>
-
+<b>Thank you for believing in us.</b>
 <h2>Resume:</h2>
 <b>Your phone: </b> {{$quote->cell_phone}} <br>
 <b>Your Loction: </b> {{$quote->city}} {{$quote->neighborhood}} <br>

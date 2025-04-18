@@ -52,6 +52,7 @@
                                 x-bind:class="{ 'transform rotate-180': open }"></i></div>
                         <ul class="lg:!bg-background divide-secondary-highlight/10 left-0 top-full mt-2 w-full divide-y-2 divide-dashed pl-4 lg:absolute lg:m-0 lg:w-max lg:rounded-2xl lg:p-4"
                             x-show="open" x-cloak="" x-collapse="">
+                  <li class="py-3"><a href="{{ route('en_tiny-houses') }}">Models</a></li>
                             <li class="py-3"><a href="{{ route('benefits') }}">Benefits</a></li>
                             <li class="py-3"><a href="{{ route('policies') }}">Policies</a></li>
                         </ul>
@@ -158,33 +159,33 @@
                             <h1 class="text-highlight text-4xl font-bold">Get a Quote for Your Products</h1>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="name">Name</label>
-                                <input
+                                <input required 
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="name" placeholder="Enter your Full Name" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="mail">Email</label>
-                                <input
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="mail" placeholder="Enter your Email Address" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="phone">Phone</label>
-                                <input
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="phone" placeholder="Enter your Phone Number" />
                             </fieldset>
                             <div class="my-2 border-t border-gray-300"></div>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="materials">Materials to Quote</label>
-                                <input
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="materials"
                                     placeholder="Select the materials you need" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="city">Delivery City</label>
-                                <input
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="city"
                                     placeholder="Enter the city where delivery will be made" />
@@ -192,7 +193,7 @@
                             <div class="my-2 border-t border-gray-300"></div>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="subdivision">Subdivision</label>
-                                <input
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="subdivision"
                                     placeholder="Enter the subdivision or neighborhood for delivery" />
