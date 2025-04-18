@@ -15,7 +15,7 @@
                     class="border-secondary bg-background has-[:checked]:bg-highlight has-[:checked]:text-background has-[:checked]:border-highlight flex cursor-pointer items-center justify-between gap-2 rounded-2xl border-2 px-2 py-4 transition-colors md:px-6">
                     <div class="flex items-center gap-2">
                         <div>
-                            <input type="radio" wire:model.live="edicion" value="Estandar"
+                            <input type="radio" wire:model.live="edicion" value="Standard"
                                 class="peer hidden" name="model">
                             <div
                                 class="border-secondary peer-checked:border-secondary group flex h-4 w-4 items-center justify-center rounded-md border-2 p-2">

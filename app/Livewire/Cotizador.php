@@ -19,7 +19,7 @@ class Cotizador extends Component
     public array $accesoriosSeleccionados = [];
     public string $lenguaje;
     public HouseModel $modeloBase;
-    public string $edicion;
+    public string $edicion = "Standard";
 
     public string $nombre = '';
     public string $correo = '';
@@ -33,6 +33,7 @@ class Cotizador extends Component
 
     public function mount($modeloBase, array $accesorios, string $lenguaje): void
     {
+        $this->horaDeContacto = new DateTime( "now" );
         $this->modeloBase = $modeloBase;
         $this->precioBase = $modeloBase->estandar;
         $this->accesorios = $accesorios;
@@ -47,6 +48,10 @@ class Cotizador extends Component
     }
 
     public function updatedPrecioBase(){
+        $this->calcularTotal();
+    }
+
+    public function updatedEdicion(){
         $this->calcularTotal();
     }
 
@@ -109,7 +114,7 @@ class Cotizador extends Component
 
     public function generarDescripcion(){
         $descripcion = $this->modeloBase->name . " - " . $this->edicion;
-        $descripcion .= "Lista de accesorios\n";
+        $descripcion .= "\nLista de accesorios\n";
 
         foreach( $this->accesoriosSeleccionados as $accesorio ){
             foreach( $this->accesorios as $accesorioBase ){
@@ -120,7 +125,7 @@ class Cotizador extends Component
         }
 
         $descripcion .= "\n\nNotas:\n" . $this->notas;
-        $descripcion .= "\n\n Total: " . $this ->total;
+        $descripcion .= "\n\nTotal: " . $this ->total;
 
         return $descripcion;
     }
@@ -142,7 +147,7 @@ class Cotizador extends Component
 
     public function econtrarPrecioEdicion( HouseModel $modeloBase, string $edicion ){
         switch( $edicion ){
-            case "Standar":
+            case "Standard":
                 $precio = $modeloBase->estandar;
                 break;
 
@@ -151,7 +156,7 @@ class Cotizador extends Component
                 break;
 
             case "Delux";
-                $precio = $modeloBase->plus;
+                $precio = $modeloBase->delux;
                 break;
 
             default:

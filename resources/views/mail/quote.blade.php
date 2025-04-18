@@ -4,13 +4,13 @@
 <b>Thank you for belive in us.</b>
 
 <h2>Resume:</h2>
-<b>Your phone: </b> {{$quote->cell_phone}}
-<b>Your Loction: </b> {{$quote->city}} {{$quote->neighborhood}}
-<b>Preferred contact time: </b> Date: {{$quote->scheduled->format('d-m-y') }} Time: {{$quote->scheduled->format('H:i') }}
+<b>Your phone: </b> {{$quote->cell_phone}} <br>
+<b>Your Loction: </b> {{$quote->city}} {{$quote->neighborhood}} <br>
+<b>Preferred contact time: </b> <br>
+Date: {{$quote->scheduled->format('d-m-y') }} <br>
+Time: {{$quote->scheduled->format('H:i') }} <br>
 <h2>Your Quote:</h2>
-<b>Model: </b> {{$quote->model}}
-<pre>
-    {{htmlspecialchars($quote->description)}}
-<pre>
+<p> <b>Model: </b> {{$quote->model}} </p>
+<pre>{{$quote->description}}<pre>
 
 
