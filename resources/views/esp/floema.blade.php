@@ -165,33 +165,33 @@
                             <h1 class="text-highlight text-4xl font-bold">Cotiza tus Productos</h1>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="name">Nombre</label>
-                                <input
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="name" placeholder="Ingresa tu Nombre Completo" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="mail">Correo</label>
-                                <input
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="mail" placeholder="Ingresa tu Correo Electrónico" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="phone">Teléfono</label>
-                                <input
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="phone" placeholder="Ingresa tu Número de Teléfono" />
                             </fieldset>
                             <div class="my-2 border-t border-gray-300"></div>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="materials">Materiales Por Cotizar</label>
-                                <input
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="materials"
                                     placeholder="Selecciona los materiales que necesites" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="city">Ciudad de Entrega</label>
-                                <input
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="city"
                                     placeholder="Ingresa la ciudad donde se realizará la entrega" />
@@ -199,7 +199,7 @@
                             <div class="my-2 border-t border-gray-300"></div>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="subdivision">Fraccionamiento</label>
-                                <input
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
                                     type="text" id="subdivision"
                                     placeholder="Ingresa el fraccionamiento o colonia de entrega" />
