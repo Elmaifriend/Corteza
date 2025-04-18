@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\FloemaEsp;
+use App\Mail\floemaEn;
 use App\Models\Accesory;
 use App\Models\HouseModel;
+use Illuminate\Support\Facades\Mail;
 
 class PagesController extends Controller
 {
@@ -50,6 +53,12 @@ class PagesController extends Controller
     return view('esp.floema');
   }
 
+  public function floemaFormEsp(){
+    $data = request()->all();
+    //Mail::to("cortezacym@gmail.com")->send( new FloemaEsp($data));
+    Mail::to("stmp@bytebitestudio.com")->send( new FloemaEsp($data) );
+  }
+
 
   public function faq()
   {
@@ -70,7 +79,7 @@ class PagesController extends Controller
 
   public function raiz()
   {
-    $casa = HouseModel::where('name', 'Raiz')->first();
+    $casa = (object) ['price' => 150000, 'name' => 'raiz'];
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.raiz', [
@@ -81,7 +90,7 @@ class PagesController extends Controller
 
   public function savia()
   {
-    $casa = HouseModel::where('name', 'Savia')->first();
+    $casa = (object) ['price' => 150000, 'name' => 'savia'];
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.savia', [
@@ -92,7 +101,7 @@ class PagesController extends Controller
 
   public function copa()
   {
-    $casa = HouseModel::where('name', 'Copa')->first();
+    $casa = (object) ['price' => 150000, 'name' => 'copa'];
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.copa', [
@@ -103,7 +112,7 @@ class PagesController extends Controller
 
   public function ebano()
   {
-    $casa = HouseModel::where('name', 'Ebano')->first();
+    $casa = (object) ['price' => 150000, 'name' => 'ebano'];
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.ebano', [
@@ -157,6 +166,12 @@ class PagesController extends Controller
     return view('en.floema');
   }
 
+  public function floemaFormEn(){
+    $data = request()->all();
+    //Mail::to("cortezacym@gmail.com")->send( new FloemaEn($data) );
+    Mail::to("stmp@bytebitestudio.com")->send( new FloemaEn($data) );
+  }
+
 
   public function en_faq()
   {
@@ -166,7 +181,7 @@ class PagesController extends Controller
 
   public function en_nido()
   {
-    $casa = HouseModel::where('name', 'Nido')->first();
+    $casa = (object) ['price' => 150000, 'name' => 'nido'];
     $accesorios = Accesory::all()->toArray();
 
     return view('en.nido', [
@@ -177,7 +192,7 @@ class PagesController extends Controller
 
   public function en_raiz()
   {
-    $casa = HouseModel::where('name', 'Raiz')->first();
+    $casa = (object) ['price' => 150000, 'name' => 'raiz'];
     $accesorios = Accesory::all()->toArray();
 
     return view('en.raiz', [
@@ -188,7 +203,7 @@ class PagesController extends Controller
 
   public function en_savia()
   {
-    $casa = HouseModel::where('name', 'Sabia')->first();
+    $casa = (object) ['price' => 150000, 'name' => 'savia'];
     $accesorios = Accesory::all()->toArray();
 
     return view('en.savia', [
@@ -199,7 +214,7 @@ class PagesController extends Controller
 
   public function en_copa()
   {
-    $casa = HouseModel::where('name', 'Copa')->first();
+    $casa = (object) ['price' => 150000, 'name' => 'copa'];
     $accesorios = Accesory::all()->toArray();
 
     return view('en.copa', [
@@ -210,7 +225,7 @@ class PagesController extends Controller
 
   public function en_ebano()
   {
-    $casa = HouseModel::where('name', 'Ebano')->first();
+    $casa = (object) ['price' => 150000, 'name' => 'ebano'];
     $accesorios = Accesory::all()->toArray();
 
     return view('en.ebano', [

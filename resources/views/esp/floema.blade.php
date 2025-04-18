@@ -160,55 +160,53 @@
                             class="bx bx-right-arrow-alt"></i></a>
                 </div>
                 <div class="flex justify-center">
-                    <form x-data="{ formStep: 0 }" class="align-center flex w-full max-w-4xl flex-col gap-6">
+                    <form x-data="{ formStep: 0 }" class="align-center flex w-full max-w-4xl flex-col gap-6" action="{{route("floema_form_esp")}}" method="POST">
+                        @csrf
                         <div x-show="formStep == 0" x-transition class="flex flex-col gap-6">
                             <h1 class="text-highlight text-4xl font-bold">Cotiza tus Productos</h1>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="name">Nombre</label>
                                 <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="name" placeholder="Ingresa tu Nombre Completo" />
+                                    type="text" id="name" name="name" placeholder="Ingresa tu Nombre Completo" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="mail">Correo</label>
                                 <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="mail" placeholder="Ingresa tu Correo Electrónico" />
+                                    type="text" id="mail" name="mail" placeholder="Ingresa tu Correo Electrónico" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="phone">Teléfono</label>
                                 <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="phone" placeholder="Ingresa tu Número de Teléfono" />
+                                    type="text" id="phone" name="phone" placeholder="Ingresa tu Número de Teléfono" />
                             </fieldset>
                             <div class="my-2 border-t border-gray-300"></div>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="materials">Materiales Por Cotizar</label>
                                 <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="materials"
-                                    placeholder="Selecciona los materiales que necesites" />
+                                    type="text" id="materials" name="materiales" placeholder="Selecciona los materiales que necesites" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="city">Ciudad de Entrega</label>
                                 <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="city"
-                                    placeholder="Ingresa la ciudad donde se realizará la entrega" />
+                                    type="text" name="city" id="city" placeholder="Ingresa la ciudad donde se realizará la entrega" />
                             </fieldset>
                             <div class="my-2 border-t border-gray-300"></div>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="subdivision">Fraccionamiento</label>
                                 <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="subdivision"
-                                    placeholder="Ingresa el fraccionamiento o colonia de entrega" />
+                                    type="text" name="subdivision" id="subdivision" placeholder="Ingresa el fraccionamiento o colonia de entrega" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="message">¿Cómo podemos ayudarte?</label>
                                 <textarea
                                     class="bg-secondary focus:ring-highlight text-tertiary resize-none appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="textarea" rows="5" id="message" placeholder="Cuéntanos como podemos ayudarte"></textarea>
+                                    type="textarea" rows="5" name="message" id="message" placeholder="Cuéntanos como podemos ayudarte"></textarea>
                             </fieldset>
                             <div class="mt-4 flex justify-end">
                                 <button x-on:click="formStep++" type="button"

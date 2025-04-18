@@ -13,10 +13,8 @@ Route::get('/corteza', [PagesController::class, 'corteza'])
 Route::get('/funciones', [PagesController::class, 'funciones'])
     ->name('funciones');
 
-
 Route::get('/historia', [PagesController::class, 'historia'])
     ->name('historia');
-
 
 Route::get('/tiny-houses', [PagesController::class, 'tinyHouses'])
     ->name('tiny-houses');
@@ -27,15 +25,14 @@ Route::get('/beneficios', [PagesController::class, 'beneficios'])
 Route::get('/polizas', [PagesController::class, 'polizas'])
     ->name('polizas');
 
-
 Route::get('/floema', [PagesController::class, 'floema'])
     ->name('floema');
 
+Route::post("/floema_form_esp", [PagesController::class, "floemaFormEsp"])
+    ->name("floema_form_esp");
 
 Route::get('/faq', [PagesController::class, 'faq'])
     ->name('faq');
-
-
 
 Route::get('/nido', [PagesController::class, 'nido'])
     ->name('nido');
@@ -84,7 +81,7 @@ Route::prefix('en')->group( function(){
 
     Route::get('/faq', [PagesController::class, 'en_faq'])
       ->name('en_faq');
-      
+
 
     Route::get('/nido', [PagesController::class, 'en_nido'])
         ->name('en_nido');
