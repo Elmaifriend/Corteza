@@ -22,7 +22,7 @@
     <!-- Navigation Begin-->
     <div class="my-4 flex w-full flex-col items-center">
         <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr_150px] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
-      <a class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a> 
+      <a class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a>
             <ul class="lg:translate-0 mdlg!bg-none bg-background text-secondary-highlight divide-secondary-highlight/10 absolute left-1/2 top-[120%] z-10 flex w-11/12 -translate-x-1/2 flex-col divide-y-2 divide-dashed rounded-2xl p-4 md:top-[150%] lg:static lg:!flex lg:w-full lg:flex-row lg:divide-none lg:p-0"
                 x-show="open" x-cloak="" x-transition="">
                 <li class="block py-3 lg:hidden">
@@ -73,7 +73,7 @@
         <div class="lg:col-span-8 overflow-hidden rounded-2xl">
             <div class="h-full bg-background flex flex-col gap-4 p-4 py-6 md:p-8 lg:overflow-y-auto">
                 <h1 class="font-title text-highlight text-4xl font-bold">Model {{ $casa->name }}</h1>
-    
+
                 <div x-data="modelGallery([
                     '{{ Vite::asset('resources/images/tiny-houses/raiz-01.jpg') }}',
                     '{{ Vite::asset('resources/images/tiny-houses/raiz-02.jpg') }}',
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="flex flex-col gap-8">
                     <div class="flex flex-col gap-4">
                         <div>
@@ -239,7 +239,7 @@
         <div class="overflow-hidden rounded-2xl lg:col-span-4">
             <div class="bg-background flex h-full flex-col p-4 md:px-8 md:py-6 lg:overflow-y-auto">
                 @livewire('cotizador', [
-                    'precioBase' => $casa->price,
+                    'precioBase' => $casa,
                     'accesorios' => $accesorios,
                     'lenguaje' => 'eng',
                 ])

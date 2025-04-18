@@ -5,19 +5,21 @@ namespace App\Livewire;
 use App\Mail\CotizacionMail;
 use Livewire\Component;
 use App\Models\Quote;
+use app\Models\HouseModel;
 use App\Mail\QuoteMail;
 use Illuminate\Support\Facades\Mail;
 use DateTime;
 
 class Cotizador extends Component
 {
-    public float $total = 0; // Total calculado
-    public float $precioBase; // Precio base de la casa
-    public array $accesorios = []; // Lista de accesorios
+    public float $total = 0;
+    public float $precioBase;
+    public array $accesorios = [];
     public array $accesoriosPorCategoria = [];
-    public array $accesoriosSeleccionados = []; // Accesorios seleccionados
+    public array $accesoriosSeleccionados = [];
     public string $lenguaje;
-    public $modeloBase;
+    public HouseModel $modeloBase;
+    public string $edicion;
 
     public string $nombre = '';
     public string $correo = '';
@@ -50,7 +52,7 @@ class Cotizador extends Component
 
     private function calcularTotal(): void
     {
-        $this->total = $this->precioBase;
+        $this->total = $this->econtrarPrecioEdicion($this->modeloBase, $this->edicion);
 
         foreach ($this->accesoriosSeleccionados as $accesorioId) {
             $accesorio = collect($this->accesorios)->firstWhere('id', $accesorioId);
@@ -106,8 +108,8 @@ class Cotizador extends Component
     }
 
     public function generarDescripcion(){
-
-        $descripcion = "Lista de accesorios\n";
+        $descripcion = $this->modeloBase->name . " - " . $this->edicion;
+        $descripcion .= "Lista de accesorios\n";
 
         foreach( $this->accesoriosSeleccionados as $accesorio ){
             foreach( $this->accesorios as $accesorioBase ){
@@ -136,6 +138,26 @@ class Cotizador extends Component
         } else if( $this->lenguaje == "eng"){
             Mail::to($quote->email)->send(new QuoteMail($quote));
         }
+    }
 
+    public function econtrarPrecioEdicion( HouseModel $modeloBase, string $edicion ){
+        switch( $edicion ){
+            case "Standar":
+                $precio = $modeloBase->estandar;
+                break;
+
+            case "Plus":
+                $precio = $modeloBase->plus;
+                break;
+
+            case "Delux";
+                $precio = $modeloBase->plus;
+                break;
+
+            default:
+                $precio = 0;
+                break;
+        }
+        return $precio;
     }
 }

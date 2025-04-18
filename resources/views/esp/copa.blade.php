@@ -243,7 +243,7 @@
         <div class="overflow-hidden rounded-2xl lg:col-span-4">
             <div class="bg-background flex h-full flex-col p-4 md:px-8 md:py-6 lg:overflow-y-auto">
                 @livewire('cotizador', [
-                    'precioBase' => $casa->price,
+                    'precioBase' => $casa,
                     'accesorios' => $accesorios,
                     'lenguaje' => 'esp',
                 ])

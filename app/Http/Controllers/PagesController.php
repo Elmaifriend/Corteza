@@ -70,7 +70,7 @@ class PagesController extends Controller
 
   public function raiz()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'raiz'];
+    $casa = HouseModel::where('name', 'Raiz')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.raiz', [
@@ -81,7 +81,7 @@ class PagesController extends Controller
 
   public function savia()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'savia'];
+    $casa = HouseModel::where('name', 'Savia')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.savia', [
@@ -92,7 +92,7 @@ class PagesController extends Controller
 
   public function copa()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'copa'];
+    $casa = HouseModel::where('name', 'Copa')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.copa', [
@@ -103,7 +103,7 @@ class PagesController extends Controller
 
   public function ebano()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'ebano'];
+    $casa = HouseModel::where('name', 'Ebano')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.ebano', [
@@ -166,7 +166,7 @@ class PagesController extends Controller
 
   public function en_nido()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'nido'];
+    $casa = HouseModel::where('name', 'Nido')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('en.nido', [
@@ -177,7 +177,7 @@ class PagesController extends Controller
 
   public function en_raiz()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'raiz'];
+    $casa = HouseModel::where('name', 'Raiz')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('en.raiz', [
@@ -188,7 +188,7 @@ class PagesController extends Controller
 
   public function en_savia()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'savia'];
+    $casa = HouseModel::where('name', 'Sabia')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('en.savia', [
@@ -199,7 +199,7 @@ class PagesController extends Controller
 
   public function en_copa()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'copa'];
+    $casa = HouseModel::where('name', 'Copa')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('en.copa', [
@@ -210,7 +210,7 @@ class PagesController extends Controller
 
   public function en_ebano()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'ebano'];
+    $casa = HouseModel::where('name', 'Ebano')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('en.ebano', [

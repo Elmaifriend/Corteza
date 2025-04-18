@@ -74,7 +74,7 @@
         <div class="lg:col-span-8 overflow-hidden rounded-2xl">
             <div class="h-full bg-background flex flex-col gap-4 p-4 py-6 md:p-8 lg:overflow-y-auto">
                 <h1 class="font-title text-highlight text-4xl font-bold">Modelo {{ $casa->name }}</h1>
-    
+
                 <div x-data="modelGallery([
                     '{{ Vite::asset('resources/images/tiny-houses/raiz-01.jpg') }}',
                     '{{ Vite::asset('resources/images/tiny-houses/raiz-02.jpg') }}',
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="flex flex-col gap-8">
                     <div class="flex flex-col gap-4">
                         <div>
@@ -240,7 +240,7 @@
         <div class="overflow-hidden rounded-2xl lg:col-span-4">
             <div class="bg-background flex h-full flex-col p-4 md:px-8 md:py-6 lg:overflow-y-auto">
                 @livewire('cotizador', [
-                    'precioBase' => $casa->price,
+                    'precioBase' => $casa,
                     'accesorios' => $accesorios,
                     'lenguaje' => 'esp',
                 ])
