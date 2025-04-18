@@ -150,25 +150,44 @@
               <div class="text-sm text-tertiary pt-2" x-show="open" x-cloak="" x-collapse="">Yes, with a certified guarantor.</div>
             </div>
             <h1 class="font-bold">Do you have any other questions? Contact us!</h1>
-            <form class="w-full flex flex-col align-center gap-4">
+            <form x-data="{ formStep: 0 }" class="w-full flex flex-col align-center gap-4">
+                <div x-show="formStep == 0" x-transition class="flex flex-col gap-6">
               <fieldset class="flex flex-col gap-1">
                 <label for="name">Name</label>
-                <input class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="name" placeholder="Enter your full name"/>
+                <input required class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="name" placeholder="Enter your full name"/>
               </fieldset>
               <fieldset class="flex flex-col gap-1">
                 <label for="mail">Email</label>
-                <input class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="mail" placeholder="Enter your email address"/>
+                <input required class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="mail" placeholder="Enter your email address"/>
               </fieldset>
               <fieldset class="flex flex-col gap-1">
                 <label for="phone">Phone (optional)</label>
-                <input class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="phone" placeholder="Enter your phone number"/>
+                <input required class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="phone" placeholder="Enter your phone number"/>
               </fieldset>
               <fieldset class="flex flex-col gap-1">
                 <label for="message">How can we help you?</label>
-                <textarea class="appearance-none resize-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="textarea" rows="5" name="message" placeholder="Tell us how we can help you"></textarea>
+                <textarea required class="appearance-none resize-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="textarea" rows="5" name="message" placeholder="Tell us how we can help you"></textarea>
               </fieldset>
-              <div class="flex justify-end"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-2xl font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="#">Contact Us</a>
+              <div class="flex justify-end">                                <button x-on:click="formStep++" type="button"
+                                    class="bg-highlight text-background hover:bg-dark-highlight/90 flex cursor-pointer select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-all ease-in sm:px-6 sm:text-lg">
+                                    Contact Us
+                                </button>
               </div>
+                          </div>
+                                                  <div x-show="formStep == 1" x-transition class="flex flex-col gap-6">
+                            <h1 class="text-highlight text-4xl font-bold">Thank You for Submitting Your Application</h1>
+                            <p>Within the next 48 hours one of our
+                                operators
+                                will contact you to schedule an appointment, if they don't contact you please
+                                communicate directly to our email: <span
+                                    class="text-highlight font-bold">cortezacym@gmail.com</span></p>
+                            <div class="mt-4 flex justify-end">
+                                <button x-on:click="formStep--" type="button"
+                                    class="bg-highlight text-background hover:bg-dark-highlight/90 flex cursor-pointer select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-all ease-in sm:px-6 sm:text-lg">
+                                    Accept
+                                </button>
+                            </div>
+                        </div>
             </form>
           </div>
         </div>
