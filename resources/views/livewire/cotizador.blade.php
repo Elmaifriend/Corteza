@@ -22,7 +22,7 @@
                                 <i class="bx bx-check bx-xs group-peer-checked:!block !hidden"></i>
                             </div>
                         </div>
-                        <span class="select-none font-bold">Estandar</span>
+                        <span class="select-none font-bold">Standard</span>
                     </div>
                     <span class="select-none">
                         ${{ number_format($modeloBase->estandar, 2) }}
@@ -60,7 +60,7 @@
                                 <i class="bx bx-check bx-xs group-peer-checked:!block !hidden"></i>
                             </div>
                         </div>
-                        <span class="select-none font-bold">Delux</span>
+                        <span class="select-none font-bold">Deluxe</span>
                     </div>
                     <span class="select-none">
                         ${{ number_format($modeloBase->delux, 2) }}
@@ -146,7 +146,7 @@
         <div class="fixed left-1/2 top-1/2 w-fit -translate-x-1/2 -translate-y-1/2">
             <div class="overflow-hidden rounded-2xl">
                 <form wire:submit.prevent="guardarCotizacion" x-data="{ formStep: 0 }"
-                    class="bg-background container h-full max-h-[90vh] w-full overflow-y-auto rounded-2xl px-6 py-8 lg:px-16">
+                    class="bg-background container h-full min-w-[280px] max-h-[90vh] w-full overflow-y-auto rounded-2xl px-6 py-8 lg:px-16">
                     <div x-show="formStep == 0" x-transition class="flex flex-col gap-6">
                         <h1 class="text-highlight text-4xl font-bold">
                             @if ($lenguaje == 'esp')

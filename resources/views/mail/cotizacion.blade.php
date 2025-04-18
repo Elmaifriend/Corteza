@@ -9,6 +9,4 @@
 <b>Hora preferida de contacto: </b> Fecha: {{$quote->scheduled->format('d-m-y') }} Hora: {{$quote->scheduled->format('H:i') }} <br>
 <h2>Tu Cotización:</h2> <br>
 <b>Modelo: </b> {{$quote->model}} <br>
-<pre>
-    {{htmlspecialchars($quote->description)}}
-<pre>
+<pre>{{htmlspecialchars($quote->description)}}<pre>
