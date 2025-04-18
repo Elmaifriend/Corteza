@@ -21,13 +21,12 @@
     class="bg-secondary grid grid-cols-1 justify-items-center lg:fixed lg:inset-0 lg:h-screen lg:grid-rows-[94px_calc(100dvh_-_84px)] lg:overflow-hidden">
     <!-- Navigation Begin-->
     <div class="my-4 flex w-full flex-col items-center">
-        <nav class="bg-background container relative z-10 col-span-12 flex w-full select-none flex-row items-center justify-between rounded-2xl p-4 lg:grid lg:grid-cols-[150px_1fr]"
-            x-data="{ open: false }" x-on:click.outside="open = false">
-            <h1 class="font-title text-highlight hidden justify-self-start text-4xl font-bold lg:block">Corteza</h1>
+        <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr_150px] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
+      <a class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a> 
             <ul class="lg:translate-0 mdlg!bg-none bg-background text-secondary-highlight divide-secondary-highlight/10 absolute left-1/2 top-[120%] z-10 flex w-11/12 -translate-x-1/2 flex-col divide-y-2 divide-dashed rounded-2xl p-4 md:top-[150%] lg:static lg:!flex lg:w-full lg:flex-row lg:divide-none lg:p-0"
                 x-show="open" x-cloak="" x-transition="">
                 <li class="block py-3 lg:hidden">
-                    <h1 class="font-title text-highlight text-4xl font-bold">Corteza</h1>
+            <a class="font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a>
                 </li>
                 <div class="w-full items-center justify-center gap-8 lg:flex">
                     <li class="group relative py-3 lg:p-0" x-data="{ open: false }" x-on:click="open = !open"
@@ -61,6 +60,8 @@
                     <li class="py-3"><a href="{{ route('en_faq') }}">FAQ</a></li>
                 </div>
             </ul>
+        <div class="justify-self-end"><a href="{{ route('inicio') }}">ES</a>
+        </div>
             <button
                 class="bx bx-menu bx-md hover:text-foreground/60 cursor-pointer transition-colors ease-in lg:!hidden"
                 x-on:click="open = !open"></button>
