@@ -53,7 +53,7 @@
       <div class="h-dvh container snap-center snap-always shrink-0">
         <!-- Hero Image Begin-->
         <div class="w-full h-full p-0 md:py-6 bg-background">
-          <div class="w-full h-full text-background relative sm:rounded-3xl bg-hero sm:bg-left bg-center bg-cover">
+          <div class="py-2 w-full h-full text-background relative sm:rounded-3xl bg-hero sm:bg-left bg-center bg-cover">
             <div class="flex flex-col px-6 md:px-8 py-10 sm:rounded-3xl gap-4 justify-center items-center sm:items-start sm:pl-4 sm:text-left text-center w-full h-full transition-all">
               <h1 class="sm:text-8xl text-4xl font-title font-bold"></h1>
               <p class="sm:text-lg text-sm px-2 text-secondary text-center"></p><span class="relative inline-block before:absolute before:left-0 before:-top-3 before:h-2 before:w-1/2 before:block before:-skew-y-12 before:bg-background after:absolute after:left-1/2 after:-top-3 after:h-2 after:w-1/2 after:block after:skew-y-12 after:bg-background">
@@ -68,8 +68,8 @@
         <!-- Hero Image End-->
       </div>
       <!-- Models Begin-->
-      <div id="nido" class="h-dvh container snap-center snap-always shrink-0">
-        <div class="py-6 h-full">
+      <div id="nido" class="h-screen container snap-center snap-always shrink-0">
+        <div class="p-2 h-full">
           <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-nido bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
               <div class="flex flex-col gap-4 items-center mt-auto">
@@ -87,8 +87,8 @@
           </div>
         </div>
       </div>
-      <div class="h-dvh container snap-center snap-always shrink-0">
-        <div class="py-6 h-full">
+      <div class="h-screen container snap-center snap-always shrink-0">
+        <div class="p-2 h-full">
           <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-raiz bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
               <div class="flex flex-col gap-4 items-center mt-auto">
@@ -106,8 +106,8 @@
           </div>
         </div>
       </div>
-      <div class="h-dvh container snap-center snap-always shrink-0">
-        <div class="py-6 h-full">
+      <div class="h-screen container snap-center snap-always shrink-0">
+        <div class="p-2 h-full">
           <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-savia bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
               <div class="flex flex-col gap-4 items-center mt-auto">
@@ -125,8 +125,8 @@
           </div>
         </div>
       </div>
-      <div class="h-dvh container snap-center snap-always shrink-0">
-        <div class="py-6 h-full">
+      <div class="h-screen container snap-center snap-always shrink-0">
+        <div class="p-2 h-full">
           <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-copa bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
               <div class="flex flex-col gap-4 items-center mt-auto">
@@ -144,8 +144,8 @@
           </div>
         </div>
       </div>
-      <div class="h-dvh container snap-center snap-always shrink-0">
-        <div class="py-6 h-full">
+      <div class="h-screen container snap-center snap-always shrink-0">
+        <div class="p-2 h-full">
           <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-ebano bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
               <div class="flex flex-col gap-4 items-center mt-auto">

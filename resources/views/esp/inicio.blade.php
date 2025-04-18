@@ -15,7 +15,7 @@
     <title>Inicio</title>
   </head>
   <body class="flex flex-col items-center">
-    <div class="h-dvh container grid grid-rows-[auto_1fr]">
+    <div class="min-h-dvh container grid grid-rows-[auto_1fr]">
       <!-- Navigation Begin-->
       <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr_150px] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
         <a class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight" href="{{ route('inicio') }}">Corteza</a>
@@ -50,7 +50,7 @@
       </nav>
       <!-- Navigation End-->
       <!-- Hero Image Begin-->
-      <div class="w-full h-full p-0 md:py-6 bg-background">
+      <div class="min-h-[600px] w-full h-full p-0 md:py-6 bg-background">
         <div class="w-full h-full text-background relative sm:rounded-3xl bg-hero bg-center bg-cover">
           <div class="flex flex-col px-6 md:px-8 py-10 sm:rounded-3xl gap-4 justify-center items-center text-center w-full h-full transition-all" x-data="{ isHovered: false }" x-bind:class="{ 'backdrop-blur-md bg-foreground/20' : isHovered }">
             <h1 class="sm:text-8xl text-4xl font-title font-bold"></h1>
