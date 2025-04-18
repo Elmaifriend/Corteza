@@ -53,6 +53,7 @@
                                 x-bind:class="{ 'transform rotate-180': open }"></i></div>
                         <ul class="lg:!bg-background divide-secondary-highlight/10 left-0 top-full mt-2 w-full divide-y-2 divide-dashed pl-4 lg:absolute lg:m-0 lg:w-max lg:rounded-2xl lg:p-4"
                             x-show="open" x-cloak="" x-collapse="">
+                            <li class="py-3"><a href="{{ route('tiny-houses') }}">Modelos</a></li>
                             <li class="py-3"><a href="{{ route('beneficios') }}">Beneficios</a></li>
                             <li class="py-3"><a href="{{ route('polizas') }}">Polizas</a></li>
                         </ul>
