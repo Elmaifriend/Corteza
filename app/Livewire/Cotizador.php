@@ -8,7 +8,7 @@ use App\Models\Quote;
 use app\Models\HouseModel;
 use App\Mail\QuoteMail;
 use Illuminate\Support\Facades\Mail;
-use DateTime;
+use Carbon\Carbon;
 
 class Cotizador extends Component
 {
@@ -28,12 +28,12 @@ class Cotizador extends Component
     public string $ciudad = '';
     public string $fraccionamiento = '';
     public string $notas = '';
-    public DateTime $horaDeContacto;
+    public Carbon $horaDeContacto;
     public bool $readTermsAndConditions = false;
 
     public function mount($modeloBase, array $accesorios, string $lenguaje): void
     {
-        $this->horaDeContacto = new DateTime( "now" );
+        $this->horaDeContacto = Carbon::now();
         $this->modeloBase = $modeloBase;
         $this->precioBase = $modeloBase->estandar;
         $this->accesorios = $accesorios;
@@ -139,11 +139,14 @@ class Cotizador extends Component
 
     public function sendMail( $quote ){
         if( $this->lenguaje == "esp"){
-            Mail::to($quote->email)->send(new CotizacionMail($quote))
-                ->cc(env("MAIL_TO"));
+            Mail::to($quote->email)
+                ->cc(env("MAIL_TO"))
+                ->send(new CotizacionMail($quote));
+
         } else if( $this->lenguaje == "eng"){
-            Mail::to($quote->email)->send(new QuoteMail($quote))
-                ->cc(env("MAIL_TO"));
+            Mail::to($quote->email)
+                ->cc(env("MAIL_TO"))
+                ->send(new QuoteMail($quote));
         }
     }
 
