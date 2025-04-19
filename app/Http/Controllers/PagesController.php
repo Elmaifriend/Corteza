@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\FloemaEsp;
-use App\Mail\floemaEn;
+use App\Mail\enFAQ;
+use App\Mail\espFAQ;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Accesory;
 use App\Models\HouseModel;
-use Illuminate\Support\Facades\Mail;
+use App\Mail\FloemaEsp;
+use App\Mail\FloemaEn;
+use GuzzleHttp\Psr7\Request;
 
 class PagesController extends Controller
 {
@@ -55,14 +58,20 @@ class PagesController extends Controller
 
   public function floemaFormEsp(){
     $data = request()->all();
-    //Mail::to("cortezacym@gmail.com")->send( new FloemaEsp($data));
-    Mail::to("stmp@bytebitestudio.com")->send( new FloemaEsp($data) );
+    Mail::to(env("MAIL_TO"))->send( new FloemaEsp($data) );
+    return redirect()->route("floema");
   }
 
 
   public function faq()
   {
     return view('esp.faq');
+  }
+
+  public function faqFormEsp(){
+    $data = Request()->all();
+    Mail::to(env("MAIL_TO"))->send( new espFAQ($data) );
+    return redirect()->route("inicio");
   }
 
 
@@ -79,7 +88,7 @@ class PagesController extends Controller
 
   public function raiz()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'raiz'];
+    $casa = HouseModel::where('name', 'Raiz')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.raiz', [
@@ -90,7 +99,7 @@ class PagesController extends Controller
 
   public function savia()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'savia'];
+    $casa = HouseModel::where('name', 'Savia')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.savia', [
@@ -101,7 +110,7 @@ class PagesController extends Controller
 
   public function copa()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'copa'];
+    $casa = HouseModel::where('name', 'Copa')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.copa', [
@@ -112,7 +121,7 @@ class PagesController extends Controller
 
   public function ebano()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'ebano'];
+    $casa = HouseModel::where('name', 'Ebano')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('esp.ebano', [
@@ -168,8 +177,8 @@ class PagesController extends Controller
 
   public function floemaFormEn(){
     $data = request()->all();
-    //Mail::to("cortezacym@gmail.com")->send( new FloemaEn($data) );
-    Mail::to("stmp@bytebitestudio.com")->send( new FloemaEn($data) );
+    Mail::to(env("MAIL_TO"))->send( new FloemaEn($data) );
+    return redirect()->route("inicio");
   }
 
 
@@ -178,10 +187,16 @@ class PagesController extends Controller
     return view('en.faq');
   }
 
+  public function faqFormEn(){
+    $data = Request()->all();
+    Mail::to(env("MAIL_TO"))->send( new enFAQ($data) );
+    return redirect()->route("inicio");
+  }
+
 
   public function en_nido()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'nido'];
+    $casa = HouseModel::where('name', 'Nido')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('en.nido', [
@@ -192,7 +207,7 @@ class PagesController extends Controller
 
   public function en_raiz()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'raiz'];
+    $casa = HouseModel::where('name', 'Raiz')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('en.raiz', [
@@ -203,7 +218,7 @@ class PagesController extends Controller
 
   public function en_savia()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'savia'];
+    $casa = HouseModel::where('name', 'Sabia')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('en.savia', [
@@ -214,7 +229,7 @@ class PagesController extends Controller
 
   public function en_copa()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'copa'];
+    $casa = HouseModel::where('name', 'Copa')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('en.copa', [
@@ -225,7 +240,7 @@ class PagesController extends Controller
 
   public function en_ebano()
   {
-    $casa = (object) ['price' => 150000, 'name' => 'ebano'];
+    $casa = HouseModel::where('name', 'Ebano')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('en.ebano', [

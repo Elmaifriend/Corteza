@@ -15,7 +15,7 @@ class FloemaEsp extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private $data;
+    public $data;
 
     public function __construct($data)
     {
@@ -28,7 +28,7 @@ class FloemaEsp extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: "Floema - Formulario de contacto",
+            subject: "Nuevo solicitud para materiales del formulario de Floema - CortezaMex.com",
         );
     }
 

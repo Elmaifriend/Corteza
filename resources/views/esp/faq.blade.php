@@ -151,6 +151,8 @@
             </div>
             <h1 class="font-bold">¿Tienes alguna otra pregunta? Contactanos!</h1>
             <form x-data="{ formStep: 0 }" class="w-full flex flex-col align-center gap-4">
+                @csrf
+                <input type="hidden" name="language" value="Español">
                 <div x-show="formStep == 0" x-transition class="flex flex-col gap-6">
                     <fieldset class="flex flex-col gap-1">
                         <label for="name">Nombre</label>

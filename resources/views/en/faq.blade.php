@@ -18,7 +18,7 @@
     <div class="h-dvh container grid grid-rows-[80px_1fr]">
       <!-- Navigation Begin-->
       <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[160px_1fr_160px] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
-      <a class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a> 
+      <a class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a>
         <ul class="lg:w-full w-11/12 lg:p-0 p-4 lg:!flex flex lg:flex-row flex-col lg:static absolute md:top-[150%] top-[120%] left-1/2 lg:translate-0 -translate-x-1/2 z-10 rounded-2xl mdlg!bg-none bg-background text-secondary-highlight lg:divide-none divide-y-2 divide-dashed divide-secondary-highlight/10" x-show="open" x-cloak="" x-transition="">
           <li class="block lg:hidden py-3">
             <a class="font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a>
@@ -150,8 +150,10 @@
               <div class="text-sm text-tertiary pt-2" x-show="open" x-cloak="" x-collapse="">Yes, with a certified guarantor.</div>
             </div>
             <h1 class="font-bold">Do you have any other questions? Contact us!</h1>
-            <form x-data="{ formStep: 0 }" class="w-full flex flex-col align-center gap-4">
+            <form x-data="{ formStep: 0 }" class="w-full flex flex-col align-center gap-4" action="{{ route("faq.form.en")}}" method="POST">
                 <div x-show="formStep == 0" x-transition class="flex flex-col gap-6">
+                    @csrf
+                    <input type="hidden" name="language" value="English">
               <fieldset class="flex flex-col gap-1">
                 <label for="name">Name</label>
                 <input required class="appearance-none bg-secondary rounded-2xl text-sm p-4 focus:outline-none focus:ring-2 focus:ring-highlight text-tertiary" type="text" name="name" placeholder="Enter your full name"/>
@@ -182,7 +184,7 @@
                                 communicate directly to our email: <span
                                     class="text-highlight font-bold">cortezacym@gmail.com</span></p>
                             <div class="mt-4 flex justify-end">
-                                <button x-on:click="formStep--" type="button"
+                                <button x-on:click="formStep--" type="submit"
                                     class="bg-highlight text-background hover:bg-dark-highlight/90 flex cursor-pointer select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-all ease-in sm:px-6 sm:text-lg">
                                     Accept
                                 </button>

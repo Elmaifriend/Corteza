@@ -28,11 +28,14 @@ Route::get('/polizas', [PagesController::class, 'polizas'])
 Route::get('/floema', [PagesController::class, 'floema'])
     ->name('floema');
 
-Route::post("/floema_form_esp", [PagesController::class, "floemaFormEsp"])
+Route::post("/floema/form/esp", [PagesController::class, "floemaFormEsp"])
     ->name("floema_form_esp");
 
 Route::get('/faq', [PagesController::class, 'faq'])
     ->name('faq');
+
+Route::get('/faq/form/esp', [PagesController::class, 'faqFormEsp'])
+    ->name('faq.form.esp');
 
 Route::get('/nido', [PagesController::class, 'nido'])
     ->name('nido');
@@ -78,10 +81,14 @@ Route::prefix('en')->group( function(){
     Route::get('/floema', [PagesController::class, 'en_floema'])
       ->name('en_floema');
 
+    Route::post("/floema/form", [PagesController::class, "floemaFormEn"])
+        ->name("floema_form_en");
 
     Route::get('/faq', [PagesController::class, 'en_faq'])
       ->name('en_faq');
 
+    Route::post('/faq/form', [PagesController::class, 'faqFormEn'])
+      ->name('faq.form.en');
 
     Route::get('/nido', [PagesController::class, 'en_nido'])
         ->name('en_nido');

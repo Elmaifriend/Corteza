@@ -22,7 +22,7 @@
         <!-- Navigation Begin-->
         <nav class="container relative z-10 flex w-full select-none flex-row items-center justify-between p-4 lg:grid lg:grid-cols-[160px_1fr_160px]"
             x-data="{ open: false }" x-on:click.outside="open = false">
-      <a class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a> 
+      <a class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a>
             <ul class="lg:translate-0 mdlg!bg-none bg-background text-secondary-highlight divide-secondary-highlight/10 absolute left-1/2 top-[120%] z-10 flex w-11/12 -translate-x-1/2 flex-col divide-y-2 divide-dashed rounded-2xl p-4 md:top-[150%] lg:static lg:!flex lg:w-full lg:flex-row lg:divide-none lg:p-0"
                 x-show="open" x-cloak="" x-transition="">
                 <li class="block py-3 lg:hidden">
@@ -154,40 +154,42 @@
                             class="bx bx-right-arrow-alt"></i></a>
                 </div>
                 <div class="flex justify-center">
-                    <form x-data="{ formStep: 0 }" class="align-center flex w-full max-w-4xl flex-col gap-6">
+                    <form x-data="{ formStep: 0 }" class="align-center flex w-full max-w-4xl flex-col gap-6" action="{{ route("floema_form_en") }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="language" value="English">
                         <div x-show="formStep == 0" x-transition class="flex flex-col gap-6">
                             <h1 class="text-highlight text-4xl font-bold">Get a Quote for Your Products</h1>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="name">Name</label>
-                                <input required 
+                                <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="name" placeholder="Enter your Full Name" />
+                                    type="text" id="name" name="name" placeholder="Enter your Full Name" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="mail">Email</label>
                                 <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="mail" placeholder="Enter your Email Address" />
+                                    type="text" id="mail" name="mail" placeholder="Enter your Email Address" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="phone">Phone</label>
                                 <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="phone" placeholder="Enter your Phone Number" />
+                                    type="text" id="phone" name="phone" placeholder="Enter your Phone Number" />
                             </fieldset>
                             <div class="my-2 border-t border-gray-300"></div>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="materials">Materials to Quote</label>
                                 <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="materials"
+                                    type="text" id="materials" name="materiales"
                                     placeholder="Select the materials you need" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="city">Delivery City</label>
                                 <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="city"
+                                    type="text" id="city" name="city"
                                     placeholder="Enter the city where delivery will be made" />
                             </fieldset>
                             <div class="my-2 border-t border-gray-300"></div>
@@ -195,14 +197,14 @@
                                 <label for="subdivision">Subdivision</label>
                                 <input required
                                     class="bg-secondary focus:ring-highlight text-tertiary appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="text" id="subdivision"
+                                    type="text" id="subdivision" name="subdivision"
                                     placeholder="Enter the subdivision or neighborhood for delivery" />
                             </fieldset>
                             <fieldset class="flex flex-col gap-1">
                                 <label for="message">How can we help you?</label>
                                 <textarea
                                     class="bg-secondary focus:ring-highlight text-tertiary resize-none appearance-none rounded-2xl p-4 text-sm focus:outline-none focus:ring-2"
-                                    type="textarea" rows="5" id="message" placeholder="Tell us how we can help you"></textarea>
+                                    type="textarea" rows="5" id="message" name="message" placeholder="Tell us how we can help you"></textarea>
                             </fieldset>
                             <div class="mt-4 flex justify-end">
                                 <button x-on:click="formStep++" type="button"
@@ -219,7 +221,7 @@
                                 communicate directly to our email: <span
                                     class="text-highlight font-bold">cortezacym@gmail.com</span></p>
                             <div class="mt-4 flex justify-end">
-                                <button x-on:click="formStep--" type="button"
+                                <button x-on:click="formStep--" type="submit"
                                     class="bg-highlight text-background hover:bg-dark-highlight/90 flex cursor-pointer select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-all ease-in sm:px-6 sm:text-lg">
                                     Accept
                                 </button>

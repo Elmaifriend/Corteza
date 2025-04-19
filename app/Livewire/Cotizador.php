@@ -139,9 +139,11 @@ class Cotizador extends Component
 
     public function sendMail( $quote ){
         if( $this->lenguaje == "esp"){
-            Mail::to($quote->email)->send(new CotizacionMail($quote));
+            Mail::to($quote->email)->send(new CotizacionMail($quote))
+                ->cc(env("MAIL_TO"));
         } else if( $this->lenguaje == "eng"){
-            Mail::to($quote->email)->send(new QuoteMail($quote));
+            Mail::to($quote->email)->send(new QuoteMail($quote))
+                ->cc(env("MAIL_TO"));
         }
     }
 

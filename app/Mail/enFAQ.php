@@ -3,22 +3,21 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class QuoteMail extends Mailable
+class enFAQ extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $quote;
-    /**
-     * Create a new message instance.
-     */
-    public function __construct($quote)
+    public $data;
+
+    public function __construct( $data )
     {
-        $this->quote = $quote;
+        $this->data = $data;
     }
 
     /**
@@ -27,7 +26,7 @@ class QuoteMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Tiny House Quote' . " - " . $this->quote->model . " - " . $this->quote->name,
+            subject: 'New contact request from "Frequently Asked Questions" – CortezaMex.com',
         );
     }
 
@@ -37,7 +36,7 @@ class QuoteMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.quote',
+            view: "mail.faqEn",
         );
     }
 

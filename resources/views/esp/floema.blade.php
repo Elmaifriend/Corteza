@@ -162,6 +162,7 @@
                 <div class="flex justify-center">
                     <form x-data="{ formStep: 0 }" class="align-center flex w-full max-w-4xl flex-col gap-6" action="{{route("floema_form_esp")}}" method="POST">
                         @csrf
+                        <input type="hidden" name="language" value="Español">
                         <div x-show="formStep == 0" x-transition class="flex flex-col gap-6">
                             <h1 class="text-highlight text-4xl font-bold">Cotiza tus Productos</h1>
                             <fieldset class="flex flex-col gap-1">
@@ -223,7 +224,7 @@
                                 favor cominicate directamente a nuestro correo: <span
                                     class="text-highlight font-bold">cortezacym@gmail.com</span></p>
                             <div class="mt-4 flex justify-end">
-                                <button x-on:click="formStep--" type="button"
+                                <button x-on:click="formStep--" type="submit"
                                     class="bg-highlight text-background hover:bg-dark-highlight/90 flex cursor-pointer select-none items-center justify-center gap-1 rounded-2xl px-4 py-3 text-center font-bold transition-all ease-in sm:px-6 sm:text-lg">
                                     Aceptar
                                 </button>
