@@ -73,16 +73,16 @@
         <div class="p-2 h-full">
           <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-nido bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
-              <div class="flex flex-col gap-4 items-center mt-auto">
+              <div class="flex flex-col gap-4 items-center my-auto">
                 <p class="text-foreground-secondary">4x8 meters</p>
                 <div class="flex flex-col gap-2 items-center">
                   <div class="flex gap-2 text-7xl">
                     <h2 class="text-background font-bold">Nido</h2><i class="bx bxs-leaf text-highlight"></i>
                   </div>
                   <p class="text-secondary">Your warm and cozy refuge</p>
+              <div class="mt-2"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_nido') }}">Get Quote</a>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_nido') }}">Get Quote</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -92,16 +92,16 @@
         <div class="p-2 h-full">
           <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-raiz bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
-              <div class="flex flex-col gap-4 items-center mt-auto">
+              <div class="flex flex-col gap-4 items-center my-auto">
                 <p class="text-foreground-secondary">5x6 meters</p>
                 <div class="flex flex-col gap-2 items-center">
                   <div class="flex gap-2 text-7xl">
                     <h2 class="text-background font-bold">Raiz</h2><i class="bx bxs-leaf text-highlight"></i>
                   </div>
                   <p class="text-secondary">The essence of simple and functional</p>
+              <div class="mt-2"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_raiz') }}">Get Quote</a>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_raiz') }}">Get Quote</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -111,16 +111,16 @@
         <div class="p-2 h-full">
           <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-savia bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
-              <div class="flex flex-col gap-4 items-center mt-auto">
+              <div class="flex flex-col gap-4 items-center my-auto">
                 <p class="text-foreground-secondary">3x12 meters</p>
                 <div class="flex flex-col gap-2 items-center">
                   <div class="flex gap-2 text-7xl">
                     <h2 class="text-background font-bold">Savia</h2><i class="bx bxs-leaf text-highlight"></i>
                   </div>
                   <p class="text-secondary">Modern and harmonious design</p>
+              <div class="mt-2"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_savia') }}">Get Quote</a>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_savia') }}">Get Quote</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -130,16 +130,16 @@
         <div class="p-2 h-full">
           <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-copa bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
-              <div class="flex flex-col gap-4 items-center mt-auto">
+              <div class="flex flex-col gap-4 items-center my-auto">
                 <p class="text-foreground-secondary">6x6 meters</p>
                 <div class="flex flex-col gap-2 items-center">
                   <div class="flex gap-2 text-7xl">
                     <h2 class="text-background font-bold">Copa</h2><i class="bx bxs-leaf text-highlight"></i>
                   </div>
                   <p class="text-secondary">Elegance and spaciousness in every detail</p>
+              <div class="mt-2"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_copa') }}">Get Quote</a>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_copa') }}">Get Quote</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
@@ -149,16 +149,16 @@
         <div class="p-2 h-full">
           <div class="container w-full h-full rounded-2xl sm:p-14 pb-6 p-4 mb-4 bg-model-ebano bg-cover bg-center">
             <div class="relative w-full h-full flex flex-col gap-2 items-center justify-center">
-              <div class="flex flex-col gap-4 items-center mt-auto">
+              <div class="flex flex-col gap-4 items-center my-auto">
                 <p class="text-foreground-secondary">6x6 meters</p>
                 <div class="flex flex-col gap-2 items-center">
                   <div class="flex gap-2 text-7xl">
                     <h2 class="text-background font-bold">Ébano</h2><i class="bx bxs-leaf text-highlight"></i>
                   </div>
                   <p class="text-secondary">The epitome of luxury and exclusivity</p>
+              <div class="mt-2"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_ebano') }}">Get Quote</a>
                 </div>
               </div>
-              <div class="mt-auto"><a class="flex gap-1 items-center justify-center sm:px-6 px-4 py-3 bg-highlight rounded-full font-bold text-background sm:text-lg text-center select-none hover:bg-dark-highlight/90 transition-colors ease-in" href="{{ route('en_ebano') }}">Get Quote</a>
               </div><img class="absolute sm:top-full sm:-translate-y-full top-0 right-0 sm:max-w-32 max-w-28 opacity-70" src="{{ Vite::asset('resources/images/tiny-white.png') }}" alt="Tiny Logo"/>
             </div>
           </div>
