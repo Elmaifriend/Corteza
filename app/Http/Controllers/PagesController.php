@@ -9,7 +9,7 @@ use App\Models\Accesory;
 use App\Models\HouseModel;
 use App\Mail\FloemaEsp;
 use App\Mail\FloemaEn;
-use GuzzleHttp\Psr7\Request;
+
 
 class PagesController extends Controller
 {
@@ -218,7 +218,7 @@ class PagesController extends Controller
 
   public function en_savia()
   {
-    $casa = HouseModel::where('name', 'Sabia')->first();
+    $casa = HouseModel::where('name', 'Savia')->first();
     $accesorios = Accesory::all()->toArray();
 
     return view('en.savia', [

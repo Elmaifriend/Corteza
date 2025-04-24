@@ -33,9 +33,8 @@ class HouseModelsResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('nombre'),
-
-                TextInput::make('name'),
+                TextInput::make('name')
+                    ->label("Nombre"),
 
                 TextInput::make('estandar')
                     ->label("Estandar (USD)")

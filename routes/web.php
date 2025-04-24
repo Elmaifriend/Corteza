@@ -96,7 +96,7 @@ Route::prefix('en')->group( function(){
     Route::get('/raiz', [PagesController::class, 'en_raiz'])
         ->name('en_raiz');
 
-    Route::get('/savia', [PagesController::class, 'en_sabia'])
+    Route::get('/savia', [PagesController::class, 'en_savia'])
         ->name('en_savia');
 
     Route::get('/copa', [PagesController::class, 'en_copa'])
