@@ -21,7 +21,7 @@
     class="bg-secondary grid grid-cols-1 justify-items-center lg:fixed lg:inset-0 lg:h-screen lg:grid-rows-[94px_calc(100dvh_-_84px)] lg:overflow-hidden">
     <!-- Navigation Begin-->
     <div class="my-4 flex w-full flex-col items-center">
-        <nav class="relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr_150px] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
+        <nav class="bg-background rounded-2xl relative w-full flex flex-row justify-between lg:grid lg:grid-cols-[150px_1fr_150px] container items-center p-4 select-none z-10" x-data="{ open: false }" x-on:click.outside="open = false">
       <a class="hidden lg:block justify-self-start font-title font-bold text-4xl text-highlight" href="{{ route('home') }}">Corteza</a>
             <ul class="lg:translate-0 mdlg!bg-none bg-background text-secondary-highlight divide-secondary-highlight/10 absolute left-1/2 top-[120%] z-10 flex w-11/12 -translate-x-1/2 flex-col divide-y-2 divide-dashed rounded-2xl p-4 md:top-[150%] lg:static lg:!flex lg:w-full lg:flex-row lg:divide-none lg:p-0"
                 x-show="open" x-cloak="" x-transition="">
