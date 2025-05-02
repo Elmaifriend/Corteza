@@ -186,7 +186,7 @@
                   <div class="flex flex-col gap-4 items-center">
                     <div class="flex gap-2 items-center"><i class="bx bx-envelope bx-sm"></i><span class="font-bold">cortezacym@gmail.com</span></div>
                     <p class="text-tertiary">We provide what's necessary to protect what's most important</p>
-                    <div class="flex gap-2 items-center"> <i class="bx bxl-facebook-circle bx-md hover:text-light-highlight transition-colors cursor-pointer"></i><i class="bx bxl-instagram-alt bx-md hover:text-light-highlight transition-colors cursor-pointer"></i><i class="bx bxl-whatsapp bx-md hover:text-light-highlight transition-colors cursor-pointer"></i></div>
+                    <div class="flex gap-2 items-center"> <a href="https://www.facebook.com/share/16LkuNhZP1/" class="bx bxl-facebook-circle bx-md hover:text-light-highlight transition-colors cursor-pointer"></a><a href="https://www.instagram.com/corteza.cym?igsh=dHg5NmExcmx6NjZs" class="bx bxl-instagram-alt bx-md hover:text-light-highlight transition-colors cursor-pointer"></a><a href="https://wa.me/526648522228" class="bx bxl-whatsapp bx-md hover:text-light-highlight transition-colors cursor-pointer"></a></div>
                   </div>
                 </div>
               </div>
