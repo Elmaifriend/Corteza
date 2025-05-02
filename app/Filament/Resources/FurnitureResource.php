@@ -31,7 +31,7 @@ class FurnitureResource extends Resource
                 TextInput::make('name'),
 
                 TextInput::make('price')
-                    ->lable("Precio ( USD )")
+                    ->label("Precio ( USD )")
                     ->numeric(),
             ]);
     }

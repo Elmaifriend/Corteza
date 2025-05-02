@@ -45,7 +45,7 @@ class HouseModelsResource extends Resource
                     ->numeric(),
 
                 TextInput::make('delux')
-                    ->label("Delux (USD)")
+                    ->label("Deluxe (USD)")
                     ->numeric(),
             ]);
     }
@@ -71,7 +71,7 @@ class HouseModelsResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make("delux")
-                    ->label("Delux (USD)")
+                    ->label("Deluxe (USD)")
                     ->numeric()
                     ->sortable()
                     ->searchable(),
