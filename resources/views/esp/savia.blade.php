@@ -149,7 +149,6 @@
                                 <span class="font-bold">Distribución:</span>
                                 <ul>
                                     <li>1 habitación</li>
-                                    <li>1 baño</li>
                                     <li>Cocina</li>
                                     <li>Sala</li>
                                 </ul>
@@ -184,6 +183,7 @@
                                     <li>1 baño</li>
                                     <li>Cocina</li>
                                     <li>Sala</li>
+                                    <li>Terraza con pérgola</li>
                                 </ul>
                             </div>
                             <div class="flex flex-col gap-2">

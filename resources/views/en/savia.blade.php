@@ -146,7 +146,6 @@
                                 <span class="font-bold">Layout:</span>
                                 <ul>
                                     <li>1 bedroom</li>
-                                    <li>1 bathroom</li>
                                     <li>Kitchen</li>
                                     <li>Living room</li>
                                 </ul>
@@ -181,6 +180,7 @@
                                     <li>1 bathroom</li>
                                     <li>Kitchen</li>
                                     <li>Living room</li>
+                                    <li>Terrace with pergola</li>
                                 </ul>
                             </div>
                             <div class="flex flex-col gap-2">
